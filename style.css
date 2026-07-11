@@ -29,3 +29,59 @@ body{
         0 0 20px rgba(0,140,255,.35),
         0 0 50px rgba(0,140,255,.18);
 }
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.45);
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+    color:white;
+
+    padding:20px;
+}
+
+.hero-overlay h1{
+    font-size:42px;
+    letter-spacing:3px;
+    color:#ffd54a;
+    text-shadow:0 0 20px rgba(255,215,0,.7);
+}
+
+.hero-overlay p{
+    margin-top:12px;
+    font-size:18px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    margin-top:30px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    text-decoration:none;
+    color:white;
+    padding:14px 28px;
+    border-radius:50px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.whatsapp{
+    background:#25D366;
+}
+
+.phone{
+    background:#d4af37;
+    color:#111;
+}
+
+.btn:hover{
+    transform:scale(1.08);
+}
