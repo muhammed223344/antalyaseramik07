@@ -76,18 +76,19 @@ body{
     border-radius:50px;
     font-weight:bold;
     transition:0.3s;
-}
-
 .whatsapp{
-    background:#25D366;
-    color:#fff;
+    background:linear-gradient(135deg,#00b09b,#25D366,#7CFC00);
+    color:white;
+    box-shadow:0 0 18px rgba(37,211,102,.45);
 }
 
 .phone{
-    background:#D4AF37;
+    background:linear-gradient(135deg,#8B5E00,#D4AF37,#FFE27A);
     color:#111;
+    box-shadow:0 0 18px rgba(212,175,55,.45);
 }
 
 .btn:hover{
-    transform:scale(1.08);
+    transform:translateY(-4px) scale(1.06);
+    filter:brightness(1.15);
 }
