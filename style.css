@@ -71,31 +71,89 @@ body{
 }
 
 .btn{
-    display:inline-block;
-    text-decoration:none;
-    padding:15px 30px;
-    border-radius:50px;
-    font-weight:bold;
-    transition:.35s;
+position:relative;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+
+padding:15px 30px;
+
+border-radius:50px;
+
+font-weight:bold;
+text-decoration:none;
+
+color:#fff;
+
+overflow:hidden;
+
+background:linear-gradient(
+130deg,
+#0EA5E9,
+#2563EB,
+#7C3AED,
+#A855F7,
+#FFD700,
+#F59E0B,
+#0EA5E9
+);
+
+background-size:500% 500%;
+
+animation:gradientMove 8s ease infinite;
+
+border:1px solid rgba(255,255,255,.25);
+
+box-shadow:
+0 0 12px rgba(37,99,235,.35),
+0 0 22px rgba(255,215,0,.30);
+
+transition:.35s;
 }
 
-.whatsapp{
-    background:linear-gradient(135deg,#00b09b,#25D366,#7CFC00);
-    color:white;
-    box-shadow:0 0 18px rgba(37,211,102,.45);
-}
+.btn::before{
 
-.phone{
-    background:linear-gradient(135deg,#8B5E00,#D4AF37,#FFE27A);
-    color:#111;
-    box-shadow:0 0 18px rgba(212,175,55,.45);
+content:"";
+
+position:absolute;
+
+width:20px;
+height:3px;
+
+background:linear-gradient(
+90deg,
+#00D4FF,
+#FFFFFF,
+#FFD700
+);
+
+border-radius:20px;
+
+box-shadow:
+0 0 8px #00D4FF,
+0 0 14px #FFD700;
+
+offset-path:inset(2px round 50px);
+offset-distance:0%;
+
+animation:borderRunner 2s linear infinite;
+
 }
 
 .btn:hover{
-    transform:translateY(-4px) scale(1.06);
-    filter:brightness(1.15);
+
+transform:translateY(-4px) scale(1.06);
+
+box-shadow:
+0 0 20px rgba(37,99,235,.6),
+0 0 35px rgba(255,215,0,.5);
+
 }
 
+.phone,
+.whatsapp{
+color:#fff;
+}
 /* ===== القائمة ===== */
 
 .navbar{
@@ -198,3 +256,31 @@ footer{
 }
 
 }
+
+@keyframes borderRunner{
+
+0%{
+offset-distance:0%;
+}
+
+100%{
+offset-distance:100%;
+}
+
+}
+
+@keyframes gradientMove{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+    }
