@@ -1,1 +1,31 @@
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#0b0b0b;
+    font-family:Arial,sans-serif;
+}
+
+.hero-banner{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#000;
+    padding:20px 0;
+}
+
+.hero-banner img{
+    width:95%;
+    max-width:1200px;
+    height:auto;
+    display:block;
+    border-radius:18px;
+    box-shadow:
+        0 0 20px rgba(0,140,255,.35),
+        0 0 50px rgba(0,140,255,.18);
+}
