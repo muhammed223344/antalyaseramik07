@@ -157,17 +157,45 @@ color:#fff;
 /* ===== القائمة ===== */
 
 .navbar{
-    background:#111;
-    padding:18px 8%;
+    position:sticky;
+    top:0;
+    z-index:999;
+
     display:flex;
     justify-content:space-between;
     align-items:center;
+
+    padding:18px 8%;
+
+    background:rgba(10,10,10,.35);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(255,215,0,.25);
+
+    box-shadow:0 5px 25px rgba(0,0,0,.35);
 }
 
 .logo{
+    font-size:34px;
+    font-weight:900;
     color:#FFD700;
-    font-size:30px;
-    font-weight:bold;
+    letter-spacing:3px;
+
+    text-shadow:
+        0 0 8px rgba(255,215,0,.7),
+        0 0 25px rgba(255,215,0,.35);
+
+    transition:.4s;
+}
+
+.logo:hover{
+    transform:scale(1.08);
+
+    text-shadow:
+        0 0 12px rgba(255,215,0,.9),
+        0 0 35px rgba(255,215,0,.55);
 }
 
 .navbar ul{
@@ -177,13 +205,30 @@ color:#fff;
 }
 
 .navbar a{
+    position:relative;
     color:white;
     text-decoration:none;
-    transition:.3s;
+    font-weight:bold;
+    transition:.35s;
 }
 
 .navbar a:hover{
     color:#FFD700;
+}
+
+.navbar a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0;
+    height:2px;
+    background:#FFD700;
+    transition:.35s;
+}
+
+.navbar a:hover::after{
+    width:100%;
 }
 
 /* ===== الأقسام ===== */
