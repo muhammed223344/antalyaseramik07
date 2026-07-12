@@ -625,6 +625,7 @@ overflow:hidden;
 border-radius:20px;
 
 }
+
 .slider{
 
 position:relative;
@@ -656,8 +657,8 @@ cursor:pointer;
 transform:scale(1.04);
 
 box-shadow:
-0 0 12px rgba(79,195,247,.45),
-0 0 25px rgba(79,195,247,.35);
+0 0 12px rgba(79,195,247,.35),
+0 0 25px rgba(79,195,247,.25);
 
 }
 
@@ -720,7 +721,7 @@ right:12px;
 
 }
 
-/* النص */
+/* النص فوق الصورة */
 
 .image-overlay{
 
@@ -732,12 +733,9 @@ bottom:0;
 
 padding:18px;
 
-background:linear-gradient(
-to top,
-rgba(79,195,247,.88),
-rgba(255,245,220,.55),
-rgba(255,255,255,0)
-);
+background:transparent;
+
+text-align:center;
 
 color:#fff;
 
@@ -745,16 +743,30 @@ color:#fff;
 
 .image-overlay h3{
 
-margin-bottom:8px;
+margin-bottom:10px;
 
-font-size:24px;
+font-size:32px;
+
+font-weight:800;
+
+color:#ffffff;
+
+text-shadow:
+0 2px 8px rgba(0,0,0,.75);
 
 }
 
 .image-overlay p{
 
-font-size:15px;
+font-size:17px;
 
-line-height:1.7;
+font-weight:600;
 
-    }
+line-height:1.8;
+
+color:#ffffff;
+
+text-shadow:
+0 2px 8px rgba(0,0,0,.75);
+
+}
