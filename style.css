@@ -329,3 +329,58 @@ background-position:0% 50%;
 }
 
     }
+
+/* ===== اللوجو العائم ===== */
+
+.logo-floating{
+    position:absolute;
+    top:25px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:100;
+    overflow:hidden;
+}
+
+.logo-floating img{
+    width:220px;
+    max-width:65vw;
+    display:block;
+    filter:
+        drop-shadow(0 0 10px rgba(255,215,0,.35))
+        drop-shadow(0 0 25px rgba(255,255,255,.25));
+}
+
+/* تأثير اللمعة */
+
+.logo-floating::after{
+    content:"";
+    position:absolute;
+    top:-40%;
+    left:-80%;
+    width:40%;
+    height:180%;
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.95),
+        transparent
+    );
+    transform:rotate(20deg);
+    animation:logoShine 5s infinite;
+}
+
+@keyframes logoShine{
+
+    0%{
+        left:-80%;
+    }
+
+    20%{
+        left:130%;
+    }
+
+    100%{
+        left:130%;
+    }
+
+}
