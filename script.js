@@ -123,10 +123,12 @@ bathroomSlider.addEventListener("click", function(){
     img.style.maxHeight = "92%";
     img.style.borderRadius = "18px";
 
-    img.style.boxShadow =
-        "0 0 18px #4FC3F7," +
-        "0 0 40px rgba(79,195,247,.55)";
+    img.style.border = "4px solid #4FC3F7";
 
+img.style.boxShadow =
+    "0 0 15px #4FC3F7," +
+    "0 0 35px #4FC3F7," +
+    "0 0 60px rgba(79,195,247,.75)";
     overlay.appendChild(img);
 
     overlay.onclick = function(){
