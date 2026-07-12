@@ -77,7 +77,15 @@ const bathroomImages = [
     "bathroom5.png",
     "bathroom6.png"
 ];
+/* تحميل صور الحمامات مسبقًا */
 
+bathroomImages.forEach(function(image){
+
+const img = new Image();
+
+img.src = image;
+
+});
 let bathroomIndex = 0;
 
 const bathroomSlider = document.getElementById("bathroom-slider");
