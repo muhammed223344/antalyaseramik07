@@ -215,6 +215,84 @@ poolSlider.style.opacity = "1";
 
 },300);
 
-},1000);
+},3000);
 
 }
+/* ===========================
+   Pool Gallery
+=========================== */
+
+poolSlider.addEventListener("click", function(){
+
+let current = poolIndex;
+
+const overlay = document.createElement("div");
+
+overlay.style.position = "fixed";
+overlay.style.top = "0";
+overlay.style.left = "0";
+overlay.style.width = "100%";
+overlay.style.height = "100%";
+overlay.style.background = "rgba(0,0,0,.95)";
+overlay.style.display = "flex";
+overlay.style.justifyContent = "center";
+overlay.style.alignItems = "center";
+overlay.style.zIndex = "999999";
+
+const img = document.createElement("img");
+
+img.src = poolImages[current];
+
+img.style.maxWidth = "95%";
+img.style.maxHeight = "95%";
+img.style.borderRadius = "15px";
+
+overlay.appendChild(img);
+
+let startX = 0;
+
+overlay.addEventListener("touchstart", function(e){
+
+startX = e.touches[0].clientX;
+
+});
+
+overlay.addEventListener("touchend", function(e){
+
+const endX = e.changedTouches[0].clientX;
+
+if(startX - endX > 50){
+
+current++;
+
+if(current >= poolImages.length) current = 0;
+
+img.src = poolImages[current];
+
+}
+
+if(endX - startX > 50){
+
+current--;
+
+if(current < 0) current = poolImages.length - 1;
+
+img.src = poolImages[current];
+
+}
+
+});
+
+overlay.addEventListener("click", function(e){
+
+if(e.target === overlay){
+
+overlay.remove();
+
+}
+
+});
+
+document.body.appendChild(overlay);
+
+});
