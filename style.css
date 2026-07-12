@@ -612,7 +612,19 @@ section{
 /* ===========================
    Bathroom Slider
 =========================== */
+/* ===========================
+   Bathroom Slider
+=========================== */
 
+.image-card{
+
+position:relative;
+
+overflow:hidden;
+
+border-radius:20px;
+
+}
 .slider{
 
 position:relative;
