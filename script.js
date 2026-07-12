@@ -173,3 +173,48 @@ player.src = videos[currentVideo];
 player.load();
 
 }
+/* ===========================
+   Pool Slider
+=========================== */
+
+const poolImages = [
+
+"pool1.jpg",
+"pool2.jpg",
+"pool3.jpg",
+"pool4.jpg",
+"pool5.jpg",
+"pool6.jpg",
+"pool7.jpg"
+
+];
+
+let poolIndex = 0;
+
+const poolSlider = document.getElementById("pool-slider");
+
+if(poolSlider){
+
+setInterval(function(){
+
+poolIndex++;
+
+if(poolIndex >= poolImages.length){
+
+poolIndex = 0;
+
+}
+
+poolSlider.style.opacity = "0";
+
+setTimeout(function(){
+
+poolSlider.src = poolImages[poolIndex];
+
+poolSlider.style.opacity = "1";
+
+},300);
+
+},1000);
+
+}
