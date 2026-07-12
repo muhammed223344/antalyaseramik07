@@ -960,176 +960,58 @@ text-shadow:
 }
 
 /* ===========================
-   PREMIUM LOGO
+   LOGO EFFECT
 =========================== */
 
 .tips-logo{
 
 display:flex;
-
 justify-content:center;
-
 align-items:center;
 
-position:relative;
-
-margin:70px auto;
-
-overflow:hidden;
+margin:60px auto;
 
 }
 
 .tips-logo img{
 
-width:270px;
+width:180px;
+max-width:80%;
 
-max-width:90%;
+animation:logoFloat 5s ease-in-out infinite;
 
-position:relative;
-
-z-index:5;
-
-animation:
-logoFloat 5s ease-in-out infinite,
-logoPulse 4s ease-in-out infinite;
+transition:.4s;
 
 filter:
-drop-shadow(0 0 10px rgba(0,180,255,.50))
-drop-shadow(0 0 25px rgba(138,43,226,.35))
-drop-shadow(0 0 45px rgba(255,215,0,.25));
+drop-shadow(0 0 8px rgba(0,180,255,.55))
+drop-shadow(0 0 18px rgba(138,43,226,.35))
+drop-shadow(0 0 28px rgba(255,215,0,.35));
 
 }
 
-/* هالة زرقاء كبيرة */
+.tips-logo img:hover{
 
-.tips-logo::before{
+transform:scale(1.05);
 
-content:"";
-
-position:absolute;
-
-bottom:-10px;
-
-left:50%;
-
-transform:translateX(-50%);
-
-width:280px;
-
-height:70px;
-
-background:radial-gradient(circle,
-
-rgba(0,180,255,.85),
-
-rgba(0,180,255,.35),
-
-transparent 75%
-
-);
-
-filter:blur(30px);
-
-animation:blueAura 3s ease-in-out infinite;
-
-z-index:1;
+filter:
+drop-shadow(0 0 12px #00B4FF)
+drop-shadow(0 0 22px #8A2BE2)
+drop-shadow(0 0 38px #FFD700);
 
 }
 
-/* لمعان فاخر */
-
-.tips-logo::after{
-
-content:"";
-
-position:absolute;
-
-top:-25%;
-
-left:-60%;
-
-width:40%;
-
-height:160%;
-
-background:linear-gradient(
-
-110deg,
-
-transparent,
-
-rgba(255,215,0,.15),
-
-rgba(255,255,255,1),
-
-rgba(0,180,255,.40),
-
-rgba(138,43,226,.40),
-
-transparent
-
-);
-
-transform:skewX(-25deg);
-
-animation:premiumShine 3s linear infinite;
-
-z-index:10;
-
-pointer-events:none;
-
-mix-blend-mode:screen;
-
-}
-
-@keyframes premiumShine{
-
-0%{
-
-left:-60%;
-
-}
-
-100%{
-
-left:160%;
-
-}
-
-}
-
-@keyframes blueAura{
+@keyframes logoFloat{
 
 0%,100%{
 
-opacity:.6;
-
-transform:translateX(-50%) scale(1);
+transform:translateY(0);
 
 }
 
 50%{
 
-opacity:1;
-
-transform:translateX(-50%) scale(1.25);
+transform:translateY(-6px);
 
 }
 
 }
-
-@keyframes logoPulse{
-
-0%,100%{
-
-transform:scale(1);
-
-}
-
-50%{
-
-transform:scale(1.03);
-
-}
-
-    }
