@@ -960,7 +960,7 @@ text-shadow:
 }
 
 /* ===========================
-   LOGO EFFECT
+   PREMIUM LOGO
 =========================== */
 
 .tips-logo{
@@ -969,46 +969,78 @@ display:flex;
 justify-content:center;
 align-items:center;
 
-margin:60px auto;
+margin:50px auto;
+
+position:relative;
+
+}
+
+.tips-logo::before{
+
+content:"";
+
+position:absolute;
+
+width:180px;
+height:180px;
+
+border-radius:50%;
+
+background:conic-gradient(
+
+#FFD700,
+#00C8FF,
+#8A2BE2,
+#FFD700
+
+);
+
+animation:logoRing 4s linear infinite;
+
+filter:blur(18px);
+
+opacity:.85;
 
 }
 
 .tips-logo img{
 
-width:180px;
-max-width:80%;
+position:relative;
 
-animation:logoFloat 5s ease-in-out infinite;
+z-index:2;
 
-transition:.4s;
+width:120px;
 
-filter:
-drop-shadow(0 0 8px rgba(0,180,255,.55))
-drop-shadow(0 0 18px rgba(138,43,226,.35))
-drop-shadow(0 0 28px rgba(255,215,0,.35));
+height:120px;
 
-}
+object-fit:contain;
 
-.tips-logo img:hover{
+border-radius:50%;
 
-transform:scale(1.05);
+background:#fff;
 
-filter:
-drop-shadow(0 0 12px #00B4FF)
-drop-shadow(0 0 22px #8A2BE2)
-drop-shadow(0 0 38px #FFD700);
+padding:8px;
+
+box-shadow:
+0 0 15px rgba(255,255,255,.7);
 
 }
 
-@keyframes logoFloat{
+@keyframes logoRing{
 
-0%,100%{
+0%{
 
-transform:translateY(0);
+transform:rotate(0deg);
 
 }
 
-50%{
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
 
 transform:translateY(-6px);
 
