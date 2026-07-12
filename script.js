@@ -138,3 +138,38 @@ img.style.boxShadow =
     document.body.appendChild(overlay);
 
 });
+/* ===========================
+   Video Slider
+=========================== */
+
+const videos = [
+"video1.mp4",
+"video2.mp4",
+"video3.mp4",
+"video4.mp4",
+"video5.mp4"
+];
+
+let currentVideo = 0;
+
+function changeVideo(direction){
+
+currentVideo += direction;
+
+if(currentVideo < 0){
+currentVideo = videos.length - 1;
+}
+
+if(currentVideo >= videos.length){
+currentVideo = 0;
+}
+
+const player = document.getElementById("video-slider");
+
+player.pause();
+
+player.src = videos[currentVideo];
+
+player.load();
+
+}
