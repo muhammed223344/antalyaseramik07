@@ -1108,3 +1108,36 @@ display:none !important;
 background:none !important;
 box-shadow:none !important;
 }
+/* ===========================
+   LIVE CLOCK
+=========================== */
+
+.live-clock{
+
+position:absolute;
+
+top:145px;
+
+right:35px;
+
+width:95px;
+
+padding:6px 8px;
+
+background:rgba(255,255,255,.95);
+
+border-radius:10px;
+
+text-align:center;
+
+font-size:16px;
+
+font-weight:700;
+
+color:#1565C0;
+
+box-shadow:0 0 15px rgba(0,180,255,.25);
+
+font-family:monospace;
+
+}
