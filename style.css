@@ -1144,22 +1144,20 @@ user-select:none;
 
 .live-clock .time{
 
-font-size:44px;
-
-letter-spacing:3px;
-
-}
-
-/* التاريخ */
-
-.live-clock .date{
-
-margin-top:5px;
-
-font-size:18px;
+font-size:28px;
 
 letter-spacing:2px;
 
-opacity:.90;
+}
+
+.live-clock .date{
+
+margin-top:3px;
+
+font-size:12px;
+
+letter-spacing:1px;
+
+opacity:.85;
 
 }
