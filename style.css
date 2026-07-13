@@ -1052,66 +1052,6 @@ transform:translateY(-6px);
    POOL SLIDER
 =========================== */
 
-.pool-slider{
-
-position:relative;
-
-overflow:hidden;
-
-border-radius:20px;
-
-cursor:pointer;
-
-}
-
-.pool-slider img{
-
-width:100%;
-
-height:340px;
-
-object-fit:cover;
-
-display:block;
-
-transition:opacity .6s ease;
-
-}
-
-.pool-slider:hover img{
-
-transform:scale(1.03);
-
-transition:.4s;
-
-}
-/* إخفاء شريط Google Translate */
-
-.goog-te-banner-frame{
-display:none !important;
-}
-
-body{
-top:0 !important;
-}
-
-.skiptranslate{
-display:none !important;
-}
-
-.goog-tooltip,
-.goog-tooltip:hover{
-display:none !important;
-}
-
-.goog-text-highlight{
-background:none !important;
-box-shadow:none !important;
-}
-/* ===========================
-   DIGITAL CLOCK
-=========================== */
-
 .live-clock{
 
 position:absolute;
@@ -1130,11 +1070,11 @@ line-height:1;
 
 font-family:'Digital-7', monospace;
 
-color:#BDBDBD;
+color:#5A5A5A;
 
 text-shadow:
-0 0 2px #FFFFFF,
-0 0 5px rgba(255,255,255,.25);
+1px 1px 0 rgba(255,255,255,.9),
+0 0 1px rgba(0,0,0,.15);
 
 user-select:none;
 
@@ -1146,9 +1086,15 @@ user-select:none;
 
 font-size:17px;
 
-letter-spacing:2px;
+letter-spacing:1.5px;
+
+font-weight:700;
+
+color:#4F4F4F;
 
 }
+
+/* التاريخ */
 
 .live-clock .date{
 
@@ -1158,6 +1104,8 @@ font-size:8px;
 
 letter-spacing:1px;
 
-opacity:.85;
+font-weight:700;
+
+color:#666666;
 
 }
