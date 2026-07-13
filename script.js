@@ -357,7 +357,9 @@ function openPage(pageId) {
 
 history.pushState({page: pageId}, "", "#"+pageId);
 
-document.querySelector("main").style.display = "none";
+document.querySelectorAll("main > section").forEach(function(section){
+section.style.display = "none";
+});
 
 document.getElementById("pages").style.display = "block";
 
