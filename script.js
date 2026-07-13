@@ -375,6 +375,8 @@ window.addEventListener("popstate", function(){
 
 document.getElementById("pages").style.display = "none";
 
-document.querySelector("main").style.display = "block";
+document.querySelectorAll("main > section").forEach(function(section){
+section.style.display = "";
+});
 
 });
