@@ -1076,6 +1076,47 @@ user-select:none;
 
 }
 
+/* ===========================
+   POOL SLIDER
+=========================== */
+
+.pool-slider{
+
+position:relative;
+
+width:100%;
+
+height:340px;
+
+overflow:hidden;
+
+border-radius:22px;
+
+line-height:0;
+
+}
+
+.pool-slider img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+display:block;
+
+cursor:pointer;
+
+transition:opacity .5s ease;
+
+}
+
+.pool-slider img:hover{
+
+transform:scale(1.03);
+
+}
 /* الساعة */
 
 /* ===========================
