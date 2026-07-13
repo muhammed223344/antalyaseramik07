@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="tr" dir="ltr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Antalya Seramik</title>
+
+<meta name="description" content="Antalya Seramik">
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="top-logo">
+
+    <img src="logo.png" alt="Antalya Seramik">
+
+    <div class="live-clock">
+
+        <div class="time" id="live-clock">
+            00:00:00
+        </div>
+
+        <div class="date" id="live-date">
+            00•00•0000
+        </div>
+
+    </div>
+
+</div>
+
+<h1 class="site-title">
+
+ANTALYA SERAMIK
+
+</h1>
+
+<div class="language-buttons">
+
+<a href="#" class="lang-btn" onclick="changeLanguage('ar'); return false;">
+
+🇸🇦 العربية
+
+</a>
+
+<a href="#" class="lang-btn active" onclick="changeLanguage('tr'); return false;">
+
+🇹🇷 Türkçe
+
+</a>
+
+</div>
+
+<div class="contact-buttons">
+
+<a href="https://wa.me/905319667732" class="btn whatsapp">
+
+💬 WhatsApp
+
+</a>
+
+<a href="tel:+905072975291" class="btn phone">
+
+📞 Ara
+
+</a>
+
+</div>
+
+<nav class="navbar">
+
+<ul>
+
+<li><a href="#home">Anasayfa</a></li>
+
+<li><a href="#services">Hizmetlerimiz</a></li>
+
+<li><a href="#gallery">Çalışmalarımız</a></li>
+
+<li><a href="#contact">İletişim</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<main>
+
+<section id="home" class="home">
+
+<h2>
+Antalya Seramik'e Hoş Geldiniz
+</h2>
+
+<p>
+
+Biz, en iyi sonucu elde etmek için her ayrıntıya özen göstererek, yüksek profesyonellikle <strong>seramik ve porselen döşeme</strong> ile tüm dekorasyon ve tadilat işlerini gerçekleştiren uzman bir ekibiz.
+
+<br><br>
+
+Evler, villalar ve iş yerleri için bakım ve onarım çalışmalarının yanı sıra zemin ve duvar, mutfak, banyo, merdiven, balkon ve cephe kaplama döşeme hizmetleri sunuyoruz.
+
+<br><br>
+
+Yıllarca sürecek bir iş kalitesini garanti etmek için deneyime, hassasiyete, zamanında teslimata ve en iyi modern uygulama yöntemlerini kullanmaya güveniyoruz.
+
+<br><br>
+
+<strong>
+Müşterilerimizin memnuniyeti gurur kaynağımızdır ve amacımız, uyguladığımız her projenin bir kalite ve ustalık örneği olmasıdır.
+</strong>
+
+</p>
+
+</section>
+<section id="services" class="services">
+
+<h2>Hizmetlerimiz</h2>
+
+<div class="service-grid">
+
+<div class="service-card" style="grid-column:1/-1; text-align:left;">
+
+<h3>Antalya'daki Deneyimimiz</h3>
+
+<p>
+
+<strong>Antalya</strong> şehri genelinde birçok seramik ve porselen döşeme projesini başarıyla tamamlamış olmaktan gurur duyuyor, farklı iş türlerini yüksek profesyonellik ve titizlikle yürütme konusunda geniş bir deneyim kazanmış bulunuyoruz.
+
+<br><br>
+
+Çalışmalarımız; dekorasyon, tadilat ve yenileme projelerinin yanı sıra <strong>restoranlar, güzellik salonları, spor salonları, alışveriş merkezleri (AVM'ler), konut binaları, villalar ve yüzme havuzları</strong> gibi alanlardaki projelerin uygulanmasını kapsamaktadır.
+
+<br><br>
+
+Kaliteyi ve profesyonelliği yansıtan sonuçlar sunmak için her projede en iyi uygulama yöntemlerini kullanmaya özen gösteriyor, en ince ayrıntılara dikkat ediyor ve teslim sürelerine sadık kalıyoruz.
+
+<br><br>
+
+<strong>Müşterilerimizin güveni en büyük başarımızdır ve uyguladığımız her projenin Antalya şehrindeki seçkin iş geçmişimize yeni bir katkı olmasını hedefliyoruz.</strong>
+
+</p>
+
+</div>
+
+<div class="service-card image-card">
+
+    <div class="slider">
+
+        <img
+            id="bathroom-slider"
+            src="bathroom1.png"
+            alt="Banyo Döşeme">
+
+        <button class="slider-btn prev"
+            onclick="changeBathroom(-1)">
+            ❮
+        </button>
+
+        <button class="slider-btn next"
+            onclick="changeBathroom(1)">
+            ❯
+        </button>
+
+        <div class="image-overlay">
+
+            <h3>Banyolar</h3>
+
+            <p>
+                Her müşterinin zevkine ve ihtiyacına uygun en yeni seramik tasarımlarıyla banyo duvarlarının kaplanması.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="service-card video-card">
+
+    <div class="slider">
+
+        <video
+            id="video-slider"
+            src="video1.mp4"
+            controls
+            playsinline>
+        </video>
+
+        <button class="slider-btn prev"
+            onclick="changeVideo(-1)">
+            ❮
+        </button>
+
+        <button class="slider-btn next"
+            onclick="changeVideo(1)">
+            ❯
+        </button>
+
+        <div class="image-overlay">
+
+            <h3>Çalışmalarımızın Videoları</h3>
+
+            <p>
+                Antalya şehri genelinde tamamladığımız çalışmalarımızdan kesitler.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+    <div class="service-card" style="grid-column:1/-1; text-align:left;">
+
+<h3>Seramik Seçmeden Önce Tavsiyeler</h3>
+
+<p>
+
+Doğru seramik seçimi sadece şekle değil, mekanın renkleri, aydınlatması ve dekorasyonu ile olan uyumuna da bağlıdır.
+Bu nedenle, yıllarca sürecek rahat ve şık bir tasarım elde etmek için her zaman mutfak dolapları, kapı renkleri, mermer ve aksesuarlarla uyumlu renkler seçmenizi öneririz.
+<br><br>
+
+Banyolarda; lavabo, bataryalar ve metal aksesuarlarla uyumlu sakin renklerin seçilmesi, ayrıca mekanın daha geniş ve estetik görünmesi için fayans boyutunun banyo alanına uygun şekilde dikkate alınması tercih edilir.
+<br><br>
+
+Ayrıca seramik ve porselenin sağlamlığını, neme ve çeşitli dış etkenlere karşı direncini garanti altına almak için yüksek kaliteli yapıştırıcılar ve orijinal dolgu malzemeleri kullanılmasını tavsiye ederiz, çünkü montaj kalitesi kullanılan malzemelerin kalitesiyle başlar.
+<br><br>
+
+<strong>
+Doğru malzeme ve renk seçiminin profesyonel uygulama ile birleşmesi, mekana lüks bir görünüm ve uzun bir kullanım ömrü kazandırır.
+</strong>
+
+</p>
+
+    </div>
+    <div class="tips-logo">
+
+    <img src="logo1.png" alt="Antalya Seramik">
+
+    </div>
+    
+<div class="service-card image-card">
+
+    <div class="pool-slider">
+
+        <img id="pool-slider"
+             src="pool1.jpg"
+             alt="Antalya Havuzları">
+
+        <div class="image-overlay">
+
+            <h3>Konyaaltı, Döşemealtı ve Lara'da Tamamladığımız Havuzlar</h3>
+
+            <p>
+                En kaliteli seramik ve porselenleri kullanarak gerçekleştirdiğimiz havuz yapımı ve kaplama çalışmalarımızdan örnekler.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="service-card" style="grid-column:1/-1; text-align:left;">
+
+<h3>Çalışmalarımız</h3>
+
+<p>
+
+Gerçek iş kalitesinin sadece projenin bitmesiyle sona ermediğine, aksine teslimattan sonra başladığına inanıyoruz.
+Bu nedenle tüm seramik, porselen ve mermer işlerini sertifikalı malzemeler ve profesyonel montaj yöntemleri kullanarak en yüksek kalite ve hassasiyet standartlarına göre uygulamaya özen gösteriyoruz.
+<br><br>
+
+Evler, villalar, iş yerleri veya havuzlar için uyguladığımız tüm çalışmalarda müşterilerimize <strong>en az beş yıl garanti</strong> sunuyoruz; garanti, uygulama veya montajdan kaynaklanan her türlü kusuru kapsar.
+<br><br>
+
+Bu süre zarfında garanti kapsamına giren herhangi bir sorun ortaya çıkması durumunda, gecikmeksizin gelip sorunu çözmeyi ve gerekli bakım veya onarım çalışmalarını yapmayı taahhüt ediyoruz, çünkü müşteri güveni bizim için her şeyden önemlidir.
+<br><br>
+
+<strong>
+Amacımız sadece projeyi tamamlamak değil, müşterilerimizle kalite, bağlılık ve dürüstlüğe dayalı uzun vadeli bir ilişki kurmaktır.
+</strong>
+
+</p>
+
+</div>
+    
+
+</div>
+
+<div class="service-card" style="grid-column:1/-1; text-align:left;">
+
+<h3>Tamamladığımız Her İşle Gurur Duyuyoruz</h3>
+
+<p>
+
+Ev, villa, ticari iş yeri veya havuz olsun, hayata geçirdiğimiz her projeden gurur duyuyoruz.
+Çünkü her iş bizim için, ilk günden projenin teslimine kadar layıkıyla taşımaya özen gösterdiğimiz büyük bir sorumluluk ve güveni temsil eder.
+<br><br>
+
+İş bittikten sonra müşterilerimizin memnuniyetini gördüğümüzde mutlu oluyoruz ve her zaman ulaşmaya çalıştığımız hedef de budur.
+Çünkü gerçek başarımız uyguladığımız proje sayısıyla değil, müşterinin gülümsemesi ve ona sunduğumuz işin kalitesine olan güveni ile ölçülür.
+<br><br>
+
+Bizim için en güzel olanı ise, birçok müşterimizin bizimle olan deneyimlerinden sonra bizi arkadaşlarına, akrabalarına ve komşularına tavsiye etmesidir; bu güven gurur duyduğumuz en büyük referanstır ve yıldan yıla yeni müşterilere ulaşmamızın sebebidir.
+<br><br>
+
+<strong>
+İlişkilerde dürüstlüğün, işte ustalığın ve zamanlamaya sadık kalmanın her projenin başarısının temeli olduğuna inanıyor ve tüm müşterilerimizin beklentilerini her zaman karşılayabilmeyi temenni ediyoruz.
+</strong>
+
+</p>
+
+</div>
+
+</section>
+
+<section id="contact" class="contact">
+
+<h2>Bizimle İletişime Geçin</h2>
+
+<p>Bilgi almak veya fiyat teklifi istemek için bizimle doğrudan iletişime geçin.</p>
+
+<div class="contact-buttons">
+
+<a href="https://wa.me/905319667732" class="btn whatsapp">
+
+💬 WhatsApp
+
+</a>
+
+<a href="tel:+905072975291" class="btn phone">
+
+📞 Ara
+
+</a>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+<p>© 2026 Antalya Seramik - Tüm Hakları Saklıdır</p>
+
+</footer>
+
+<div id="google_translate_element" style="display:none;"></div>
+
+<script>
+function googleTranslateElementInit() {
+new google.translate.TranslateElement({
+pageLanguage:'ar',
+includedLanguages:'ar,tr',
+autoDisplay:false
+}, 'google_translate_element');
+}
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
