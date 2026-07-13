@@ -353,3 +353,26 @@ d + "•" + mo + "•" + y;
 updateClock();
 
 setInterval(updateClock,1000);
+function openPage(pageId) {
+
+history.pushState({page: pageId}, "", "#"+pageId);
+
+document.querySelector("main").style.display = "none";
+
+document.getElementById("pages").style.display = "block";
+
+document.querySelectorAll(".inside-page").forEach(function(page){
+page.style.display = "none";
+});
+
+document.getElementById(pageId).style.display = "block";
+
+}
+
+window.addEventListener("popstate", function(){
+
+document.getElementById("pages").style.display = "none";
+
+document.querySelector("main").style.display = "block";
+
+});
