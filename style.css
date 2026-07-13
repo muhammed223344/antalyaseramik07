@@ -1237,3 +1237,56 @@ display:none !important;
 background:transparent !important;
 border:none !important;
 }
+.extra-links{
+
+padding:25px;
+
+text-align:right;
+
+}
+
+.extra-links h3{
+
+font-size:30px;      /* حجم العنوان */
+
+font-weight:800;     /* سماكة الخط */
+
+margin-bottom:20px;
+
+color:#0A58CA;
+
+}
+
+.extra-links ul{
+
+list-style:disc;
+
+padding-right:25px;
+
+}
+
+.extra-links li{
+
+margin:15px 0;
+
+}
+
+.extra-links a{
+
+font-size:24px;      /* حجم النص */
+
+font-weight:700;     /* سماكة النص */
+
+color:#222;
+
+text-decoration:none;
+
+transition:.3s;
+
+}
+
+.extra-links a:hover{
+
+color:#0A58CA;
+
+}
