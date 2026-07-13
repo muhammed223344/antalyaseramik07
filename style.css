@@ -1120,24 +1120,28 @@ top:145px;
 
 right:35px;
 
-width:95px;
+width:105px;
 
-padding:6px 8px;
+height:42px;
 
-background:rgba(255,255,255,.95);
+display:flex;
 
-border-radius:10px;
+justify-content:center;
 
-text-align:center;
+align-items:center;
+
+background:#ffffff;
+
+border-radius:8px;
 
 font-size:16px;
 
 font-weight:700;
 
+font-family:monospace;
+
 color:#1565C0;
 
-box-shadow:0 0 15px rgba(0,180,255,.25);
-
-font-family:monospace;
+box-shadow:none;
 
 }
