@@ -1265,23 +1265,19 @@ padding-right:25px;
 
 }
 
-.extra-links li{
-
-margin:15px 0;
-
-}
-
 .extra-links a{
 
-font-size:26px;      /* حجم النص */
+font-size:26px;
 
-font-weight:600;     /* سماكة النص */
+font-weight:500;
 
-color:#222;
+color:#0EA5E9;
 
 text-decoration:none;
 
 transition:.3s;
+
+cursor:pointer;
 
 }
 
