@@ -1109,39 +1109,57 @@ background:none !important;
 box-shadow:none !important;
 }
 /* ===========================
-   LIVE CLOCK
+   DIGITAL CLOCK
 =========================== */
 
 .live-clock{
 
 position:absolute;
 
-top:145px;
+top:135px;
 
-right:35px;
-
-width:105px;
-
-height:42px;
+right:25px;
 
 display:flex;
 
-justify-content:center;
+flex-direction:column;
 
 align-items:center;
 
-background:#ffffff;
+line-height:1;
 
-border-radius:8px;
+font-family:'Digital-7', monospace;
 
-font-size:16px;
+color:#E6E6E6;
 
-font-weight:700;
+text-shadow:
+0 0 3px rgba(255,255,255,.30),
+0 0 8px rgba(255,255,255,.15);
 
-font-family:monospace;
+user-select:none;
 
-color:#1565C0;
+}
 
-box-shadow:none;
+/* الساعة */
+
+.live-clock .time{
+
+font-size:44px;
+
+letter-spacing:3px;
+
+}
+
+/* التاريخ */
+
+.live-clock .date{
+
+margin-top:5px;
+
+font-size:18px;
+
+letter-spacing:2px;
+
+opacity:.90;
 
 }
