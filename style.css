@@ -1155,9 +1155,33 @@ font-weight:700;
 
 letter-spacing:2px;
 
-color:#555555;
-
 text-align:center;
+
+animation:clockColor 2s infinite alternate;
+
+}
+
+@keyframes clockColor{
+
+0%{
+
+color:#FFD700;
+
+text-shadow:
+0 0 5px rgba(255,215,0,.6),
+0 0 10px rgba(255,215,0,.4);
+
+}
+
+100%{
+
+color:#38BDF8;
+
+text-shadow:
+0 0 5px rgba(56,189,248,.6),
+0 0 10px rgba(56,189,248,.4);
+
+}
 
 }
 
@@ -1173,9 +1197,9 @@ font-weight:700;
 
 letter-spacing:1px;
 
-color:#666666;
-
 text-align:center;
+
+animation:clockColor 2s infinite alternate;
 
 }
 /* إخفاء شريط Google Translate */
