@@ -1085,3 +1085,26 @@ transform:scale(1.03);
 transition:.4s;
 
 }
+/* إخفاء شريط Google Translate */
+
+.goog-te-banner-frame{
+display:none !important;
+}
+
+body{
+top:0 !important;
+}
+
+.skiptranslate{
+display:none !important;
+}
+
+.goog-tooltip,
+.goog-tooltip:hover{
+display:none !important;
+}
+
+.goog-text-highlight{
+background:none !important;
+box-shadow:none !important;
+}
