@@ -1130,11 +1130,11 @@ line-height:1;
 
 font-family:'Digital-7', monospace;
 
-color:#E6E6E6;
+color:#BDBDBD;
 
 text-shadow:
-0 0 3px rgba(255,255,255,.30),
-0 0 8px rgba(255,255,255,.15);
+0 0 2px #FFFFFF,
+0 0 5px rgba(255,255,255,.25);
 
 user-select:none;
 
