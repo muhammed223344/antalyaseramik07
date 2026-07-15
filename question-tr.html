@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="tr" dir="ltr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sorunuzu Gönderin</title>
+
+<style>
+
+body{
+margin:0;
+padding:25px;
+font-family:'Cairo',sans-serif;
+background:#fff;
+color:#333;
+}
+
+.container{
+max-width:700px;
+margin:auto;
+}
+
+h2{
+
+text-align:center;
+color:#0A58CA;
+font-size:34px;
+font-weight:800;
+margin-bottom:30px;
+
+}
+
+label{
+
+display:block;
+margin-top:18px;
+margin-bottom:8px;
+font-weight:bold;
+color:#8BAF00;
+font-size:20px;
+
+}
+
+input,
+textarea{
+
+width:100%;
+padding:14px;
+font-size:18px;
+
+background:#F2F4F7;
+
+border:2px solid #BFC7D1;
+
+border-radius:12px;
+
+color:#222;
+
+box-sizing:border-box;
+
+transition:.3s;
+
+}
+
+input:focus,
+textarea:focus{
+
+background:#FFFFFF;
+
+border-color:#0A58CA;
+
+outline:none;
+
+box-shadow:0 0 10px rgba(10,88,202,.25);
+
+}
+
+input::placeholder,
+textarea::placeholder{
+
+color:#7A7A7A;
+
+}
+
+textarea{
+
+height:180px;
+resize:vertical;
+
+}
+
+button{
+
+margin-top:25px;
+
+width:100%;
+
+padding:18px;
+
+font-size:21px;
+
+font-weight:800;
+
+border:none;
+
+border-radius:14px;
+
+background:#25D366;
+
+color:#fff;
+
+cursor:pointer;
+
+transition:.3s;
+
+box-shadow:0 8px 20px rgba(37,211,102,.35);
+
+}
+
+button:hover{
+
+background:#1EBE5D;
+
+transform:translateY(-3px);
+
+box-shadow:0 12px 25px rgba(37,211,102,.45);
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Sorunuzu Gönderin</h2>
+
+<label>Adınız</label>
+
+<input
+type="text"
+id="name"
+placeholder="Adınızı yazın">
+
+<label>Telefon Numaranız</label>
+
+<input
+type="tel"
+id="phone"
+placeholder="05xxxxxxxx">
+
+<label>Sorunuz</label>
+
+<textarea
+id="question"
+placeholder="Sorunuzu buraya yazın"></textarea>
+
+<button onclick="sendWhatsApp()">
+WhatsApp ile Gönder
+</button>
+
+</div>
+
+<script>
+
+function sendWhatsApp(){
+
+let name=document.getElementById("name").value.trim();
+let phone=document.getElementById("phone").value.trim();
+let question=document.getElementById("question").value.trim();
+
+if(name==="" || phone==="" || question===""){
+
+alert("Lütfen önce tüm alanları doldurun.");
+
+return;
+
+}
+
+let text=
+"Merhaba 👋%0A%0A"+
+"Ad: "+encodeURIComponent(name)+"%0A"+
+"Telefon: "+encodeURIComponent(phone)+"%0A%0A"+
+"Soru:%0A"+encodeURIComponent(question);
+
+window.open("https://wa.me/905319667732?text="+text,"_blank");
+
+}
+
+</script>
+
+</body>
+
+</html>
