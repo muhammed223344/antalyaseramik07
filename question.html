@@ -24,11 +24,14 @@ margin:auto;
 }
 
 h2{
+
 text-align:center;
 color:#0A58CA;
+font-size:34px;
+font-weight:800;
 margin-bottom:30px;
-}
 
+}
 label{
 display:block;
 margin-top:18px;
@@ -44,12 +47,32 @@ textarea{
 width:100%;
 padding:14px;
 font-size:18px;
-border:1px solid #ddd;
+
+background:#F2F4F7;
+
+border:2px solid #BFC7D1;
+
 border-radius:12px;
+
+color:#222;
+
 box-sizing:border-box;
 
-}
+transition:.3s;
 
+}
+input:focus,
+textarea:focus{
+
+background:#FFFFFF;
+
+border-color:#0A58CA;
+
+outline:none;
+
+box-shadow:0 0 10px rgba(10,88,202,.25);
+
+}
 textarea{
 
 height:180px;
