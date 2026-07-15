@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>أرسل سؤالك</title>
+
+<style>
+
+body{
+margin:0;
+padding:25px;
+font-family:'Cairo',sans-serif;
+background:#fff;
+color:#333;
+}
+
+.container{
+max-width:700px;
+margin:auto;
+}
+
+h2{
+text-align:center;
+color:#0A58CA;
+margin-bottom:30px;
+}
+
+label{
+display:block;
+margin-top:18px;
+margin-bottom:8px;
+font-weight:bold;
+color:#8BAF00;
+}
+
+input,
+textarea{
+
+width:100%;
+padding:14px;
+font-size:18px;
+border:1px solid #ddd;
+border-radius:12px;
+box-sizing:border-box;
+
+}
+
+textarea{
+
+height:180px;
+resize:vertical;
+
+}
+
+button{
+
+margin-top:25px;
+width:100%;
+padding:16px;
+font-size:20px;
+font-weight:bold;
+border:none;
+border-radius:14px;
+background:#0A58CA;
+color:#fff;
+cursor:pointer;
+
+}
+
+button:hover{
+
+background:#0848a8;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>أرسل سؤالك</h2>
+
+<form action="mailto:mhmd.abo.sham123@gmail.com" method="post" enctype="text/plain">
+
+<label>الاسم</label>
+
+<input
+type="text"
+name="الاسم"
+required>
+
+<label>رقم الهاتف</label>
+
+<input
+type="tel"
+name="رقم الهاتف">
+
+<label>سؤالك</label>
+
+<textarea
+name="الرسالة"
+required></textarea>
+
+<button type="submit">
+إرسال
+</button>
+
+</form>
+
+</div>
+
+</body>
+
+</html>
