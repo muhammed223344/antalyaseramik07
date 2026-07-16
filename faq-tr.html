@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="tr" dir="ltr">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>اSık Sorulan Sorular</title>
+
+<title>Sık Sorulan Sorular</title>
 
 <style>
 
@@ -25,15 +27,12 @@ body{
 
 .content p{
     margin:0 0 18px;
-    text-align:justify;
+    text-align:left;
 }
 
-/* كل سؤالين بعد كل 10 أسئلة يصبحان باللون الأزرق */
-
-.content p:nth-child(12n-1),
-.content p:nth-child(12n){
+.blue{
     color:#0A58CA;
-    font-weight:700;
+    font-weight:bold;
     font-size:24px;
 }
 
@@ -43,7 +42,7 @@ body{
 
 <body>
 
-<!-- BURAYA METNİ YAPIŞTIR -->
+<div class="content">
 
  <p>Seramik uygulamasından sonra ve derz dolgusu yapılmadan önce, karolar arasında kot farkı (diş yapma) olmadığını doğrulamak için yüzey düzgünlüğü nasıl kontrol edilir؟</p>
 <p>Su soğutmalı bıçaklar kullanılarak aşırı sert porselenleri kesmenin doğru yöntemi nedir؟</p>
@@ -648,6 +647,27 @@ body{
   
 </div>
 
-</body>
+<script>
 
+document.addEventListener("DOMContentLoaded", function () {
+
+    const questions = document.querySelectorAll(".content p");
+
+    questions.forEach((q, index) => {
+
+        const questionNumber = index + 1;
+
+        const position = (questionNumber - 1) % 12;
+
+        if(position === 10 || position === 11){
+            q.classList.add("blue");
+        }
+
+    });
+
+});
+
+</script>
+
+</body>
 </html>
