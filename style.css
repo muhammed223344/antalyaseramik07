@@ -47,55 +47,53 @@ header{
 
     display:flex;
     justify-content:center;
-    align-items:center;
+/* ===========================
+   HEADER
+=========================== */
 
+header{
+    width:100%;
+    background:#fff;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    position:relative;
+}
+
+.top-logo{
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
     padding:35px 20px 15px;
-
 }
 
 .top-logo img{
-
     width:180px;
-
-    filter:
-        drop-shadow(0 0 12px rgba(255,215,0,.35));
-
+    filter:drop-shadow(0 0 12px rgba(255,215,0,.35));
     animation:logoFloat 5s ease-in-out infinite;
-
 }
 
 @keyframes logoFloat{
+    0%{
+        transform:translateY(0);
+    }
 
-0%{
-transform:translateY(0px);
-}
+    50%{
+        transform:translateY(-8px);
+    }
 
-50%{
-transform:translateY(-8px);
-}
-
-100%{
-transform:translateY(0px);
-}
-
+    100%{
+        transform:translateY(0);
+    }
 }
 
 .site-title{
-
     text-align:center;
-
     color:#0A58CA;
-
     font-size:38px;
-
     font-weight:800;
-
     letter-spacing:3px;
-
     margin-bottom:20px;
-
 }
-
 /* ===========================
    LANGUAGE
 =========================== */
