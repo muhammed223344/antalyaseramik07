@@ -1,48 +1,40 @@
 <!DOCTYPE html>
-<html lang="tr" dir="ltr">
+<html lang="ar" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sık Sorulan Sorular</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<title>اSık Sorulan Sorular</title>
 
 <style>
 
 body{
-    font-family:'Cairo',sans-serif;
-    background:#ffffff;
     margin:0;
     padding:35px;
+    font-family:'Cairo',sans-serif;
+    background:#ffffff;
     color:#333;
-    line-height:2.2;
+    line-height:2;
+    font-size:22px;
 }
 
-.container{
+.content{
     max-width:1000px;
     margin:auto;
 }
 
-.questions{
-    font-size:22px;
-}
-
-.questions p{
+.content p{
     margin:0 0 18px;
-    line-height:2;
+    text-align:justify;
 }
 
-.questions strong{
-    display:block;
-    margin:30px 0 15px;
+/* كل سؤالين بعد كل 10 أسئلة يصبحان باللون الأزرق */
+
+.content p:nth-child(12n-1),
+.content p:nth-child(12n){
     color:#0A58CA;
+    font-weight:700;
     font-size:24px;
-    font-weight:800;
-}
-
-.blue{
-    color:#0A58CA;
-    font-weight:800;
 }
 
 </style>
@@ -50,10 +42,6 @@ body{
 </head>
 
 <body>
-
-<div class="container">
-
-<div class="questions">
 
 <!-- BURAYA METNİ YAPIŞTIR -->
 
@@ -658,11 +646,8 @@ body{
 <p>Geniş ticari showroom zeminlerinde ağır teşhir stantlarının altına gelen seramiklerin kırılmaması için kullanılan çimento esaslı kendiliğinden yayılan şapların basınç dayanımı ne olmalıdır؟</p>
 <p>Epoksi derz dolgusunun temizliğinde kullanılan selülozik keçelerin karo yüzeyinde kalan epoksi reçinesini tamamen temizlemesi için hangi temizlik jelleri kullanılır؟</p>
   
-<!-- METİN BİTİŞİ -->
-
-</div>
-
 </div>
 
 </body>
+
 </html>
