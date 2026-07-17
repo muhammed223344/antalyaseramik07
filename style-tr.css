@@ -772,3 +772,88 @@ body {
     background: transparent !important;
     border: none !important;
   }
+/* ===========================
+   SOCIAL MEDIA
+=========================== */
+
+.social-section{
+
+    padding:45px 15px;
+
+    background:#fff;
+
+    text-align:center;
+
+}
+
+.social-section h2{
+
+    font-size:26px;
+
+    font-weight:800;
+
+    color:#0A58CA;
+
+    margin-bottom:20px;
+
+}
+
+.social-icons{
+
+    display:flex;
+
+    flex-direction:row;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    flex-wrap:nowrap;
+
+}
+
+.social-link{
+
+    width:60px;
+
+    height:60px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:#F5F5F5;
+
+    color:#808080;
+
+    font-size:24px;
+
+    transition:.35s;
+
+    box-shadow:0 4px 10px rgba(0,0,0,.08);
+
+}
+
+.social-link:hover{
+
+    transform:translateY(-3px) scale(1.08);
+
+    background:#EAEAEA;
+
+    color:#555;
+
+    box-shadow:0 8px 18px rgba(0,0,0,.18);
+
+}
+
+.social-link:active{
+
+    transform:scale(.95);
+
+}
