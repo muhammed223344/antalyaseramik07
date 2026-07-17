@@ -134,7 +134,7 @@ bathroomSlider.addEventListener("click", function(){
 
     img.style.width = "100vw";
     img.style.height = "100vh";
-    img.style.maxWidth = "100vw";
+    img.style.maxWidth = "100vh";
     img.style.maxHeight = "100vh";
 
     /* إظهار الصورة كاملة */
