@@ -66,49 +66,16 @@ document.body.style.opacity="1";
 
 });
 /* ===========================
-   Bathroom Slider
+   Bathroom Gallery
 =========================== */
 
-const bathroomImages = [
-    "bathroom1.png",
-    "bathroom2.png",
-    "bathroom3.png",
-    "bathroom4.png",
-    "bathroom5.png",
-    "bathroom6.png"
-];
-/* تحميل صور الحمامات مسبقًا */
+bathroomSlider.addEventListener("click", function () {
 
-bathroomImages.forEach(function(image){
+    const scrollY = window.scrollY;
 
-const img = new Image();
+    history.pushState({ bathroom: true, scroll: scrollY }, "");
 
-img.src = image;
-
-});
-let bathroomIndex = 0;
-
-const bathroomSlider = document.getElementById("bathroom-slider");
-
-function changeBathroom(step){
-
-    bathroomIndex += step;
-
-    if(bathroomIndex < 0){
-        bathroomIndex = bathroomImages.length - 1;
-    }
-
-    if(bathroomIndex >= bathroomImages.length){
-        bathroomIndex = 0;
-    }
-
-    bathroomSlider.src = bathroomImages[bathroomIndex];
-
-}
-
-/* فتح الصورة بالحجم الكامل */
-
-bathroomSlider.addEventListener("click", function(){
+    let current = bathroomIndex;
 
     const overlay = document.createElement("div");
 
@@ -117,31 +84,89 @@ bathroomSlider.addEventListener("click", function(){
     overlay.style.left = "0";
     overlay.style.width = "100%";
     overlay.style.height = "100%";
-    overlay.style.background = "rgba(0,0,0,.85)";
+    overlay.style.background = "rgba(0,0,0,.90)";
     overlay.style.display = "flex";
     overlay.style.justifyContent = "center";
     overlay.style.alignItems = "center";
-    overlay.style.zIndex = "99999";
-    overlay.style.cursor = "pointer";
+    overlay.style.zIndex = "999999";
 
     const img = document.createElement("img");
 
-    img.src = bathroomImages[bathroomIndex];
+    img.src = bathroomImages[current];
     img.style.maxWidth = "92%";
     img.style.maxHeight = "92%";
     img.style.borderRadius = "18px";
-
     img.style.border = "4px solid #4FC3F7";
+    img.style.boxShadow =
+        "0 0 15px #4FC3F7," +
+        "0 0 35px #4FC3F7," +
+        "0 0 60px rgba(79,195,247,.75)";
 
-img.style.boxShadow =
-    "0 0 15px #4FC3F7," +
-    "0 0 35px #4FC3F7," +
-    "0 0 60px rgba(79,195,247,.75)";
     overlay.appendChild(img);
 
-    overlay.onclick = function(){
+    let startX = 0;
+
+    overlay.addEventListener("touchstart", function (e) {
+        startX = e.touches[0].clientX;
+    });
+
+    overlay.addEventListener("touchend", function (e) {
+
+        const endX = e.changedTouches[0].clientX;
+
+        if (startX - endX > 50) {
+            current++;
+            if (current >= bathroomImages.length) current = 0;
+            img.src = bathroomImages[current];
+        }
+
+        if (endX - startX > 50) {
+            current--;
+            if (current < 0) current = bathroomImages.length - 1;
+            img.src = bathroomImages[current];
+        }
+
+    });
+
+    function closeBathroomOverlay() {
+
         overlay.remove();
-    };
+
+        window.scrollTo({
+            top: scrollY,
+            behavior: "instant"
+        });
+
+        if (history.state && history.state.bathroom) {
+            history.back();
+        }
+
+    }
+
+    overlay.addEventListener("click", function (e) {
+        if (e.target === overlay) {
+            closeBathroomOverlay();
+        }
+    });
+
+    function bathroomBackHandler() {
+
+        if (overlay.parentNode) {
+
+            overlay.remove();
+
+            window.scrollTo({
+                top: scrollY,
+                behavior: "instant"
+            });
+
+        }
+
+        window.removeEventListener("popstate", bathroomBackHandler);
+
+    }
+
+    window.addEventListener("popstate", bathroomBackHandler);
 
     document.body.appendChild(overlay);
 
