@@ -296,111 +296,116 @@ poolSlider.style.opacity = "1";
    Pool Gallery
 =========================== */
 
-poolSlider.addEventListener("click", function(){
+poolSlider.addEventListener("click", function () {
 
-let current = poolIndex;
+    let current = poolIndex;
+    const savedScroll = window.scrollY;
 
-const overlay = document.createElement("div");
-overlay.className = "pool-overlay";
+    const overlay = document.createElement("div");
+    overlay.className = "pool-overlay";
 
-overlay.style.position = "fixed";
-overlay.style.top = "0";
-overlay.style.left = "0";
-overlay.style.width = "100%";
-overlay.style.height = "100%";
-overlay.style.background = "rgba(0,0,0,.95)";
-overlay.style.display = "flex";
-overlay.style.justifyContent = "center";
-overlay.style.alignItems = "center";
-overlay.style.zIndex = "999999";
+    overlay.style.position = "fixed";
+    overlay.style.top = "0";
+    overlay.style.left = "0";
+    overlay.style.width = "100%";
+    overlay.style.height = "100%";
+    overlay.style.background = "rgba(0,0,0,.95)";
+    overlay.style.display = "flex";
+    overlay.style.justifyContent = "center";
+    overlay.style.alignItems = "center";
+    overlay.style.zIndex = "999999";
 
-const img = document.createElement("img");
+    const img = document.createElement("img");
 
-img.src = poolImages[current];
+    img.src = poolImages[current];
+    img.style.maxWidth = "95%";
+    img.style.maxHeight = "95%";
+    img.style.borderRadius = "15px";
 
-img.style.maxWidth = "95%";
-img.style.maxHeight = "95%";
-img.style.borderRadius = "15px";
+    overlay.appendChild(img);
+    document.body.appendChild(overlay);
 
-overlay.appendChild(img);
+    /* منع تحريك الصفحة */
+    document.body.style.overflow = "hidden";
 
-document.body.appendChild(overlay);
+    /* إضافة حالة واحدة فقط */
+    history.pushState({gallery:true}, "");
 
-/* دعم زر الرجوع */
+    function closeGallery(){
 
-history.pushState({poolGallery:true},"");
+        overlay.remove();
 
-function closeGallery(){
+        document.body.style.overflow = "";
 
-if(document.body.contains(overlay)){
+        window.removeEventListener("popstate", onBack);
 
-overlay.remove();
+        setTimeout(function(){
 
-}
+            window.scrollTo(0, savedScroll);
 
-window.removeEventListener("popstate", onBack);
+        },0);
 
-}
+    }
 
-function onBack(){
+    function onBack(){
 
-closeGallery();
+        closeGallery();
 
-}
+    }
 
-window.addEventListener("popstate", onBack);
+    window.addEventListener("popstate", onBack);
 
-/* السحب */
+    /* السحب */
 
-let startX = 0;
+    let startX = 0;
 
-overlay.addEventListener("touchstart", function(e){
+    overlay.addEventListener("touchstart", function(e){
 
-startX = e.touches[0].clientX;
+        startX = e.touches[0].clientX;
 
-});
+    });
 
-overlay.addEventListener("touchend", function(e){
+    overlay.addEventListener("touchend", function(e){
 
-const endX = e.changedTouches[0].clientX;
+        const endX = e.changedTouches[0].clientX;
 
-if(startX - endX > 50){
+        if(startX - endX > 50){
 
-current++;
+            current++;
 
-if(current >= poolImages.length){
-current = 0;
-}
+            if(current >= poolImages.length){
+                current = 0;
+            }
 
-img.src = poolImages[current];
+            img.src = poolImages[current];
 
-}
+        }
 
-if(endX - startX > 50){
+        if(endX - startX > 50){
 
-current--;
+            current--;
 
-if(current < 0){
-current = poolImages.length - 1;
-}
+            if(current < 0){
+                current = poolImages.length - 1;
+            }
 
-img.src = poolImages[current];
+            img.src = poolImages[current];
 
-}
+        }
 
-});
+    });
 
-/* الضغط خارج الصورة */
+    /* الضغط خارج الصورة */
 
-overlay.addEventListener("click", function(e){
+    overlay.addEventListener("click", function(e){
 
-if(e.target === overlay){
+        if(e.target === overlay){
 
-history.back();
+            history.back();
 
-}
+        }
 
-});
+    });
 
 });
 /* ===========================
