@@ -584,3 +584,57 @@ function playLogoGlow(){
 setInterval(playLogoGlow,10000);
 
 logo.addEventListener("click",playLogoGlow);
+/* ===================================================
+   Premium Logo Glow
+=================================================== */
+
+const logo=document.getElementById("mainLogo");
+
+const glowColors=[
+
+"drop-shadow(0 0 10px rgba(255,215,0,.60)) drop-shadow(0 0 22px rgba(255,215,0,.40))",
+
+"drop-shadow(0 0 10px rgba(56,189,248,.60)) drop-shadow(0 0 22px rgba(56,189,248,.40))",
+
+"drop-shadow(0 0 10px rgba(168,85,247,.60)) drop-shadow(0 0 22px rgba(168,85,247,.40))",
+
+"drop-shadow(0 0 10px rgba(16,185,129,.60)) drop-shadow(0 0 22px rgba(16,185,129,.40))"
+
+];
+
+let glowIndex=0;
+
+function playLogoGlow(){
+
+    if(!logo) return;
+
+    logo.classList.add("logoPulse");
+
+    logo.style.filter=glowColors[glowIndex];
+
+    glowIndex++;
+
+    if(glowIndex>=glowColors.length){
+
+        glowIndex=0;
+
+    }
+
+    setTimeout(()=>{
+
+        logo.style.filter=
+        "drop-shadow(0 0 10px rgba(255,215,0,.18))";
+
+        logo.classList.remove("logoPulse");
+
+    },3000);
+
+}
+
+/* كل عشر ثواني */
+
+setInterval(playLogoGlow,10000);
+
+/* عند الضغط */
+
+logo.addEventListener("click",playLogoGlow);
