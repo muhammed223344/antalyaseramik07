@@ -584,57 +584,44 @@ function playLogoGlow(){
 setInterval(playLogoGlow,10000);
 
 logo.addEventListener("click",playLogoGlow);
-/* ===================================================
-   Premium Logo Glow
-=================================================== */
+/* ===========================
+   Logo Glow Effect
+=========================== */
 
-const logo=document.getElementById("mainLogo");
+const logo = document.getElementById("mainLogo");
 
-const glowColors=[
-
-"drop-shadow(0 0 10px rgba(255,215,0,.60)) drop-shadow(0 0 22px rgba(255,215,0,.40))",
-
-"drop-shadow(0 0 10px rgba(56,189,248,.60)) drop-shadow(0 0 22px rgba(56,189,248,.40))",
-
-"drop-shadow(0 0 10px rgba(168,85,247,.60)) drop-shadow(0 0 22px rgba(168,85,247,.40))",
-
-"drop-shadow(0 0 10px rgba(16,185,129,.60)) drop-shadow(0 0 22px rgba(16,185,129,.40))"
-
+const glowColors = [
+"drop-shadow(0 0 10px rgba(255,215,0,.55)) drop-shadow(0 0 25px rgba(255,215,0,.35))",
+"drop-shadow(0 0 10px rgba(56,189,248,.55)) drop-shadow(0 0 25px rgba(56,189,248,.35))",
+"drop-shadow(0 0 10px rgba(168,85,247,.55)) drop-shadow(0 0 25px rgba(168,85,247,.35))",
+"drop-shadow(0 0 10px rgba(16,185,129,.55)) drop-shadow(0 0 25px rgba(16,185,129,.35))"
 ];
 
-let glowIndex=0;
+let glowIndex = 0;
 
 function playLogoGlow(){
 
     if(!logo) return;
 
-    logo.classList.add("logoPulse");
+    logo.style.transition = "filter .8s ease";
 
-    logo.style.filter=glowColors[glowIndex];
+    logo.style.filter = glowColors[glowIndex];
 
     glowIndex++;
 
-    if(glowIndex>=glowColors.length){
-
-        glowIndex=0;
-
+    if(glowIndex >= glowColors.length){
+        glowIndex = 0;
     }
 
-    setTimeout(()=>{
+    setTimeout(function(){
 
-        logo.style.filter=
-        "drop-shadow(0 0 10px rgba(255,215,0,.18))";
-
-        logo.classList.remove("logoPulse");
+        logo.style.filter =
+        "drop-shadow(0 0 8px rgba(255,215,0,.20))";
 
     },3000);
 
 }
 
-/* كل عشر ثواني */
-
 setInterval(playLogoGlow,10000);
-
-/* عند الضغط */
 
 logo.addEventListener("click",playLogoGlow);
