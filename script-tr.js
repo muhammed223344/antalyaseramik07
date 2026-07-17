@@ -260,59 +260,122 @@ if(poolSlider){
 }
 
 
-// =========================================================
-// Havuz Galerisi (Pool Gallery - Swipe ve Kaydırma)
-// =========================================================
-if (poolSlider) {
-    poolSlider.addEventListener("click", function(){
-        let current = poolIndex;
-        const overlay = document.createElement("div");
-        overlay.style.position = "fixed";
-        overlay.style.top = "0";
-        overlay.style.left = "0";
-        overlay.style.width = "100%";
-        overlay.style.height = "100%";
-        overlay.style.background = "rgba(0,0,0,.95)";
-        overlay.style.display = "flex";
-        overlay.style.justifyContent = "center";
-        overlay.style.alignItems = "center";
-        overlay.style.zIndex = "999999";
+/* ===========================
+   Pool Gallery
+=========================== */
 
-        const img = document.createElement("img");
-        img.src = poolImages[current];
-        img.style.maxWidth = "95%";
-        img.style.maxHeight = "95%";
-        img.style.borderRadius = "15px";
-        overlay.appendChild(img);
+poolSlider.addEventListener("click", function () {
 
-        let startX = 0;
-        overlay.addEventListener("touchstart", function(e){
-            startX = e.touches[0].clientX;
-        });
+    let current = poolIndex;
+    const savedScroll = window.scrollY;
 
-        overlay.addEventListener("touchend", function(e){
-            const endX = e.changedTouches[0].clientX;
-            if(startX - endX > 50){
-                current++;
-                if(current >= poolImages.length) current = 0;
-                img.src = poolImages[current];
-            }
-            if(endX - startX > 50){
-                current--;
-                if(current < 0) current = poolImages.length - 1;
-                img.src = poolImages[current];
-            }
-        });
+    const overlay = document.createElement("div");
+    overlay.className = "pool-overlay";
 
-        overlay.addEventListener("click", function(e){
-            if(e.target === overlay){
-                overlay.remove();
-            }
-        });
+    overlay.style.position = "fixed";
+    overlay.style.top = "0";
+    overlay.style.left = "0";
+    overlay.style.width = "100%";
+    overlay.style.height = "100%";
+    overlay.style.background = "rgba(0,0,0,.95)";
+    overlay.style.display = "flex";
+    overlay.style.justifyContent = "center";
+    overlay.style.alignItems = "center";
+    overlay.style.zIndex = "999999";
 
-        document.body.appendChild(overlay);
+    const img = document.createElement("img");
+
+    img.src = poolImages[current];
+    img.style.maxWidth = "95%";
+    img.style.maxHeight = "95%";
+    img.style.borderRadius = "15px";
+
+    overlay.appendChild(img);
+    document.body.appendChild(overlay);
+
+    /* منع تحريك الصفحة */
+    document.body.style.overflow = "hidden";
+
+    /* إضافة حالة واحدة فقط */
+    history.pushState({gallery:true}, "");
+
+    function closeGallery(){
+
+        overlay.remove();
+
+        document.body.style.overflow = "";
+
+        window.removeEventListener("popstate", onBack);
+
+        setTimeout(function(){
+
+            window.scrollTo(0, savedScroll);
+
+        },0);
+
+    }
+
+    function onBack(){
+
+        closeGallery();
+
+    }
+
+    window.addEventListener("popstate", onBack);
+
+    /* السحب */
+
+    let startX = 0;
+
+    overlay.addEventListener("touchstart", function(e){
+
+        startX = e.touches[0].clientX;
+
     });
-}
+
+    overlay.addEventListener("touchend", function(e){
+
+        const endX = e.changedTouches[0].clientX;
+
+        if(startX - endX > 50){
+
+            current++;
+
+            if(current >= poolImages.length){
+                current = 0;
+            }
+
+            img.src = poolImages[current];
+
+        }
+
+        if(endX - startX > 50){
+
+            current--;
+
+            if(current < 0){
+                current = poolImages.length - 1;
+            }
+
+            img.src = poolImages[current];
+
+        }
+
+    });
+
+    /* الضغط خارج الصورة */
+
+    overlay.addEventListener("click", function(e){
+
+        if(e.target === overlay){
+
+            history.back();
+
+        }
+
+    });
+
+});
 
 
 // =========================================================
