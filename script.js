@@ -78,10 +78,14 @@ const bathroomImages = [
     "bathroom6.png"
 ];
 
-/* تحميل الصور مسبقًا */
+/* تحميل الصور مسبقاً */
+
 bathroomImages.forEach(function(image){
+
     const img = new Image();
+
     img.src = image;
+
 });
 
 let bathroomIndex = 0;
@@ -110,113 +114,45 @@ function changeBathroom(step){
 
 bathroomSlider.addEventListener("click", function(){
 
-    const scrollPosition = window.scrollY;
-
-    history.pushState(
-        { bathroomOverlay: true },
-        "",
-        "#bathroom"
-    );
-
-    let current = bathroomIndex;
-
     const overlay = document.createElement("div");
 
     overlay.style.position = "fixed";
     overlay.style.top = "0";
     overlay.style.left = "0";
-    overlay.style.width = "100%";
-    overlay.style.height = "100%";
-    overlay.style.background = "rgba(0,0,0,.90)";
+    overlay.style.width = "100vw";
+    overlay.style.height = "100vh";
+    overlay.style.background = "#000";
     overlay.style.display = "flex";
     overlay.style.justifyContent = "center";
     overlay.style.alignItems = "center";
     overlay.style.zIndex = "999999";
+    overlay.style.cursor = "pointer";
 
     const img = document.createElement("img");
 
-    img.src = bathroomImages[current];
-    img.style.maxWidth = "92%";
-    img.style.maxHeight = "92%";
-    img.style.borderRadius = "18px";
-    img.style.border = "4px solid #4FC3F7";
-    img.style.boxShadow =
-        "0 0 15px #4FC3F7," +
-        "0 0 35px #4FC3F7," +
-        "0 0 60px rgba(79,195,247,.75)";
+    img.src = bathroomImages[bathroomIndex];
+
+    img.style.width = "100vw";
+    img.style.height = "100vh";
+    img.style.maxWidth = "100vw";
+    img.style.maxHeight = "100vh";
+
+    /* إظهار الصورة كاملة */
+    img.style.objectFit = "contain";
+
+    img.style.background = "#000";
+
+    img.style.border = "none";
+    img.style.borderRadius = "0";
+    img.style.boxShadow = "none";
 
     overlay.appendChild(img);
 
-    let startX = 0;
+    overlay.onclick = function(){
 
-    overlay.addEventListener("touchstart", function(e){
-        startX = e.touches[0].clientX;
-    });
+        overlay.remove();
 
-    overlay.addEventListener("touchend", function(e){
-
-        const endX = e.changedTouches[0].clientX;
-
-        if(startX - endX > 50){
-
-            current++;
-
-            if(current >= bathroomImages.length){
-                current = 0;
-            }
-
-            img.src = bathroomImages[current];
-
-        }
-
-        if(endX - startX > 50){
-
-            current--;
-
-            if(current < 0){
-                current = bathroomImages.length - 1;
-            }
-
-            img.src = bathroomImages[current];
-
-        }
-
-    });
-
-    function closeOverlay(){
-
-        if(overlay.parentNode){
-            overlay.remove();
-        }
-
-        window.scrollTo({
-            top: scrollPosition,
-            behavior: "instant"
-        });
-
-        window.removeEventListener("popstate", backHandler);
-
-    }
-
-    function backHandler(){
-
-        closeOverlay();
-
-    }
-
-    window.addEventListener("popstate", backHandler);
-
-    overlay.addEventListener("click", function(e){
-
-        if(e.target === overlay){
-
-            closeOverlay();
-
-            history.back();
-
-        }
-
-    });
+    };
 
     document.body.appendChild(overlay);
 
