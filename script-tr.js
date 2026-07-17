@@ -121,8 +121,9 @@ if (bathroomSlider) {
 
 
 // =========================================================
-// Video Slaytı (Video Slider)
+// Video Slaytı (Smart Video Slider)
 // =========================================================
+
 const videos = [
     "video1.mp4",
     "video2.mp4",
@@ -133,24 +134,99 @@ const videos = [
 
 let currentVideo = 0;
 
+const player = document.getElementById("video-slider");
+
+/* Video ön yükleme önbelleği */
+
+const cache = {};
+
+/* Tek video yükle */
+
+function preloadVideo(index){
+
+    if(index < 0 || index >= videos.length) return;
+
+    if(cache[index]) return;
+
+    const video = document.createElement("video");
+
+    video.src = videos[index];
+
+    video.preload = "auto";
+
+    video.muted = true;
+
+    video.playsInline = true;
+
+    video.load();
+
+    cache[index] = video;
+
+}
+
+/* Geçerli + önceki + sonraki videoları yükle */
+
+function preloadAround(index){
+
+    preloadVideo(index);
+
+    preloadVideo(index + 1);
+
+    preloadVideo(index - 1);
+
+}
+
+/* Video oynat */
+
+function playVideo(index){
+
+    if(!player) return;
+
+    player.pause();
+
+    player.src = videos[index];
+
+    player.load();
+
+    player.onloadeddata = function(){
+
+        player.play();
+
+    };
+
+    preloadAround(index);
+
+}
+
+/* İlk video */
+
+if(player){
+
+    playVideo(currentVideo);
+
+}
+
+/* Sonraki / Önceki */
+
 function changeVideo(direction){
+
     currentVideo += direction;
 
     if(currentVideo < 0){
+
         currentVideo = videos.length - 1;
+
     }
+
     if(currentVideo >= videos.length){
+
         currentVideo = 0;
+
     }
 
-    const player = document.getElementById("video-slider");
-    if (player) {
-        player.pause();
-        player.src = videos[currentVideo];
-        player.load();
-    }
+    playVideo(currentVideo);
+
 }
-
 
 // =========================================================
 // Havuz Slaytı (Pool Slider)
