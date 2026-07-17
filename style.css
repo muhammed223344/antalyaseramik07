@@ -1242,25 +1242,11 @@ color:#0A58CA;
 
 }
 
-.social-icons{
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:35px;
-
-    flex-wrap:wrap;
-
-}
-
 .social-link{
 
-    width:70px;
+    width:52px;
 
-    height:70px;
+    height:52px;
 
     display:flex;
 
@@ -1274,25 +1260,25 @@ color:#0A58CA;
 
     color:#808080;
 
-    font-size:34px;
+    font-size:24px;
 
     transition:.35s;
 
     box-shadow:
-    0 5px 15px rgba(0,0,0,.08);
+        0 5px 15px rgba(0,0,0,.08);
 
 }
 
 .social-link:hover{
 
-    transform:translateY(-6px) scale(1.12);
+    transform:translateY(-4px) scale(1.08);
 
     background:#EAEAEA;
 
     color:#555;
 
     box-shadow:
-    0 12px 25px rgba(0,0,0,.18);
+        0 10px 22px rgba(0,0,0,.18);
 
 }
 
