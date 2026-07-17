@@ -535,3 +535,52 @@ function playLogoGlow(){
 setInterval(playLogoGlow,10000);
 
 logo.addEventListener("click",playLogoGlow);
+/* ===========================
+   Premium Logo Glow
+=========================== */
+
+const logo = document.getElementById("mainLogo");
+
+const glowColors = [
+
+"drop-shadow(0 0 8px rgba(255,215,0,.55)) drop-shadow(0 0 18px rgba(255,215,0,.45)) drop-shadow(0 0 30px rgba(255,215,0,.35))",
+
+"drop-shadow(0 0 8px rgba(56,189,248,.55)) drop-shadow(0 0 18px rgba(56,189,248,.45)) drop-shadow(0 0 30px rgba(56,189,248,.35))",
+
+"drop-shadow(0 0 8px rgba(139,92,246,.55)) drop-shadow(0 0 18px rgba(139,92,246,.45)) drop-shadow(0 0 30px rgba(139,92,246,.35))",
+
+"drop-shadow(0 0 8px rgba(16,185,129,.55)) drop-shadow(0 0 18px rgba(16,185,129,.45)) drop-shadow(0 0 30px rgba(16,185,129,.35))"
+
+];
+
+let glowIndex = 0;
+
+function playLogoGlow(){
+
+    if(!logo) return;
+
+    logo.style.filter = glowColors[glowIndex];
+
+    logo.style.transform = "scale(1.02)";
+
+    setTimeout(()=>{
+
+        logo.style.filter = "";
+
+        logo.style.transform = "scale(1)";
+
+    },3000);
+
+    glowIndex++;
+
+    if(glowIndex >= glowColors.length){
+
+        glowIndex = 0;
+
+    }
+
+}
+
+setInterval(playLogoGlow,10000);
+
+logo.addEventListener("click",playLogoGlow);
