@@ -301,6 +301,7 @@ poolSlider.addEventListener("click", function(){
 let current = poolIndex;
 
 const overlay = document.createElement("div");
+overlay.className = "pool-overlay";
 
 overlay.style.position = "fixed";
 overlay.style.top = "0";
@@ -323,6 +324,34 @@ img.style.borderRadius = "15px";
 
 overlay.appendChild(img);
 
+document.body.appendChild(overlay);
+
+/* دعم زر الرجوع */
+
+history.pushState({poolGallery:true},"");
+
+function closeGallery(){
+
+if(document.body.contains(overlay)){
+
+overlay.remove();
+
+}
+
+window.removeEventListener("popstate", onBack);
+
+}
+
+function onBack(){
+
+closeGallery();
+
+}
+
+window.addEventListener("popstate", onBack);
+
+/* السحب */
+
 let startX = 0;
 
 overlay.addEventListener("touchstart", function(e){
@@ -339,7 +368,9 @@ if(startX - endX > 50){
 
 current++;
 
-if(current >= poolImages.length) current = 0;
+if(current >= poolImages.length){
+current = 0;
+}
 
 img.src = poolImages[current];
 
@@ -349,7 +380,9 @@ if(endX - startX > 50){
 
 current--;
 
-if(current < 0) current = poolImages.length - 1;
+if(current < 0){
+current = poolImages.length - 1;
+}
 
 img.src = poolImages[current];
 
@@ -357,17 +390,17 @@ img.src = poolImages[current];
 
 });
 
+/* الضغط خارج الصورة */
+
 overlay.addEventListener("click", function(e){
 
 if(e.target === overlay){
 
-overlay.remove();
+history.back();
 
 }
 
 });
-
-document.body.appendChild(overlay);
 
 });
 /* ===========================
