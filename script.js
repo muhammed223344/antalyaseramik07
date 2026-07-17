@@ -619,7 +619,27 @@ function playLogoGlow(){
         "drop-shadow(0 0 8px rgba(255,215,0,.20))";
 
     },3000);
+/* ===========================
+   LOGO HALO
+=========================== */
 
+const topLogo = document.querySelector(".top-logo");
+
+function playHalo(){
+
+    if(!topLogo) return;
+
+    topLogo.classList.remove("halo");
+
+    void topLogo.offsetWidth;
+
+    topLogo.classList.add("halo");
+
+}
+
+setInterval(playHalo,10000);
+
+document.getElementById("mainLogo").addEventListener("click",playHalo);
 }
 
 setInterval(playLogoGlow,10000);
