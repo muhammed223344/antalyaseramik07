@@ -491,3 +491,47 @@ d + "•" + mo + "•" + y;
 updateClock();
 
 setInterval(updateClock,1000);
+/* ===========================
+   Premium Logo Glow
+=========================== */
+
+const glow = document.getElementById("logoGlow");
+const logo = document.getElementById("mainLogo");
+
+const glowColors = [
+
+"radial-gradient(circle,#FFD700 0%,transparent 70%)",
+
+"radial-gradient(circle,#38BDF8 0%,transparent 70%)",
+
+"radial-gradient(circle,#8B5CF6 0%,transparent 70%)",
+
+"radial-gradient(circle,#10B981 0%,transparent 70%)"
+
+];
+
+let glowIndex = 0;
+
+function playLogoGlow(){
+
+    glow.classList.remove("active");
+
+    void glow.offsetWidth;
+
+    glow.style.background = glowColors[glowIndex];
+
+    glow.classList.add("active");
+
+    glowIndex++;
+
+    if(glowIndex >= glowColors.length){
+
+        glowIndex = 0;
+
+    }
+
+}
+
+setInterval(playLogoGlow,10000);
+
+logo.addEventListener("click",playLogoGlow);
