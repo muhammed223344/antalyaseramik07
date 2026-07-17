@@ -1238,23 +1238,25 @@ color:#0A58CA;
 
     color:#0A58CA;
 
-    margin-bottom:22px;
+    margin-bottom:20px;
 
 }
+
+/* الأيقونات في صف أفقي */
 
 .social-icons{
 
     display:flex;
 
+    flex-direction:row;
+
     justify-content:center;
 
     align-items:center;
 
-    flex-wrap:nowrap;
-
     gap:10px;
 
-    width:100%;
+    flex-wrap:nowrap;
 
 }
 
@@ -1263,8 +1265,6 @@ color:#0A58CA;
     width:42px;
 
     height:42px;
-
-    min-width:42px;
 
     display:flex;
 
@@ -1282,8 +1282,7 @@ color:#0A58CA;
 
     transition:.35s;
 
-    box-shadow:
-        0 4px 10px rgba(0,0,0,.08);
+    box-shadow:0 4px 10px rgba(0,0,0,.08);
 
 }
 
@@ -1295,8 +1294,7 @@ color:#0A58CA;
 
     color:#555;
 
-    box-shadow:
-        0 8px 18px rgba(0,0,0,.18);
+    box-shadow:0 8px 18px rgba(0,0,0,.18);
 
 }
 
