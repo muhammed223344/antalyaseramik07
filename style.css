@@ -1222,7 +1222,7 @@ color:#0A58CA;
 
 .social-section{
 
-    padding:60px 20px;
+    padding:45px 15px;
 
     background:#fff;
 
@@ -1232,21 +1232,39 @@ color:#0A58CA;
 
 .social-section h2{
 
-    font-size:34px;
+    font-size:26px;
 
     font-weight:800;
 
     color:#0A58CA;
 
-    margin-bottom:35px;
+    margin-bottom:22px;
+
+}
+
+.social-icons{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:nowrap;
+
+    gap:10px;
+
+    width:100%;
 
 }
 
 .social-link{
 
-    width:52px;
+    width:42px;
 
-    height:52px;
+    height:42px;
+
+    min-width:42px;
 
     display:flex;
 
@@ -1260,25 +1278,25 @@ color:#0A58CA;
 
     color:#808080;
 
-    font-size:24px;
+    font-size:20px;
 
     transition:.35s;
 
     box-shadow:
-        0 5px 15px rgba(0,0,0,.08);
+        0 4px 10px rgba(0,0,0,.08);
 
 }
 
 .social-link:hover{
 
-    transform:translateY(-4px) scale(1.08);
+    transform:translateY(-3px) scale(1.08);
 
     background:#EAEAEA;
 
     color:#555;
 
     box-shadow:
-        0 10px 22px rgba(0,0,0,.18);
+        0 8px 18px rgba(0,0,0,.18);
 
 }
 
