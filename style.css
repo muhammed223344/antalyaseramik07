@@ -1389,3 +1389,24 @@ color:#0A58CA;
     transform:scale(.95);
 
 }
+/* ===========================
+   PREMIUM LOGO GLOW
+=========================== */
+
+#mainLogo{
+
+    transition:filter .8s ease,
+               transform .8s ease;
+
+}
+
+#mainLogo.logo-glow{
+
+    transform:scale(1.02);
+
+    filter:
+    drop-shadow(0 0 8px rgba(255,215,0,.55))
+    drop-shadow(0 0 18px rgba(255,215,0,.45))
+    drop-shadow(0 0 30px rgba(56,189,248,.35));
+
+}
