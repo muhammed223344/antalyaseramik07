@@ -1216,3 +1216,88 @@ cursor:pointer;
 color:#0A58CA;
 
 }
+/* ===========================
+   SOCIAL MEDIA
+=========================== */
+
+.social-section{
+
+    padding:60px 20px;
+
+    background:#fff;
+
+    text-align:center;
+
+}
+
+.social-section h2{
+
+    font-size:34px;
+
+    font-weight:800;
+
+    color:#0A58CA;
+
+    margin-bottom:35px;
+
+}
+
+.social-icons{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:35px;
+
+    flex-wrap:wrap;
+
+}
+
+.social-link{
+
+    width:70px;
+
+    height:70px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:#F5F5F5;
+
+    color:#808080;
+
+    font-size:34px;
+
+    transition:.35s;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.08);
+
+}
+
+.social-link:hover{
+
+    transform:translateY(-6px) scale(1.12);
+
+    background:#EAEAEA;
+
+    color:#555;
+
+    box-shadow:
+    0 12px 25px rgba(0,0,0,.18);
+
+}
+
+.social-link:active{
+
+    transform:scale(.95);
+
+}
