@@ -81,11 +81,8 @@ const bathroomImages = [
 /* تحميل الصور مسبقاً */
 
 bathroomImages.forEach(function(image){
-
     const img = new Image();
-
     img.src = image;
-
 });
 
 let bathroomIndex = 0;
@@ -132,27 +129,53 @@ bathroomSlider.addEventListener("click", function(){
 
     img.src = bathroomImages[bathroomIndex];
 
-    img.style.width = "100vw";
-    img.style.height = "100vh";
-    img.style.maxWidth = "100vw";
+    img.style.maxWidth = "95%";
     img.style.maxHeight = "100vh";
-
-    /* إظهار الصورة كاملة */
     img.style.objectFit = "contain";
-
     img.style.background = "#000";
-
     img.style.border = "none";
     img.style.borderRadius = "0";
     img.style.boxShadow = "none";
 
     overlay.appendChild(img);
 
+    /* حفظ حالة الرجوع */
+    history.pushState({bathroom:true},"");
+
+    function closeBathroomOverlay(){
+
+        if(document.body.contains(overlay)){
+            overlay.remove();
+        }
+
+    }
+
     overlay.onclick = function(){
 
-        overlay.remove();
+        history.back();
 
     };
+
+    function bathroomBack(){
+
+        closeBathroomOverlay();
+
+        const card = document.getElementById("bathroom-slider");
+
+        if(card){
+
+            card.scrollIntoView({
+                behavior:"smooth",
+                block:"center"
+            });
+
+        }
+
+        window.removeEventListener("popstate", bathroomBack);
+
+    }
+
+    window.addEventListener("popstate", bathroomBack);
 
     document.body.appendChild(overlay);
 
