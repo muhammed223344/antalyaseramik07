@@ -1297,7 +1297,93 @@ color:#0A58CA;
     box-shadow:0 8px 18px rgba(0,0,0,.18);
 
 }
+/* ===========================
+   PREMIUM LOGO GLOW
+=========================== */
 
+.top-logo{
+
+    position:relative;
+
+}
+
+.logo-glow{
+
+    position:absolute;
+
+    left:50%;
+
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:230px;
+
+    height:230px;
+
+    border-radius:50%;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    filter:blur(28px);
+
+    z-index:1;
+
+}
+
+.top-logo img{
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+/* تشغيل التوهج */
+
+.logo-glow.active{
+
+    animation:logoGlow 3s ease forwards;
+
+}
+
+@keyframes logoGlow{
+
+    0%{
+
+        opacity:0;
+
+        transform:translate(-50%,-50%) scale(.75);
+
+    }
+
+    30%{
+
+        opacity:.45;
+
+        transform:translate(-50%,-50%) scale(1);
+
+    }
+
+    60%{
+
+        opacity:.35;
+
+        transform:translate(-50%,-50%) scale(1.12);
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:translate(-50%,-50%) scale(1.28);
+
+    }
+
+}
 .social-link:active{
 
     transform:scale(.95);
