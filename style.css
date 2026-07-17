@@ -53,7 +53,7 @@ header{
 
     cursor:pointer;
 
-    filter:drop-shadow(0 0 10px rgba(255,215,0,.18));
+    filter:drop-shadow(0 0 8px rgba(255,215,0,.20));
 
     transition:
         transform .4s ease,
@@ -1429,5 +1429,95 @@ color:#0A58CA;
     drop-shadow(0 0 8px rgba(255,215,0,.55))
     drop-shadow(0 0 18px rgba(255,215,0,.45))
     drop-shadow(0 0 30px rgba(56,189,248,.35));
+
+}
+/* ===========================
+   PREMIUM LOGO HALO
+=========================== */
+
+.top-logo{
+
+    position:relative;
+
+}
+
+.top-logo::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+
+    height:220px;
+
+    border-radius:50%;
+
+    left:50%;
+
+    top:46%;
+
+    transform:translate(-50%,-50%) scale(.8);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    background:radial-gradient(circle,
+        rgba(255,215,0,.45) 0%,
+        rgba(255,215,0,.15) 40%,
+        transparent 75%);
+
+    filter:blur(25px);
+
+    z-index:0;
+
+}
+
+.top-logo.halo::before{
+
+    animation:haloEffect 3s ease-out forwards;
+
+}
+
+@keyframes haloEffect{
+
+    0%{
+
+        opacity:0;
+
+        transform:translate(-50%,-50%) scale(.75);
+
+    }
+
+    25%{
+
+        opacity:.65;
+
+    }
+
+    60%{
+
+        opacity:.45;
+
+        transform:translate(-50%,-50%) scale(1.1);
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:translate(-50%,-50%) scale(1.35);
+
+    }
+
+}
+
+.top-logo img{
+
+    position:relative;
+
+    z-index:5;
 
 }
