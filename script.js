@@ -147,38 +147,104 @@ img.style.boxShadow =
 
 });
 /* ===========================
-   Video Slider
+   SMART VIDEO SLIDER
 =========================== */
 
 const videos = [
-"video1.mp4",
-"video2.mp4",
-"video3.mp4",
-"video4.mp4",
-"video5.mp4"
+    "video1.mp4",
+    "video2.mp4",
+    "video3.mp4",
+    "video4.mp4",
+    "video5.mp4"
 ];
 
 let currentVideo = 0;
 
-function changeVideo(direction){
-
-currentVideo += direction;
-
-if(currentVideo < 0){
-currentVideo = videos.length - 1;
-}
-
-if(currentVideo >= videos.length){
-currentVideo = 0;
-}
-
 const player = document.getElementById("video-slider");
 
-player.pause();
+/* كاش للفيديوهات */
 
-player.src = videos[currentVideo];
+const cache = {};
 
-player.load();
+/* تحميل فيديو */
+
+function preloadVideo(index){
+
+    if(index < 0 || index >= videos.length) return;
+
+    if(cache[index]) return;
+
+    const video = document.createElement("video");
+
+    video.src = videos[index];
+
+    video.preload = "auto";
+
+    video.muted = true;
+
+    video.playsInline = true;
+
+    video.load();
+
+    cache[index] = video;
+
+}
+
+/* تحميل الفيديو الحالي + السابق + التالي */
+
+function preloadAround(index){
+
+    preloadVideo(index);
+
+    preloadVideo(index + 1);
+
+    preloadVideo(index - 1);
+
+}
+
+/* تشغيل فيديو */
+
+function playVideo(index){
+
+    player.pause();
+
+    player.src = videos[index];
+
+    player.load();
+
+    player.onloadeddata = function(){
+
+        player.play();
+
+    };
+
+    preloadAround(index);
+
+}
+
+/* أول تشغيل */
+
+playVideo(currentVideo);
+
+/* التالي والسابق */
+
+function changeVideo(direction){
+
+    currentVideo += direction;
+
+    if(currentVideo < 0){
+
+        currentVideo = videos.length - 1;
+
+    }
+
+    if(currentVideo >= videos.length){
+
+        currentVideo = 0;
+
+    }
+
+    playVideo(currentVideo);
 
 }
 /* ===========================
