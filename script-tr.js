@@ -417,3 +417,81 @@ function updateClock(){
 
 updateClock();
 setInterval(updateClock, 1000);
+/* ===========================
+   SIDE MENU
+=========================== */
+
+const menuToggle = document.getElementById("menuToggle");
+const sideMenu = document.getElementById("sideMenu");
+const menuOverlay = document.getElementById("menuOverlay");
+const closeMenu = document.getElementById("closeMenu");
+
+function openSideMenu(){
+
+    sideMenu.classList.add("active");
+    menuOverlay.classList.add("active");
+
+    history.pushState({menu:true},"");
+
+}
+
+function closeSideMenu(){
+
+    sideMenu.classList.remove("active");
+    menuOverlay.classList.remove("active");
+
+}
+
+if(menuToggle){
+
+    menuToggle.addEventListener("click",function(){
+
+        openSideMenu();
+
+    });
+
+}
+
+if(closeMenu){
+
+    closeMenu.addEventListener("click",function(){
+
+        history.back();
+
+    });
+
+}
+
+if(menuOverlay){
+
+    menuOverlay.addEventListener("click",function(){
+
+        history.back();
+
+    });
+
+}
+
+/* زر الرجوع في الهاتف */
+
+window.addEventListener("popstate",function(){
+
+    if(sideMenu.classList.contains("active")){
+
+        closeSideMenu();
+
+    }
+
+});
+
+/* إغلاق القائمة عند الضغط على أي رابط */
+
+document.querySelectorAll(".side-links a").forEach(function(link){
+
+    link.addEventListener("click",function(){
+
+        closeSideMenu();
+
+    });
+
+});
