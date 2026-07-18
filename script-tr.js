@@ -524,7 +524,7 @@ function closePopup(){
 
 }
 
-/* سياسة الخصوصية */
+/* Gizlilik Politikası */
 
 privacyBtn.addEventListener("click",function(e){
 
@@ -532,31 +532,35 @@ privacyBtn.addEventListener("click",function(e){
 
     openPopup(
 
-        "سياسة الخصوصية",
+        "Gizlilik Politikası",
 
         `
         <p>
-        نحن في <b>Antalya Seramik</b> نحترم خصوصية جميع زوار موقعنا.
+        <strong>Antalya Seramik</strong> olarak tüm ziyaretçilerimizin ve müşterilerimizin gizliliğine önem veriyoruz.
         </p>
 
         <p>
-        • لا نجمع أي معلومات شخصية إلا إذا قمت بالتواصل معنا بنفسك.
+        • Kişisel bilgileriniz yalnızca bizimle kendi isteğinizle iletişime geçtiğinizde alınır.
         </p>
 
         <p>
-        • تستخدم معلومات التواصل فقط للرد على الاستفسارات وطلبات الخدمة.
+        • Toplanan bilgiler yalnızca taleplerinizi yanıtlamak ve hizmet sunmak amacıyla kullanılır.
         </p>
 
         <p>
-        • لا نقوم ببيع أو مشاركة بيانات العملاء مع أي جهة خارجية.
+        • Hiçbir kişisel bilgi üçüncü kişilerle paylaşılmaz veya satılmaz.
         </p>
 
         <p>
-        • قد يستخدم الموقع ملفات تعريف الارتباط (Cookies) لتحسين تجربة الاستخدام عند الحاجة.
+        • Web sitemiz gerektiğinde kullanıcı deneyimini geliştirmek amacıyla çerezler (Cookies) kullanabilir.
         </p>
 
         <p>
-        • يحق لك طلب حذف أي بيانات قمت بمشاركتها معنا في أي وقت.
+        • Dilediğiniz zaman bizimle iletişime geçerek paylaştığınız bilgilerin silinmesini talep edebilirsiniz.
+        </p>
+
+        <p>
+        Bu web sitesini kullanarak yukarıdaki Gizlilik Politikasını kabul etmiş olursunuz.
         </p>
         `
 
@@ -564,7 +568,7 @@ privacyBtn.addEventListener("click",function(e){
 
 });
 
-/* شروط الاستخدام */
+/* Kullanım Şartları */
 
 termsBtn.addEventListener("click",function(e){
 
@@ -572,27 +576,35 @@ termsBtn.addEventListener("click",function(e){
 
     openPopup(
 
-        "شروط الاستخدام",
+        "Kullanım Şartları",
 
         `
         <p>
-        باستخدامك لهذا الموقع فإنك توافق على الشروط التالية:
+        Antalya Seramik web sitesine hoş geldiniz.
         </p>
 
         <p>
-        • جميع الصور والفيديوهات المعروضة تخص أعمال Antalya Seramik أو تم نشرها بإذن أصحابها.
+        • Bu sitede yer alan tüm fotoğraf, video ve içerikler Antalya Seramik'e aittir veya izin alınarak paylaşılmıştır.
         </p>
 
         <p>
-        • يمنع نسخ أو إعادة استخدام أي محتوى دون إذن.
+        • İçeriklerin izinsiz kopyalanması, çoğaltılması veya yeniden yayımlanması yasaktır.
         </p>
 
         <p>
-        • الأسعار والمعلومات قابلة للتغيير حسب طبيعة المشروع.
+        • Sitede yer alan fiyatlar ve bilgiler tanıtım amaçlıdır ve yapılacak işe göre değişebilir.
         </p>
 
         <p>
-        • التواصل معنا لا يعتبر عقداً نهائياً إلا بعد الاتفاق بين الطرفين.
+        • Telefon, WhatsApp veya web sitesi üzerinden yapılan görüşmeler taraflar arasında kesin bir sözleşme anlamına gelmez.
+        </p>
+
+        <p>
+        • Antalya Seramik gerekli gördüğü durumlarda bu kullanım şartlarını güncelleme hakkını saklı tutar.
+        </p>
+
+        <p>
+        Bu web sitesini kullanarak yukarıdaki kullanım şartlarını kabul etmiş olursunuz.
         </p>
         `
 
@@ -600,7 +612,7 @@ termsBtn.addEventListener("click",function(e){
 
 });
 
-/* زر الإغلاق */
+/* Kapat */
 
 popupClose.addEventListener("click",function(){
 
@@ -608,7 +620,7 @@ popupClose.addEventListener("click",function(){
 
 });
 
-/* الضغط خارج النافذة */
+/* Dışarı tıklayınca kapat */
 
 popupOverlay.addEventListener("click",function(e){
 
@@ -620,7 +632,7 @@ popupOverlay.addEventListener("click",function(e){
 
 });
 
-/* زر الرجوع */
+/* Telefon geri tuşu */
 
 window.addEventListener("popstate",function(){
 
