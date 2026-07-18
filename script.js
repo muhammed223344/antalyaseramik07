@@ -491,26 +491,3 @@ d + "•" + mo + "•" + y;
 updateClock();
 
 setInterval(updateClock,1000);
-/* ===========================
-   Logo Ring Effect
-=========================== */
-
-const topLogo = document.querySelector(".top-logo");
-
-function playLogoRing(){
-
-    if(!topLogo) return;
-
-    topLogo.classList.remove("logo-ring");
-
-    void topLogo.offsetWidth;
-
-    topLogo.classList.add("logo-ring");
-
-}
-
-/* كل 10 ثوانٍ للتجربة */
-setInterval(playLogoRing,10000);
-
-/* عند الضغط على الشعار */
-document.getElementById("mainLogo").addEventListener("click",playLogoRing);
