@@ -196,35 +196,25 @@ let currentVideo = 0;
 
 const player = document.getElementById("video-slider");
 
-/* كاش للفيديوهات */
-
-const cache = {};
-
-/* تحميل فيديو */
+/* تحميل مسبق فقط */
 
 function preloadVideo(index){
 
     if(index < 0 || index >= videos.length) return;
 
-    if(cache[index]) return;
+    const link = document.createElement("link");
 
-    const video = document.createElement("video");
+    link.rel = "preload";
 
-    video.src = videos[index];
+    link.as = "video";
 
-    video.preload = "auto";
+    link.href = videos[index];
 
-    video.muted = true;
-
-    video.playsInline = true;
-
-    video.load();
-
-    cache[index] = video;
+    document.head.appendChild(link);
 
 }
 
-/* تحميل الفيديو الحالي + السابق + التالي */
+/* تحميل الحالي والسابق والتالي */
 
 function preloadAround(index){
 
@@ -236,9 +226,11 @@ function preloadAround(index){
 
 }
 
-/* تشغيل فيديو */
+/* تشغيل الفيديو */
 
 function playVideo(index){
+
+    currentVideo = index;
 
     player.pause();
 
@@ -256,9 +248,13 @@ function playVideo(index){
 
 }
 
-/* أول تشغيل */
+/* عند فتح الموقع لا تشغل الفيديو */
 
-playVideo(currentVideo);
+player.src = videos[currentVideo];
+
+player.preload = "metadata";
+
+preloadAround(currentVideo);
 
 /* التالي والسابق */
 
@@ -281,6 +277,18 @@ function changeVideo(direction){
     playVideo(currentVideo);
 
 }
+
+/* تشغيل عند ضغط المستخدم */
+
+player.addEventListener("click",function(){
+
+    if(player.paused){
+
+        playVideo(currentVideo);
+
+    }
+
+});
 /* ===========================
    Pool Slider
 =========================== */
