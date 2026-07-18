@@ -577,3 +577,139 @@ document.querySelectorAll(".side-links a").forEach(function(link){
     });
 
 });
+/* ===========================
+   POPUP
+=========================== */
+
+const popupOverlay = document.getElementById("popupOverlay");
+const popupTitle = document.getElementById("popupTitle");
+const popupContent = document.getElementById("popupContent");
+const popupClose = document.getElementById("popupClose");
+
+const privacyBtn = document.getElementById("privacyBtn");
+const termsBtn = document.getElementById("termsBtn");
+
+function openPopup(title, html){
+
+    popupTitle.innerHTML = title;
+    popupContent.innerHTML = html;
+
+    popupOverlay.classList.add("active");
+
+    history.pushState({popup:true},"");
+
+}
+
+function closePopup(){
+
+    popupOverlay.classList.remove("active");
+
+}
+
+/* سياسة الخصوصية */
+
+privacyBtn.addEventListener("click",function(e){
+
+    e.preventDefault();
+
+    openPopup(
+
+        "سياسة الخصوصية",
+
+        `
+        <p>
+        نحن في <b>Antalya Seramik</b> نحترم خصوصية جميع زوار موقعنا.
+        </p>
+
+        <p>
+        • لا نجمع أي معلومات شخصية إلا إذا قمت بالتواصل معنا بنفسك.
+        </p>
+
+        <p>
+        • تستخدم معلومات التواصل فقط للرد على الاستفسارات وطلبات الخدمة.
+        </p>
+
+        <p>
+        • لا نقوم ببيع أو مشاركة بيانات العملاء مع أي جهة خارجية.
+        </p>
+
+        <p>
+        • قد يستخدم الموقع ملفات تعريف الارتباط (Cookies) لتحسين تجربة الاستخدام عند الحاجة.
+        </p>
+
+        <p>
+        • يحق لك طلب حذف أي بيانات قمت بمشاركتها معنا في أي وقت.
+        </p>
+        `
+
+    );
+
+});
+
+/* شروط الاستخدام */
+
+termsBtn.addEventListener("click",function(e){
+
+    e.preventDefault();
+
+    openPopup(
+
+        "شروط الاستخدام",
+
+        `
+        <p>
+        باستخدامك لهذا الموقع فإنك توافق على الشروط التالية:
+        </p>
+
+        <p>
+        • جميع الصور والفيديوهات المعروضة تخص أعمال Antalya Seramik أو تم نشرها بإذن أصحابها.
+        </p>
+
+        <p>
+        • يمنع نسخ أو إعادة استخدام أي محتوى دون إذن.
+        </p>
+
+        <p>
+        • الأسعار والمعلومات قابلة للتغيير حسب طبيعة المشروع.
+        </p>
+
+        <p>
+        • التواصل معنا لا يعتبر عقداً نهائياً إلا بعد الاتفاق بين الطرفين.
+        </p>
+        `
+
+    );
+
+});
+
+/* زر الإغلاق */
+
+popupClose.addEventListener("click",function(){
+
+    history.back();
+
+});
+
+/* الضغط خارج النافذة */
+
+popupOverlay.addEventListener("click",function(e){
+
+    if(e.target === popupOverlay){
+
+        history.back();
+
+    }
+
+});
+
+/* زر الرجوع */
+
+window.addEventListener("popstate",function(){
+
+    if(popupOverlay.classList.contains("active")){
+
+        closePopup();
+
+    }
+
+});
