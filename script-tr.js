@@ -120,9 +120,9 @@ if (bathroomSlider) {
 }
 
 
-// =========================================================
-// Video Slaytı (Smart Video Slider)
-// =========================================================
+/* ===========================
+   SMART VIDEO SLIDER
+=========================== */
 
 const videos = [
     "video1.mp4",
@@ -136,35 +136,25 @@ let currentVideo = 0;
 
 const player = document.getElementById("video-slider");
 
-/* Video ön yükleme önbelleği */
-
-const cache = {};
-
-/* Tek video yükle */
+/* تحميل مسبق فقط */
 
 function preloadVideo(index){
 
     if(index < 0 || index >= videos.length) return;
 
-    if(cache[index]) return;
+    const link = document.createElement("link");
 
-    const video = document.createElement("video");
+    link.rel = "preload";
 
-    video.src = videos[index];
+    link.as = "video";
 
-    video.preload = "auto";
+    link.href = videos[index];
 
-    video.muted = true;
-
-    video.playsInline = true;
-
-    video.load();
-
-    cache[index] = video;
+    document.head.appendChild(link);
 
 }
 
-/* Geçerli + önceki + sonraki videoları yükle */
+/* تحميل الحالي والسابق والتالي */
 
 function preloadAround(index){
 
@@ -176,11 +166,11 @@ function preloadAround(index){
 
 }
 
-/* Video oynat */
+/* تشغيل الفيديو */
 
 function playVideo(index){
 
-    if(!player) return;
+    currentVideo = index;
 
     player.pause();
 
@@ -198,15 +188,15 @@ function playVideo(index){
 
 }
 
-/* İlk video */
+/* عند فتح الموقع لا تشغل الفيديو */
 
-if(player){
+player.src = videos[currentVideo];
 
-    playVideo(currentVideo);
+player.preload = "metadata";
 
-}
+preloadAround(currentVideo);
 
-/* Sonraki / Önceki */
+/* التالي والسابق */
 
 function changeVideo(direction){
 
@@ -228,6 +218,17 @@ function changeVideo(direction){
 
 }
 
+/* تشغيل عند ضغط المستخدم */
+
+player.addEventListener("click",function(){
+
+    if(player.paused){
+
+        playVideo(currentVideo);
+
+    }
+
+});
 // =========================================================
 // Havuz Slaytı (Pool Slider)
 // =========================================================
