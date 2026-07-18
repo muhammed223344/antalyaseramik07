@@ -1318,3 +1318,60 @@ color:#0A58CA;
     box-shadow:0 8px 18px rgba(0,0,0,.18);
 
 }
+/* ===========================
+   MENU BUTTON
+=========================== */
+
+.menu-toggle{
+
+    position:absolute;
+
+    top:20px;
+
+    right:20px;
+
+    width:50px;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#0A58CA;
+
+    color:#fff;
+
+    font-size:30px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    z-index:9999;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.18);
+
+    transition:.3s;
+
+}
+
+.menu-toggle:hover{
+
+    background:#084298;
+
+    transform:scale(1.05);
+
+}
+
+.menu-toggle:active{
+
+    transform:scale(.95);
+
+}
