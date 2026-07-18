@@ -857,3 +857,372 @@ body {
     transform:scale(.95);
 
 }
+/* ===========================
+   MENU BUTTON
+=========================== */
+
+.menu-toggle{
+
+    position:absolute;
+
+    top:14px;
+
+    left:20px;
+
+    width:48px;
+
+    height:48px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#0A58CA;
+
+    color:#fff;
+
+    font-size:32px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    z-index:9999;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.18);
+
+    transition:.3s;
+
+}
+
+.menu-toggle:hover{
+
+    background:#084298;
+
+    transform:scale(1.05);
+
+}
+/* ===========================
+   SIDE MENU
+=========================== */
+
+.side-menu{
+
+    position:fixed;
+
+    top:0;
+
+    left:-340px;
+
+    width:320px;
+
+    max-width:85%;
+
+    height:100vh;
+
+    background:#ffffff;
+
+    box-shadow:8px 0 30px rgba(0,0,0,.20);
+
+    z-index:99999;
+
+    transition:left .35s ease;
+
+    overflow-y:auto;
+
+}
+
+.side-menu.active{
+
+    left:0;
+
+}
+
+/* رأس القائمة */
+
+.side-header{
+
+    background:#0A58CA;
+
+    padding:20px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.side-logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.side-logo img{
+
+    width:55px;
+
+    height:55px;
+
+    object-fit:contain;
+
+}
+
+.side-logo h2{
+
+    color:#fff;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    margin:0;
+
+}
+
+#closeMenu{
+
+    border:none;
+
+    background:none;
+
+    color:#fff;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+}
+
+/* روابط القائمة */
+
+.side-links{
+
+    padding:15px 0;
+
+}
+
+.side-links a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:18px 22px;
+
+    color:#333;
+
+    text-decoration:none;
+
+    font-size:19px;
+
+    transition:.25s;
+
+    border-bottom:1px solid #ececec;
+
+}
+
+.side-links a i{
+
+    color:#0A58CA;
+
+    width:24px;
+
+    text-align:center;
+
+    font-size:20px;
+
+}
+
+.side-links a:hover{
+
+    background:#f5f8ff;
+
+    padding-right:28px;
+
+}
+
+.side-links hr{
+
+    border:none;
+
+    border-top:1px solid #ddd;
+
+    margin:15px 20px;
+
+}
+
+/* الخلفية السوداء */
+
+.menu-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.3s;
+
+    z-index:99998;
+
+}
+
+.menu-overlay.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+/* الموبايل */
+
+@media(max-width:768px){
+
+    .side-menu{
+
+        width:300px;
+
+    }
+
+}
+/* ===========================
+   POPUP
+=========================== */
+
+.popup-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.65);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.3s;
+
+    z-index:999999;
+
+}
+
+.popup-overlay.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.popup-box{
+
+    width:90%;
+
+    max-width:700px;
+
+    max-height:85vh;
+
+    overflow-y:auto;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    position:relative;
+
+    box-shadow:0 10px 40px rgba(0,0,0,.25);
+
+    animation:popupShow .3s ease;
+
+}
+
+@keyframes popupShow{
+
+    from{
+
+        transform:scale(.9);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+.popup-close{
+
+    position:absolute;
+
+    top:15px;
+
+    left:15px;
+
+    border:none;
+
+    background:none;
+
+    font-size:30px;
+
+    cursor:pointer;
+
+    color:#0A58CA;
+
+}
+
+.popup-box h2{
+
+    color:#0A58CA;
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+    font-size:30px;
+
+}
+
+.popup-box p{
+
+    line-height:2;
+
+    color:#444;
+
+    font-size:18px;
+
+}
