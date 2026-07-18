@@ -499,3 +499,33 @@ d + "•" + mo + "•" + y;
 updateClock();
 
 setInterval(updateClock,1000);
+/* ===========================
+   SIDE MENU
+=========================== */
+
+const menuToggle = document.getElementById("menuToggle");
+const sideMenu = document.getElementById("sideMenu");
+const menuOverlay = document.getElementById("menuOverlay");
+const closeMenu = document.getElementById("closeMenu");
+
+if(menuToggle && sideMenu && menuOverlay && closeMenu){
+
+    menuToggle.addEventListener("click", function(){
+
+        sideMenu.classList.add("active");
+        menuOverlay.classList.add("active");
+
+    });
+
+    function closeSideMenu(){
+
+        sideMenu.classList.remove("active");
+        menuOverlay.classList.remove("active");
+
+    }
+
+    closeMenu.addEventListener("click", closeSideMenu);
+
+    menuOverlay.addEventListener("click", closeSideMenu);
+
+}
