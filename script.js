@@ -508,24 +508,72 @@ const sideMenu = document.getElementById("sideMenu");
 const menuOverlay = document.getElementById("menuOverlay");
 const closeMenu = document.getElementById("closeMenu");
 
-if(menuToggle && sideMenu && menuOverlay && closeMenu){
+function openSideMenu(){
 
-    menuToggle.addEventListener("click", function(){
+    sideMenu.classList.add("active");
+    menuOverlay.classList.add("active");
 
-        sideMenu.classList.add("active");
-        menuOverlay.classList.add("active");
+    history.pushState({menu:true},"");
+
+}
+
+function closeSideMenu(){
+
+    sideMenu.classList.remove("active");
+    menuOverlay.classList.remove("active");
+
+}
+
+if(menuToggle){
+
+    menuToggle.addEventListener("click",function(){
+
+        openSideMenu();
 
     });
 
-    function closeSideMenu(){
+}
 
-        sideMenu.classList.remove("active");
-        menuOverlay.classList.remove("active");
+if(closeMenu){
+
+    closeMenu.addEventListener("click",function(){
+
+        history.back();
+
+    });
+
+}
+
+if(menuOverlay){
+
+    menuOverlay.addEventListener("click",function(){
+
+        history.back();
+
+    });
+
+}
+
+/* زر الرجوع في الهاتف */
+
+window.addEventListener("popstate",function(){
+
+    if(sideMenu.classList.contains("active")){
+
+        closeSideMenu();
 
     }
 
-    closeMenu.addEventListener("click", closeSideMenu);
+});
 
-    menuOverlay.addEventListener("click", closeSideMenu);
+/* إغلاق القائمة عند الضغط على أي رابط */
 
-}
+document.querySelectorAll(".side-links a").forEach(function(link){
+
+    link.addEventListener("click",function(){
+
+        closeSideMenu();
+
+    });
+
+});
