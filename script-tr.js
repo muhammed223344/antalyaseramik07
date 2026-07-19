@@ -611,7 +611,172 @@ termsBtn.addEventListener("click",function(e){
     );
 
 });
+/* Seramik Hesaplayıcı */
 
+calculatorBtn.addEventListener("click", function(e){
+
+    e.preventDefault();
+
+    openPopup(
+
+        "Seramik Hesaplayıcı",
+
+        `
+        <h3>Duvar Hesabı</h3>
+
+        <input type="number" id="wallLength" placeholder="Uzunluk (metre)">
+        <br><br>
+
+        <input type="number" id="wallHeight" placeholder="Yükseklik (metre)">
+        <br><br>
+
+        <label>Fayans Ölçüsü (İsteğe Bağlı)</label>
+        <br>
+
+        <select id="tileSize">
+            <option value="">Seçilmedi</option>
+            <option value="30x60">30 × 60 cm</option>
+            <option value="60x60">60 × 60 cm</option>
+            <option value="60x120">60 × 120 cm</option>
+            <option value="80x80">80 × 80 cm</option>
+            <option value="120x120">120 × 120 cm</option>
+        </select>
+
+        <br><br>
+
+        <label>
+            <input type="checkbox" id="waste10">
+            %10 Fire Ekle
+        </label>
+
+        <br><br>
+
+        <button id="calcWallBtn">Hesapla</button>
+
+        <hr>
+
+        <h3>Zemin Hesabı</h3>
+
+        <input type="number" id="floorLength" placeholder="Uzunluk (metre)">
+        <br><br>
+
+        <input type="number" id="floorWidth" placeholder="Genişlik (metre)">
+        <br><br>
+
+        <label>Fayans Ölçüsü (İsteğe Bağlı)</label>
+        <br>
+
+        <select id="floorTileSize">
+            <option value="">Seçilmedi</option>
+            <option value="30x60">30 × 60 cm</option>
+            <option value="60x60">60 × 60 cm</option>
+            <option value="60x120">60 × 120 cm</option>
+            <option value="80x80">80 × 80 cm</option>
+            <option value="120x120">120 × 120 cm</option>
+        </select>
+
+        <br><br>
+
+        <label>
+            <input type="checkbox" id="floorWaste10">
+            %10 Fire Ekle
+        </label>
+
+        <br><br>
+
+        <button id="calcFloorBtn">Hesapla</button>
+
+        <hr>
+
+        <div id="calcResult"></div>
+        `
+
+    );
+
+    setTimeout(function(){
+
+        function tileArea(size){
+
+            switch(size){
+                case "30x60": return 0.18;
+                case "60x60": return 0.36;
+                case "60x120": return 0.72;
+                case "80x80": return 0.64;
+                case "120x120": return 1.44;
+                default: return 0;
+            }
+
+        }
+
+        function showResult(area, tileId, wasteId){
+
+            let html = `
+                <h3>Sonuç</h3>
+                <p><b>Alan:</b> ${area.toFixed(2)} m²</p>
+            `;
+
+            const tile = document.getElementById(tileId);
+            const waste = document.getElementById(wasteId);
+
+            if(tile && tile.value !== ""){
+
+                const oneTile = tileArea(tile.value);
+
+                if(oneTile > 0){
+
+                    const tiles = Math.ceil(area / oneTile);
+
+                    html += `<p><b>Gerekli Fayans:</b> ${tiles}</p>`;
+
+                    if(waste.checked){
+
+                        html += `<p><b>Fire Dahil:</b> ${Math.ceil(tiles*1.10)}</p>`;
+
+                    }
+
+                }
+
+            }
+
+            document.getElementById("calcResult").innerHTML = html;
+
+        }
+
+        document.getElementById("calcWallBtn").addEventListener("click",function(){
+
+            const length = parseFloat(document.getElementById("wallLength").value);
+            const height = parseFloat(document.getElementById("wallHeight").value);
+
+            if(isNaN(length)||isNaN(height)){
+
+                document.getElementById("calcResult").innerHTML="<p style='color:red'>Lütfen uzunluk ve yükseklik giriniz.</p>";
+                return;
+
+            }
+
+            showResult(length*height,"tileSize","waste10");
+
+        });
+
+        document.getElementById("calcFloorBtn").addEventListener("click",function(){
+
+            const length = parseFloat(document.getElementById("floorLength").value);
+            const width = parseFloat(document.getElementById("floorWidth").value);
+
+            if(isNaN(length)||isNaN(width)){
+
+                document.getElementById("calcResult").innerHTML="<p style='color:red'>Lütfen uzunluk ve genişlik giriniz.</p>";
+                return;
+
+            }
+
+            showResult(length*width,"floorTileSize","floorWaste10");
+
+        });
+
+    },100);
+
+});
 /* Kapat */
 
 popupClose.addEventListener("click",function(){
