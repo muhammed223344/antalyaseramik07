@@ -643,3 +643,42 @@ window.addEventListener("popstate",function(){
     }
 
 });
+/* ===========================
+   LANGUAGE DETECTION
+=========================== */
+
+// حفظ اختيار اللغة
+function setLanguage(lang){
+    localStorage.setItem("siteLanguage", lang);
+}
+
+(function(){
+
+    const savedLang = localStorage.getItem("siteLanguage");
+    const currentPage = window.location.pathname;
+
+    // إذا المستخدم اختار لغة مسبقاً
+    if(savedLang){
+
+        if(savedLang === "tr" && !currentPage.includes("index-tr.html")){
+            window.location.href = "index-tr.html";
+            return;
+        }
+
+        if(savedLang === "ar" && currentPage.includes("index-tr.html")){
+            window.location.href = "index.html";
+            return;
+        }
+
+    }else{
+
+        // أول زيارة حسب لغة الجهاز
+        const browserLang = (navigator.language || navigator.userLanguage).toLowerCase();
+
+        if(browserLang.startsWith("tr") && !currentPage.includes("index-tr.html")){
+            window.location.href = "index-tr.html";
+        }
+
+    }
+
+})();
