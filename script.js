@@ -588,7 +588,7 @@ const popupClose = document.getElementById("popupClose");
 
 const privacyBtn = document.getElementById("privacyBtn");
 const termsBtn = document.getElementById("termsBtn");
-
+const calculatorBtn = document.getElementById("calculatorBtn");
 function openPopup(title, html){
 
     popupTitle.innerHTML = title;
@@ -681,7 +681,107 @@ termsBtn.addEventListener("click",function(e){
     );
 
 });
+/* حاسبة السيراميك */
 
+calculatorBtn.addEventListener("click", function(e){
+
+    e.preventDefault();
+
+    openPopup(
+
+        "🧮 حاسبة السيراميك",
+
+        `
+        <h3>🧱 حاسبة الجدران</h3>
+
+        <input type="number" id="wallLength" placeholder="الطول بالمتر">
+
+        <br><br>
+
+        <input type="number" id="wallHeight" placeholder="الارتفاع بالمتر">
+
+        <br><br>
+
+        <button id="calcWallBtn">احسب</button>
+
+        <hr>
+
+        <h3>🏠 حاسبة الأرضيات</h3>
+
+        <input type="number" id="floorLength" placeholder="الطول بالمتر">
+
+        <br><br>
+
+        <input type="number" id="floorWidth" placeholder="العرض بالمتر">
+
+        <br><br>
+
+        <button id="calcFloorBtn">احسب</button>
+
+        <hr>
+
+        <div id="calcResult"></div>
+        `
+
+    );
+
+    /* بعد إنشاء الـ Popup */
+
+    setTimeout(function(){
+
+        /* حساب الجدران */
+
+        document.getElementById("calcWallBtn").addEventListener("click", function(){
+
+            const length = parseFloat(document.getElementById("wallLength").value);
+            const height = parseFloat(document.getElementById("wallHeight").value);
+
+            if(isNaN(length) || isNaN(height)){
+
+                document.getElementById("calcResult").innerHTML =
+                "<p style='color:red;'>يرجى إدخال الطول والارتفاع.</p>";
+
+                return;
+
+            }
+
+            const area = length * height;
+
+            document.getElementById("calcResult").innerHTML = `
+                <h3>النتيجة</h3>
+                <p><b>المساحة:</b> ${area.toFixed(2)} م²</p>
+            `;
+
+        });
+
+        /* حساب الأرضيات */
+
+        document.getElementById("calcFloorBtn").addEventListener("click", function(){
+
+            const length = parseFloat(document.getElementById("floorLength").value);
+            const width = parseFloat(document.getElementById("floorWidth").value);
+
+            if(isNaN(length) || isNaN(width)){
+
+                document.getElementById("calcResult").innerHTML =
+                "<p style='color:red;'>يرجى إدخال الطول والعرض.</p>";
+
+                return;
+
+            }
+
+            const area = length * width;
+
+            document.getElementById("calcResult").innerHTML = `
+                <h3>النتيجة</h3>
+                <p><b>المساحة:</b> ${area.toFixed(2)} م²</p>
+            `;
+
+        });
+
+    },100);
+
+});
 /* زر الإغلاق */
 
 popupClose.addEventListener("click",function(){
