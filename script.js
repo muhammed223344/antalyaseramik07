@@ -699,7 +699,26 @@ calculatorBtn.addEventListener("click", function(e){
 
         <input type="number" id="wallHeight" placeholder="الارتفاع بالمتر">
         <br><br>
+<label>مقاس البلاطة (اختياري)</label>
+<br>
 
+<select id="floorTileSize">
+    <option value="">بدون اختيار</option>
+    <option value="30x60">30 × 60 سم</option>
+    <option value="60x60">60 × 60 سم</option>
+    <option value="60x120">60 × 120 سم</option>
+    <option value="80x80">80 × 80 سم</option>
+    <option value="120x120">120 × 120 سم</option>
+</select>
+
+<br><br>
+
+<label>
+    <input type="checkbox" id="floorWaste10">
+    إضافة هدر 10%
+</label>
+
+<br><br>
         <button id="calcWallBtn">احسب</button>
 
         <hr>
@@ -711,7 +730,26 @@ calculatorBtn.addEventListener("click", function(e){
 
         <input type="number" id="floorWidth" placeholder="العرض بالمتر">
         <br><br>
+<label>مقاس البلاطة (اختياري)</label>
+<br>
 
+<select id="floorTileSize">
+    <option value="">بدون اختيار</option>
+    <option value="30x60">30 × 60 سم</option>
+    <option value="60x60">60 × 60 سم</option>
+    <option value="60x120">60 × 120 سم</option>
+    <option value="80x80">80 × 80 سم</option>
+    <option value="120x120">120 × 120 سم</option>
+</select>
+
+<br><br>
+
+<label>
+    <input type="checkbox" id="floorWaste10">
+    إضافة هدر 10%
+</label>
+
+<br><br>
         <button id="calcFloorBtn">احسب</button>
 
         <hr>
