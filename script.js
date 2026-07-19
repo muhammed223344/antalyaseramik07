@@ -689,31 +689,27 @@ calculatorBtn.addEventListener("click", function(e){
 
     openPopup(
 
-        "🧮 حاسبة السيراميك",
+        "حاسبة السيراميك",
 
         `
-        <h3>🧱 حاسبة الجدران</h3>
+        <h3>حساب الجدران</h3>
 
         <input type="number" id="wallLength" placeholder="الطول بالمتر">
-
         <br><br>
 
         <input type="number" id="wallHeight" placeholder="الارتفاع بالمتر">
-
         <br><br>
 
         <button id="calcWallBtn">احسب</button>
 
         <hr>
 
-        <h3>🏠 حاسبة الأرضيات</h3>
+        <h3>حساب الأرضيات</h3>
 
         <input type="number" id="floorLength" placeholder="الطول بالمتر">
-
         <br><br>
 
         <input type="number" id="floorWidth" placeholder="العرض بالمتر">
-
         <br><br>
 
         <button id="calcFloorBtn">احسب</button>
@@ -725,13 +721,73 @@ calculatorBtn.addEventListener("click", function(e){
 
     );
 
-    /* بعد إنشاء الـ Popup */
-
     setTimeout(function(){
 
-        /* حساب الجدران */
+        function showResult(area){
 
-        document.getElementById("calcWallBtn").addEventListener("click", function(){
+            let html = `
+                <h3>النتيجة</h3>
+                <p><b>المساحة:</b> ${area.toFixed(2)} م²</p>
+            `;
+
+            /* هذا الجزء سيعمل لاحقاً بعد إضافة HTML */
+
+            const tile = document.getElementById("tileSize");
+            const waste = document.getElementById("waste10");
+
+            if(tile && tile.value !== ""){
+
+                let tileArea = 0;
+
+                switch(tile.value){
+
+                    case "30x60":
+                        tileArea = 0.18;
+                        break;
+
+                    case "60x60":
+                        tileArea = 0.36;
+                        break;
+
+                    case "60x120":
+                        tileArea = 0.72;
+                        break;
+
+                    case "80x80":
+                        tileArea = 0.64;
+                        break;
+
+                    case "120x120":
+                        tileArea = 1.44;
+                        break;
+
+                }
+
+                const tiles = Math.ceil(area / tileArea);
+
+                html += `
+                    <p><b>عدد البلاطات:</b> ${tiles}</p>
+                `;
+
+                if(waste && waste.checked){
+
+                    html += `
+                        <p><b>عدد البلاطات مع الهدر:</b>
+                        ${Math.ceil(tiles*1.10)}
+                        </p>
+                    `;
+
+                }
+
+            }
+
+            document.getElementById("calcResult").innerHTML = html;
+
+        }
+
+        /* الجدران */
+
+        document.getElementById("calcWallBtn").addEventListener("click",function(){
 
             const length = parseFloat(document.getElementById("wallLength").value);
             const height = parseFloat(document.getElementById("wallHeight").value);
@@ -745,18 +801,13 @@ calculatorBtn.addEventListener("click", function(e){
 
             }
 
-            const area = length * height;
-
-            document.getElementById("calcResult").innerHTML = `
-                <h3>النتيجة</h3>
-                <p><b>المساحة:</b> ${area.toFixed(2)} م²</p>
-            `;
+            showResult(length * height);
 
         });
 
-        /* حساب الأرضيات */
+        /* الأرضيات */
 
-        document.getElementById("calcFloorBtn").addEventListener("click", function(){
+        document.getElementById("calcFloorBtn").addEventListener("click",function(){
 
             const length = parseFloat(document.getElementById("floorLength").value);
             const width = parseFloat(document.getElementById("floorWidth").value);
@@ -770,12 +821,7 @@ calculatorBtn.addEventListener("click", function(e){
 
             }
 
-            const area = length * width;
-
-            document.getElementById("calcResult").innerHTML = `
-                <h3>النتيجة</h3>
-                <p><b>المساحة:</b> ${area.toFixed(2)} م²</p>
-            `;
+            showResult(length * width);
 
         });
 
