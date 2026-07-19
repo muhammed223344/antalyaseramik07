@@ -699,26 +699,28 @@ calculatorBtn.addEventListener("click", function(e){
 
         <input type="number" id="wallHeight" placeholder="الارتفاع بالمتر">
         <br><br>
-<label>مقاس البلاطة (اختياري)</label>
-<br>
 
-<select id="floorTileSize">
-    <option value="">بدون اختيار</option>
-    <option value="30x60">30 × 60 سم</option>
-    <option value="60x60">60 × 60 سم</option>
-    <option value="60x120">60 × 120 سم</option>
-    <option value="80x80">80 × 80 سم</option>
-    <option value="120x120">120 × 120 سم</option>
-</select>
+        <label>مقاس البلاطة (اختياري)</label>
+        <br>
 
-<br><br>
+        <select id="tileSize">
+            <option value="">بدون اختيار</option>
+            <option value="30x60">30 × 60 سم</option>
+            <option value="60x60">60 × 60 سم</option>
+            <option value="60x120">60 × 120 سم</option>
+            <option value="80x80">80 × 80 سم</option>
+            <option value="120x120">120 × 120 سم</option>
+        </select>
 
-<label>
-    <input type="checkbox" id="floorWaste10">
-    إضافة هدر 10%
-</label>
+        <br><br>
 
-<br><br>
+        <label>
+            <input type="checkbox" id="waste10">
+            إضافة هدر 10%
+        </label>
+
+        <br><br>
+
         <button id="calcWallBtn">احسب</button>
 
         <hr>
@@ -730,26 +732,28 @@ calculatorBtn.addEventListener("click", function(e){
 
         <input type="number" id="floorWidth" placeholder="العرض بالمتر">
         <br><br>
-<label>مقاس البلاطة (اختياري)</label>
-<br>
 
-<select id="floorTileSize">
-    <option value="">بدون اختيار</option>
-    <option value="30x60">30 × 60 سم</option>
-    <option value="60x60">60 × 60 سم</option>
-    <option value="60x120">60 × 120 سم</option>
-    <option value="80x80">80 × 80 سم</option>
-    <option value="120x120">120 × 120 سم</option>
-</select>
+        <label>مقاس البلاطة (اختياري)</label>
+        <br>
 
-<br><br>
+        <select id="floorTileSize">
+            <option value="">بدون اختيار</option>
+            <option value="30x60">30 × 60 سم</option>
+            <option value="60x60">60 × 60 سم</option>
+            <option value="60x120">60 × 120 سم</option>
+            <option value="80x80">80 × 80 سم</option>
+            <option value="120x120">120 × 120 سم</option>
+        </select>
 
-<label>
-    <input type="checkbox" id="floorWaste10">
-    إضافة هدر 10%
-</label>
+        <br><br>
 
-<br><br>
+        <label>
+            <input type="checkbox" id="floorWaste10">
+            إضافة هدر 10%
+        </label>
+
+        <br><br>
+
         <button id="calcFloorBtn">احسب</button>
 
         <hr>
@@ -761,59 +765,44 @@ calculatorBtn.addEventListener("click", function(e){
 
     setTimeout(function(){
 
-        function showResult(area){
+        function tileArea(size){
+
+            switch(size){
+                case "30x60": return 0.18;
+                case "60x60": return 0.36;
+                case "60x120": return 0.72;
+                case "80x80": return 0.64;
+                case "120x120": return 1.44;
+                default: return 0;
+            }
+
+        }
+
+        function showResult(area, tileId, wasteId){
 
             let html = `
                 <h3>النتيجة</h3>
                 <p><b>المساحة:</b> ${area.toFixed(2)} م²</p>
             `;
 
-            /* هذا الجزء سيعمل لاحقاً بعد إضافة HTML */
-
-            const tile = document.getElementById("tileSize");
-            const waste = document.getElementById("waste10");
+            const tile = document.getElementById(tileId);
+            const waste = document.getElementById(wasteId);
 
             if(tile && tile.value !== ""){
 
-                let tileArea = 0;
+                const oneTile = tileArea(tile.value);
 
-                switch(tile.value){
+                if(oneTile > 0){
 
-                    case "30x60":
-                        tileArea = 0.18;
-                        break;
+                    const tiles = Math.ceil(area / oneTile);
 
-                    case "60x60":
-                        tileArea = 0.36;
-                        break;
+                    html += `<p><b>عدد البلاطات:</b> ${tiles}</p>`;
 
-                    case "60x120":
-                        tileArea = 0.72;
-                        break;
+                    if(waste.checked){
 
-                    case "80x80":
-                        tileArea = 0.64;
-                        break;
+                        html += `<p><b>عدد البلاطات مع الهدر:</b> ${Math.ceil(tiles*1.10)}</p>`;
 
-                    case "120x120":
-                        tileArea = 1.44;
-                        break;
-
-                }
-
-                const tiles = Math.ceil(area / tileArea);
-
-                html += `
-                    <p><b>عدد البلاطات:</b> ${tiles}</p>
-                `;
-
-                if(waste && waste.checked){
-
-                    html += `
-                        <p><b>عدد البلاطات مع الهدر:</b>
-                        ${Math.ceil(tiles*1.10)}
-                        </p>
-                    `;
+                    }
 
                 }
 
@@ -823,43 +812,35 @@ calculatorBtn.addEventListener("click", function(e){
 
         }
 
-        /* الجدران */
-
         document.getElementById("calcWallBtn").addEventListener("click",function(){
 
             const length = parseFloat(document.getElementById("wallLength").value);
             const height = parseFloat(document.getElementById("wallHeight").value);
 
-            if(isNaN(length) || isNaN(height)){
+            if(isNaN(length)||isNaN(height)){
 
-                document.getElementById("calcResult").innerHTML =
-                "<p style='color:red;'>يرجى إدخال الطول والارتفاع.</p>";
-
+                document.getElementById("calcResult").innerHTML="<p style='color:red'>يرجى إدخال الطول والارتفاع.</p>";
                 return;
 
             }
 
-            showResult(length * height);
+            showResult(length*height,"tileSize","waste10");
 
         });
-
-        /* الأرضيات */
 
         document.getElementById("calcFloorBtn").addEventListener("click",function(){
 
             const length = parseFloat(document.getElementById("floorLength").value);
             const width = parseFloat(document.getElementById("floorWidth").value);
 
-            if(isNaN(length) || isNaN(width)){
+            if(isNaN(length)||isNaN(width)){
 
-                document.getElementById("calcResult").innerHTML =
-                "<p style='color:red;'>يرجى إدخال الطول والعرض.</p>";
-
+                document.getElementById("calcResult").innerHTML="<p style='color:red'>يرجى إدخال الطول والعرض.</p>";
                 return;
 
             }
 
-            showResult(length * width);
+            showResult(length*width,"floorTileSize","floorWaste10");
 
         });
 
