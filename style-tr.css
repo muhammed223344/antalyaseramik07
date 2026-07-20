@@ -64,13 +64,36 @@ header {
     }
 }
 
-.site-title {
-    text-align: center;
-    color: #0A58CA;
-    font-size: 38px;
-    font-weight: 800;
-    letter-spacing: 3px;
-    margin-bottom: 20px;
+.site-title{
+
+    font-size:40px;
+    font-weight:800;
+    letter-spacing:3px;
+
+}
+
+.cursor{
+
+    display:inline-block;
+
+    animation:blink .8s infinite;
+
+}
+
+@keyframes blink{
+
+    0%{
+        opacity:1;
+    }
+
+    50%{
+        opacity:0;
+    }
+
+    100%{
+        opacity:1;
+    }
+
 }
 
 /* ===========================
