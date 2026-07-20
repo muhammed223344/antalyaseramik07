@@ -852,58 +852,47 @@ function setLanguage(lang){
 // ===========================
 
 const typingTitle = document.getElementById("typingTitle");
+const cursor = document.querySelector(".cursor");
 
 if (typingTitle) {
 
     const text = "ANTALYA FAYANS USTASI";
 
-    // إظهار النص مباشرة عند تحميل الصفحة
-    typingTitle.textContent = text;
-
-    let index = text.length;
-    let deleting = true;
+    let index = 0;
+    let deleting = false;
 
     function typeEffect() {
 
-        if (deleting) {
+        if (!deleting) {
 
-            typingTitle.textContent = text.substring(0, index - 1);
-            index--;
+            typingTitle.textContent = text.substring(0, index);
+            index++;
 
-            if (index === 0) {
-
-                deleting = false;
-
-                setTimeout(typeEffect, 1000);
-
+            if (index > text.length) {
+                deleting = true;
+                setTimeout(typeEffect, 15000);
                 return;
-
             }
 
-            setTimeout(typeEffect, 120);
+            setTimeout(typeEffect, 170);
 
         } else {
 
-            typingTitle.textContent = text.substring(0, index + 1);
-            index++;
+            typingTitle.textContent = text.substring(0, index);
+            index--;
 
-            if (index === text.length) {
-
-                deleting = true;
-
-                setTimeout(typeEffect, 15000);
-
+            if (index < 0) {
+                deleting = false;
+                setTimeout(typeEffect, 1000);
                 return;
-
             }
 
-            setTimeout(typeEffect, 220);
+            setTimeout(typeEffect, 90);
 
         }
 
     }
 
-    // يبدأ بعد 15 ثانية
-    setTimeout(typeEffect, 15000);
+    typeEffect();
 
 }
