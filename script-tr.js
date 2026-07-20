@@ -857,27 +857,15 @@ if (typingTitle) {
 
     const text = "ANTALYA FAYANS USTASI";
 
-    let index = 0;
-    let deleting = false;
+    // إظهار النص مباشرة عند تحميل الصفحة
+    typingTitle.textContent = text;
+
+    let index = text.length;
+    let deleting = true;
 
     function typeEffect() {
 
-        if (!deleting) {
-
-            typingTitle.textContent = text.substring(0, index + 1);
-            index++;
-
-            if (index === text.length) {
-
-                deleting = true;
-                setTimeout(typeEffect, 15000);
-                return;
-
-            }
-
-            setTimeout(typeEffect, 220);
-
-        } else {
+        if (deleting) {
 
             typingTitle.textContent = text.substring(0, index - 1);
             index--;
@@ -885,17 +873,37 @@ if (typingTitle) {
             if (index === 0) {
 
                 deleting = false;
+
                 setTimeout(typeEffect, 1000);
+
                 return;
 
             }
 
             setTimeout(typeEffect, 120);
 
+        } else {
+
+            typingTitle.textContent = text.substring(0, index + 1);
+            index++;
+
+            if (index === text.length) {
+
+                deleting = true;
+
+                setTimeout(typeEffect, 15000);
+
+                return;
+
+            }
+
+            setTimeout(typeEffect, 220);
+
         }
 
     }
 
-    typeEffect();
+    // يبدأ بعد 15 ثانية
+    setTimeout(typeEffect, 15000);
 
 }
