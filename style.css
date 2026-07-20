@@ -95,6 +95,29 @@ header{
     font-weight:800;
     letter-spacing:3px;
     margin-bottom:20px;
+    min-height:50px;
+}
+
+.cursor{
+    display:inline-block;
+    color:#0A58CA;
+    animation:blink .8s infinite;
+}
+
+@keyframes blink{
+
+    0%{
+        opacity:1;
+    }
+
+    50%{
+        opacity:0;
+    }
+
+    100%{
+        opacity:1;
+    }
+
 }
 /* ===========================
    LANGUAGE
