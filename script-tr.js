@@ -847,3 +847,55 @@ function setLanguage(lang){
     }
 
 })();
+// ===========================
+// Typing Effect
+// ===========================
+
+const typingTitle = document.getElementById("typingTitle");
+
+if (typingTitle) {
+
+    const text = "ANTALYA FAYANS USTASI";
+
+    let index = 0;
+    let deleting = false;
+
+    function typeEffect() {
+
+        if (!deleting) {
+
+            typingTitle.textContent = text.substring(0, index + 1);
+            index++;
+
+            if (index === text.length) {
+
+                deleting = true;
+                setTimeout(typeEffect, 15000);
+                return;
+
+            }
+
+            setTimeout(typeEffect, 220);
+
+        } else {
+
+            typingTitle.textContent = text.substring(0, index - 1);
+            index--;
+
+            if (index === 0) {
+
+                deleting = false;
+                setTimeout(typeEffect, 1000);
+                return;
+
+            }
+
+            setTimeout(typeEffect, 120);
+
+        }
+
+    }
+
+    typeEffect();
+
+}
