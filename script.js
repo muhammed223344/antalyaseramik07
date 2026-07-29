@@ -1052,12 +1052,29 @@ storiesContainer.appendChild(item);
 });
 
 }
-       
-    }
+       const storiesContainer=document.getElementById("storiesContainer");
 
-    typeEffect();
+if(storiesContainer){
 
-}
+stories.slice().reverse().forEach((story,index)=>{
+
+const item=document.createElement("div");
+
+item.className="story-item";
+
+item.innerHTML=`
+<div class="story-ring">
+<img src="${story.avatar}" alt="${story.city}">
+</div>
+
+<div class="story-title">${story.city}</div>
+`;
+
+storiesContainer.appendChild(item);
+
+});
+
+           }
 /* =========================================
    STORY VIEWER
 ========================================= */
@@ -1271,88 +1288,7 @@ imageViewer.style.display="none";
 }
 
 });
-/* ===========================
-   STORIES DATA
-=========================== */
 
-const storiesData = [
-
-{
-title: "Kepez",
-image: "Kepez Fayans Ustası.webp",
-link: "areas.html#kepez"
-},
-
-{
-title: "Kepez",
-image: "Kepez Seramik Ustası.webp",
-link: "areas.html#kepez"
-},
-
-{
-title: "Muratpaşa",
-image: "Muratpaşa Fayans Ustası.webp",
-link: "areas.html#muratpasa"
-},
-
-{
-title: "Muratpaşa",
-image: "Muratpaşa Seramik Ustası.webp",
-link: "areas.html#muratpasa"
-},
-
-{
-title: "Altıntaş",
-image: "Altıntaş Fayans Ustası.webp",
-link: "areas.html#altintas"
-},
-
-{
-title: "Altıntaş",
-image: "Altıntaş Seramik Ustası.webp",
-link: "areas.html#altintas"
-},
-
-{
-title: "Varsak",
-image: "Varsak Fayans Ustası.webp",
-link: "areas.html#varsak"
-},
-
-{
-title: "Varsak",
-image: "Varsak Seramik Ustası.webp",
-link: "areas.html#varsak"
-}
-
-];
-
-const storiesContainer = document.getElementById("storiesContainer");
-
-if(storiesContainer){
-
-storiesData.forEach(function(item){
-
-const story = document.createElement("div");
-
-story.className = "story-item";
-
-story.innerHTML = `
-<img src="${item.image}" alt="${item.title}">
-<span>${item.title}</span>
-`;
-
-story.onclick = function(){
-
-window.location.href = item.link;
-
-};
-
-storiesContainer.appendChild(story);
-
-});
-
-   }
 /* ===========================
    Stories Auto Scroll
 =========================== */
