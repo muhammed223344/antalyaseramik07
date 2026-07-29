@@ -1275,7 +1275,7 @@ Stories Auto Scroll + Drag
 
 if (storiesContainer) {
 
-let speed = 0.5;
+let speed = 1.3;
 let autoMove;
 let isDragging = false;
 
@@ -1287,7 +1287,7 @@ function startAuto(){
 
         if(!isDragging){
 
-            storiesContainer.scrollLeft += speed;
+            storiesContainer.scrollLeft += 1.3;
 
             if(
                 storiesContainer.scrollLeft >=
@@ -1362,62 +1362,6 @@ storiesContainer.addEventListener("touchmove",function(e){
 storiesContainer.addEventListener("touchend",function(){
 
     isDragging = false;
-
-});
-
-}
-/* ===========================
-   Stories Auto Move
-=========================== */
-
-if(storiesContainer){
-
-let storiesSpeed = 1.2;
-
-let storiesAnimation;
-
-function storiesLoop(){
-
-    storiesContainer.scrollLeft += storiesSpeed;
-
-    if(
-        storiesContainer.scrollLeft >=
-        storiesContainer.scrollWidth - storiesContainer.clientWidth
-    ){
-
-        storiesContainer.scrollLeft = 0;
-
-    }
-
-    storiesAnimation = requestAnimationFrame(storiesLoop);
-
-}
-
-storiesLoop();
-
-/* إيقاف الحركة أثناء التفاعل */
-
-storiesContainer.addEventListener("mouseenter",function(){
-
-    cancelAnimationFrame(storiesAnimation);
-
-});
-
-storiesContainer.addEventListener("mouseleave",function(){
-
-    storiesLoop();
-
-});
-
-storiesContainer.addEventListener("touchstart",function(){
-
-    cancelAnimationFrame(storiesAnimation);
-
-});
-
-storiesContainer.addEventListener("touchend",function(){
-
-    storiesLoop();
 
 });
 
