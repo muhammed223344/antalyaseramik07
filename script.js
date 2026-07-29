@@ -967,6 +967,11 @@ if (typingTitle) {
             setTimeout(typeEffect, 120);
 
         }
+           }
+
+    typeEffect();
+
+}
 /* =========================================
    STORIES DATA
 ========================================= */
