@@ -1058,131 +1058,129 @@ if (storiesContainer) {
    STORY VIEWER
 ========================================= */
 
-const viewer=document.createElement("div");
+const viewer = document.createElement("div");
 
-viewer.className="story-viewer";
+viewer.className = "story-viewer";
 
-viewer.innerHTML=`
-
+viewer.innerHTML = `
 <div class="story-card">
 
-<div class="story-progress">
-<span id="storyProgress"></span>
+    <div class="story-progress">
+        <span id="storyProgress"></span>
+    </div>
+
+    <button class="story-close">✕</button>
+
+    <div class="story-top-avatar">
+        <img id="storyAvatar" src="">
+    </div>
+
+    <img id="storyImage"
+         class="story-main-image"
+         src="">
+
+    <div class="story-info">
+
+        <div id="storyCity"
+             class="story-city"></div>
+
+        <div id="storyDesc"
+             class="story-desc"></div>
+
+    </div>
+
 </div>
-
-<button class="story-close">✕</button>
-
-<div class="story-top-avatar">
-<img id="storyAvatar" src="">
-</div>
-
-<img id="storyImage"
-class="story-main-image"
-src="">
-
-<div class="story-info">
-
-<div id="storyCity"
-class="story-city"></div>
-
-<div id="storyDesc"
-class="story-desc"></div>
-
-</div>
-
-</div>
-
 `;
 
 document.body.appendChild(viewer);
 
-const storyAvatar=document.getElementById("storyAvatar");
-const storyImage=document.getElementById("storyImage");
-const storyCity=document.getElementById("storyCity");
-const storyDesc=document.getElementById("storyDesc");
-const storyProgress=document.getElementById("storyProgress");
+const storyAvatar = document.getElementById("storyAvatar");
+const storyImage = document.getElementById("storyImage");
+const storyCity = document.getElementById("storyCity");
+const storyDesc = document.getElementById("storyDesc");
+const storyProgress = document.getElementById("storyProgress");
 
-let storyTimer=null;
+let storyTimer = null;
 
 function closeStory(){
 
-viewer.classList.remove("active");
+    viewer.classList.remove("active");
 
-clearTimeout(storyTimer);
+    clearTimeout(storyTimer);
 
-storyProgress.style.transition="none";
-storyProgress.style.width="0%";
+    storyProgress.style.transition = "none";
+    storyProgress.style.width = "0%";
 
-document.body.style.overflow="";
+    document.body.style.overflow = "";
 
 }
 
 function openStory(index){
 
-const data=stories.slice().reverse()[index];
+    const data = stories.slice().reverse()[index];
 
-storyAvatar.src=data.avatar;
-storyImage.src=data.image;
-storyCity.textContent=data.city;
-storyDesc.textContent=data.desc;
+    storyAvatar.src = data.avatar;
+    storyImage.src = data.image;
+    storyCity.textContent = data.city;
+    storyDesc.textContent = data.desc;
 
-viewer.classList.add("active");
+    viewer.classList.add("active");
 
-document.body.style.overflow="hidden";
+    document.body.style.overflow = "hidden";
 
-history.pushState({story:true},"");
+    history.pushState({story:true},"");
 
-storyProgress.style.transition="none";
-storyProgress.style.width="0%";
+    storyProgress.style.transition = "none";
+    storyProgress.style.width = "0%";
 
-setTimeout(()=>{
+    setTimeout(function(){
 
-storyProgress.style.transition="width 7s linear";
-storyProgress.style.width="100%";
+        storyProgress.style.transition = "width 7s linear";
+        storyProgress.style.width = "100%";
 
-},50);
+    },50);
 
-storyTimer=setTimeout(()=>{
+    storyTimer = setTimeout(function(){
 
-history.back();
+        history.back();
 
-},7000);
+    },7000);
 
 }
 
-document.querySelectorAll(".story-item").forEach((item,index)=>{
+document.querySelectorAll(".story-item").forEach(function(item,index){
 
-item.addEventListener("click",()=>{
+    item.addEventListener("click",function(){
 
-openStory(index);
+        openStory(index);
+
+    });
 
 });
 
-});
+viewer.querySelector(".story-close").onclick = function(){
 
-viewer.querySelector(".story-close").onclick=function(){
-
-history.back();
+    history.back();
 
 };
 
-viewer.onclick=function(e){
+viewer.onclick = function(e){
 
-if(e.target===viewer){
+    if(e.target === viewer){
 
-history.back();
+        history.back();
 
-}
+    }
 
 };
 
 window.addEventListener("popstate",function(){
 
-if(viewer.classList.contains("active")){
+    if(viewer.classList.contains("active")){
 
-closeStory();
+        closeStory();
 
-}
+    }
 
 });
 /* =========================================
