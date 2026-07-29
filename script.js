@@ -1027,54 +1027,33 @@ const stories = [
     image:"Kepez Seramik Ustası.webp",
     city:"Kepez",
     desc:"تنفيذ أعمال السيراميك بمنطقة كيبيز."
+}
+
 ];
 
-const storiesContainer=document.getElementById("storiesContainer");
+const storiesContainer = document.getElementById("storiesContainer");
 
-if(storiesContainer){
+if (storiesContainer) {
 
-stories.slice().reverse().forEach((story,index)=>{
+    stories.slice().reverse().forEach((story,index)=>{
 
-const item=document.createElement("div");
+        const item = document.createElement("div");
 
-item.className="story-item";
+        item.className = "story-item";
 
-item.innerHTML=`
-<div class="story-ring">
-<img src="${story.avatar}" alt="${story.city}">
-</div>
+        item.innerHTML = `
+            <div class="story-ring">
+                <img src="${story.avatar}" alt="${story.city}">
+            </div>
 
-<div class="story-title">${story.city}</div>
-`;
+            <div class="story-title">${story.city}</div>
+        `;
 
-storiesContainer.appendChild(item);
+        storiesContainer.appendChild(item);
 
-});
+    });
 
 }
-       const storiesContainer=document.getElementById("storiesContainer");
-
-if(storiesContainer){
-
-stories.slice().reverse().forEach((story,index)=>{
-
-const item=document.createElement("div");
-
-item.className="story-item";
-
-item.innerHTML=`
-<div class="story-ring">
-<img src="${story.avatar}" alt="${story.city}">
-</div>
-
-<div class="story-title">${story.city}</div>
-`;
-
-storiesContainer.appendChild(item);
-
-});
-
-           }
 /* =========================================
    STORY VIEWER
 ========================================= */
