@@ -1283,7 +1283,8 @@ if (storiesContainer) {
     let startX = 0;
     let startPosition = 0;
 
-    const originalWidth = storiesContainer.scrollWidth;
+    /* عرض نسخة واحدة فقط */
+    const oneSetWidth = storiesContainer.scrollWidth / 2;
 
     function animate() {
 
@@ -1291,7 +1292,7 @@ if (storiesContainer) {
 
             position += speed;
 
-            if (position >= originalWidth) {
+            if (position >= oneSetWidth) {
                 position = 0;
             }
 
@@ -1324,11 +1325,11 @@ if (storiesContainer) {
         position = startPosition - dx;
 
         if(position < 0){
-            position += originalWidth;
+            position += oneSetWidth;
         }
 
-        if(position >= originalWidth){
-            position -= originalWidth;
+        if(position >= oneSetWidth){
+            position -= oneSetWidth;
         }
 
         track.style.transform = `translateX(-${position}px)`;
@@ -1342,4 +1343,3 @@ if (storiesContainer) {
     });
 
 }
-
