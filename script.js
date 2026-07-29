@@ -1271,3 +1271,217 @@ imageViewer.style.display="none";
 }
 
 });
+/* ===========================
+   STORIES DATA
+=========================== */
+
+const storiesData = [
+
+{
+title: "Kepez",
+image: "Kepez Fayans Ustası.webp",
+link: "areas.html#kepez"
+},
+
+{
+title: "Kepez",
+image: "Kepez Seramik Ustası.webp",
+link: "areas.html#kepez"
+},
+
+{
+title: "Muratpaşa",
+image: "Muratpaşa Fayans Ustası.webp",
+link: "areas.html#muratpasa"
+},
+
+{
+title: "Muratpaşa",
+image: "Muratpaşa Seramik Ustası.webp",
+link: "areas.html#muratpasa"
+},
+
+{
+title: "Altıntaş",
+image: "Altıntaş Fayans Ustası.webp",
+link: "areas.html#altintas"
+},
+
+{
+title: "Altıntaş",
+image: "Altıntaş Seramik Ustası.webp",
+link: "areas.html#altintas"
+},
+
+{
+title: "Varsak",
+image: "Varsak Fayans Ustası.webp",
+link: "areas.html#varsak"
+},
+
+{
+title: "Varsak",
+image: "Varsak Seramik Ustası.webp",
+link: "areas.html#varsak"
+}
+
+];
+
+const storiesContainer = document.getElementById("storiesContainer");
+
+if(storiesContainer){
+
+storiesData.forEach(function(item){
+
+const story = document.createElement("div");
+
+story.className = "story-item";
+
+story.innerHTML = `
+<img src="${item.image}" alt="${item.title}">
+<span>${item.title}</span>
+`;
+
+story.onclick = function(){
+
+window.location.href = item.link;
+
+};
+
+storiesContainer.appendChild(story);
+
+});
+
+   }
+/* ===========================
+   Stories Auto Scroll
+=========================== */
+
+if(storiesContainer){
+
+let isDown = false;
+
+let startX;
+let scrollLeft;
+
+storiesContainer.addEventListener("mousedown",function(e){
+
+isDown = true;
+
+storiesContainer.classList.add("active");
+
+startX = e.pageX - storiesContainer.offsetLeft;
+
+scrollLeft = storiesContainer.scrollLeft;
+
+});
+
+storiesContainer.addEventListener("mouseleave",function(){
+
+isDown = false;
+
+storiesContainer.classList.remove("active");
+
+});
+
+storiesContainer.addEventListener("mouseup",function(){
+
+isDown = false;
+
+storiesContainer.classList.remove("active");
+
+});
+
+storiesContainer.addEventListener("mousemove",function(e){
+
+if(!isDown) return;
+
+e.preventDefault();
+
+const x = e.pageX - storiesContainer.offsetLeft;
+
+const walk = (x - startX) * 2;
+
+storiesContainer.scrollLeft = scrollLeft - walk;
+
+});
+
+/* دعم السحب على الهاتف */
+
+let touchStartX = 0;
+
+let touchScroll = 0;
+
+storiesContainer.addEventListener("touchstart",function(e){
+
+touchStartX = e.touches[0].clientX;
+
+touchScroll = storiesContainer.scrollLeft;
+
+});
+
+storiesContainer.addEventListener("touchmove",function(e){
+
+const move = e.touches[0].clientX;
+
+storiesContainer.scrollLeft = touchScroll - (move - touchStartX);
+
+});
+
+}
+/* ===========================
+   Stories Auto Move
+=========================== */
+
+if(storiesContainer){
+
+let storiesSpeed = 1.2;
+
+let storiesAnimation;
+
+function storiesLoop(){
+
+    storiesContainer.scrollLeft += storiesSpeed;
+
+    if(
+        storiesContainer.scrollLeft >=
+        storiesContainer.scrollWidth - storiesContainer.clientWidth
+    ){
+
+        storiesContainer.scrollLeft = 0;
+
+    }
+
+    storiesAnimation = requestAnimationFrame(storiesLoop);
+
+}
+
+storiesLoop();
+
+/* إيقاف الحركة أثناء التفاعل */
+
+storiesContainer.addEventListener("mouseenter",function(){
+
+    cancelAnimationFrame(storiesAnimation);
+
+});
+
+storiesContainer.addEventListener("mouseleave",function(){
+
+    storiesLoop();
+
+});
+
+storiesContainer.addEventListener("touchstart",function(){
+
+    cancelAnimationFrame(storiesAnimation);
+
+});
+
+storiesContainer.addEventListener("touchend",function(){
+
+    storiesLoop();
+
+});
+
+}
