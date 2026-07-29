@@ -1187,18 +1187,17 @@ window.addEventListener("popstate",function(){
    STORY IMAGE ZOOM
 ========================================= */
 
-const imageViewer=document.createElement("div");
+const imageViewer = document.createElement("div");
 
-imageViewer.style.position="fixed";
-imageViewer.style.inset="0";
-imageViewer.style.background="rgba(0,0,0,.98)";
-imageViewer.style.display="none";
-imageViewer.style.justifyContent="center";
-imageViewer.style.alignItems="center";
-imageViewer.style.zIndex="9999999";
+imageViewer.style.position = "fixed";
+imageViewer.style.inset = "0";
+imageViewer.style.background = "rgba(0,0,0,.98)";
+imageViewer.style.display = "none";
+imageViewer.style.justifyContent = "center";
+imageViewer.style.alignItems = "center";
+imageViewer.style.zIndex = "9999999";
 
-imageViewer.innerHTML=`
-
+imageViewer.innerHTML = `
 <button id="imageClose"
 style="
 position:absolute;
@@ -1222,47 +1221,46 @@ max-width:98%;
 max-height:98%;
 object-fit:contain;
 ">
-
 `;
 
 document.body.appendChild(imageViewer);
 
-const zoomImage=document.getElementById("zoomImage");
-const imageClose=document.getElementById("imageClose");
+const zoomImage = document.getElementById("zoomImage");
+const imageClose = document.getElementById("imageClose");
 
-storyImage.addEventListener("click",function(){
+storyImage.addEventListener("click", function(){
 
-zoomImage.src=storyImage.src;
+    zoomImage.src = storyImage.src;
 
-imageViewer.style.display="flex";
+    imageViewer.style.display = "flex";
 
-history.pushState({zoom:true},"");
+    history.pushState({zoom:true}, "");
 
 });
 
-imageClose.onclick=function(){
+imageClose.onclick = function(){
 
-history.back();
-
-};
-
-imageViewer.onclick=function(e){
-
-if(e.target===imageViewer){
-
-history.back();
-
-}
+    history.back();
 
 };
 
-window.addEventListener("popstate",function(){
+imageViewer.onclick = function(e){
 
-if(imageViewer.style.display==="flex"){
+    if(e.target === imageViewer){
 
-imageViewer.style.display="none";
+        history.back();
 
-}
+    }
+
+};
+
+window.addEventListener("popstate", function(){
+
+    if(imageViewer.style.display === "flex"){
+
+        imageViewer.style.display = "none";
+
+    }
 
 });
 
@@ -1270,78 +1268,78 @@ imageViewer.style.display="none";
    Stories Auto Scroll
 =========================== */
 
-if(storiesContainer){
+if (storiesContainer) {
 
-let isDown = false;
+    let isDown = false;
 
-let startX;
-let scrollLeft;
+    let startX;
+    let scrollLeft;
 
-storiesContainer.addEventListener("mousedown",function(e){
+    storiesContainer.addEventListener("mousedown", function(e){
 
-isDown = true;
+        isDown = true;
 
-storiesContainer.classList.add("active");
+        storiesContainer.classList.add("active");
 
-startX = e.pageX - storiesContainer.offsetLeft;
+        startX = e.pageX - storiesContainer.offsetLeft;
 
-scrollLeft = storiesContainer.scrollLeft;
+        scrollLeft = storiesContainer.scrollLeft;
 
-});
+    });
 
-storiesContainer.addEventListener("mouseleave",function(){
+    storiesContainer.addEventListener("mouseleave", function(){
 
-isDown = false;
+        isDown = false;
 
-storiesContainer.classList.remove("active");
+        storiesContainer.classList.remove("active");
 
-});
+    });
 
-storiesContainer.addEventListener("mouseup",function(){
+    storiesContainer.addEventListener("mouseup", function(){
 
-isDown = false;
+        isDown = false;
 
-storiesContainer.classList.remove("active");
+        storiesContainer.classList.remove("active");
 
-});
+    });
 
-storiesContainer.addEventListener("mousemove",function(e){
+    storiesContainer.addEventListener("mousemove", function(e){
 
-if(!isDown) return;
+        if (!isDown) return;
 
-e.preventDefault();
+        e.preventDefault();
 
-const x = e.pageX - storiesContainer.offsetLeft;
+        const x = e.pageX - storiesContainer.offsetLeft;
 
-const walk = (x - startX) * 2;
+        const walk = (x - startX) * 2;
 
-storiesContainer.scrollLeft = scrollLeft - walk;
+        storiesContainer.scrollLeft = scrollLeft - walk;
 
-});
+    });
 
-/* دعم السحب على الهاتف */
+    /* دعم السحب على الهاتف */
 
-let touchStartX = 0;
+    let touchStartX = 0;
 
-let touchScroll = 0;
+    let touchScroll = 0;
 
-storiesContainer.addEventListener("touchstart",function(e){
+    storiesContainer.addEventListener("touchstart", function(e){
 
-touchStartX = e.touches[0].clientX;
+        touchStartX = e.touches[0].clientX;
 
-touchScroll = storiesContainer.scrollLeft;
+        touchScroll = storiesContainer.scrollLeft;
 
-});
+    });
 
-storiesContainer.addEventListener("touchmove",function(e){
+    storiesContainer.addEventListener("touchmove", function(e){
 
-const move = e.touches[0].clientX;
+        const move = e.touches[0].clientX;
 
-storiesContainer.scrollLeft = touchScroll - (move - touchStartX);
+        storiesContainer.scrollLeft = touchScroll - (move - touchStartX);
 
-});
+    });
 
-}
+   }
 /* ===========================
    Stories Auto Move
 =========================== */
