@@ -1269,77 +1269,71 @@ window.addEventListener("popstate",function(){
 
 
 /* =========================================
-   STORIES AUTO LOOP
+   STORIES MANUAL SCROLL
 ========================================= */
 
 if (storiesContainer) {
 
-    const track = document.querySelector(".stories-track");
+    storiesContainer.style.transform = "none";
 
-    let position = 0;
-    const speed = 0.45;
-
-    let dragging = false;
+    let isDown = false;
     let startX = 0;
-    let startPosition = 0;
+    let scrollLeft = 0;
 
-    /* عرض نسخة واحدة فقط */
-    const oneSetWidth = storiesContainer.scrollWidth / 2;
+    storiesContainer.addEventListener("mousedown", function(e){
 
-    function animate() {
-
-        if (!dragging) {
-
-            position += speed;
-
-            if (position >= oneSetWidth) {
-                position = 0;
-            }
-
-            track.style.transform = `translateX(-${position}px)`;
-
-        }
-
-        requestAnimationFrame(animate);
-
-    }
-
-    animate();
-
-    /* ===== لمس ===== */
-
-    track.addEventListener("touchstart", function(e){
-
-        dragging = true;
-        startX = e.touches[0].clientX;
-        startPosition = position;
-
-    }, {passive:true});
-
-    track.addEventListener("touchmove", function(e){
-
-        if(!dragging) return;
-
-        const dx = e.touches[0].clientX - startX;
-
-        position = startPosition - dx;
-
-        if(position < 0){
-            position += oneSetWidth;
-        }
-
-        if(position >= oneSetWidth){
-            position -= oneSetWidth;
-        }
-
-        track.style.transform = `translateX(-${position}px)`;
-
-    }, {passive:true});
-
-    track.addEventListener("touchend", function(){
-
-        dragging = false;
+        isDown = true;
+        startX = e.pageX - storiesContainer.offsetLeft;
+        scrollLeft = storiesContainer.scrollLeft;
+        storiesContainer.style.cursor = "grabbing";
 
     });
+
+    storiesContainer.addEventListener("mouseleave", function(){
+
+        isDown = false;
+        storiesContainer.style.cursor = "grab";
+
+    });
+
+    storiesContainer.addEventListener("mouseup", function(){
+
+        isDown = false;
+        storiesContainer.style.cursor = "grab";
+
+    });
+
+    storiesContainer.addEventListener("mousemove", function(e){
+
+        if(!isDown) return;
+
+        e.preventDefault();
+
+        const x = e.pageX - storiesContainer.offsetLeft;
+        const walk = (x - startX) * 1.3;
+
+        storiesContainer.scrollLeft = scrollLeft - walk;
+
+    });
+
+    /* Touch */
+
+    let touchStart = 0;
+    let touchScroll = 0;
+
+    storiesContainer.addEventListener("touchstart", function(e){
+
+        touchStart = e.touches[0].pageX;
+        touchScroll = storiesContainer.scrollLeft;
+
+    }, {passive:true});
+
+    storiesContainer.addEventListener("touchmove", function(e){
+
+        const walk = (e.touches[0].pageX - touchStart) * 1.3;
+
+        storiesContainer.scrollLeft = touchScroll - walk;
+
+    }, {passive:true});
 
 }
