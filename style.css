@@ -1933,3 +1933,35 @@ color:#0A58CA;
     font-size:28px;
     cursor:pointer;
     }
+/* ===========================
+   STORIES HINT
+=========================== */
+
+.stories-hint{
+    text-align:center;
+    margin-top:8px;
+    color:#888;
+    font-size:15px;
+    font-weight:700;
+    animation:storiesHintMove 1.5s ease-in-out infinite;
+    user-select:none;
+}
+
+@keyframes storiesHintMove{
+
+    0%{
+        transform:translateX(-8px);
+        opacity:.6;
+    }
+
+    50%{
+        transform:translateX(8px);
+        opacity:1;
+    }
+
+    100%{
+        transform:translateX(-8px);
+        opacity:.6;
+    }
+
+}
