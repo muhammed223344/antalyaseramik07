@@ -1270,99 +1270,112 @@ window.addEventListener("popstate", function(){
 });
 
 /* ===========================
-Stories Auto Scroll + Drag
+   Stories Infinite Slider
 =========================== */
 
 if (storiesContainer) {
 
-let speed = 1.3;
-let autoMove;
-let isDragging = false;
+    // تكرار العناصر لإنشاء دوران لا نهائي
+    storiesContainer.innerHTML += storiesContainer.innerHTML;
 
-function startAuto(){
+    let speed = 0.7;
+    let position = 0;
 
-    cancelAnimationFrame(autoMove);
+    let isDragging = false;
+    let startX = 0;
+    let startPosition = 0;
 
-    function loop(){
+    function animateStories(){
 
         if(!isDragging){
 
-            storiesContainer.scrollLeft += 1.3;
+            position += speed;
 
-            if(
-                storiesContainer.scrollLeft >=
-                storiesContainer.scrollWidth - storiesContainer.clientWidth
-            ){
+            if(position >= storiesContainer.scrollWidth / 2){
 
-                storiesContainer.scrollLeft = 0;
+                position = 0;
 
             }
 
+            storiesContainer.style.transform =
+                `translateX(-${position}px)`;
+
         }
 
-        autoMove = requestAnimationFrame(loop);
+        requestAnimationFrame(animateStories);
 
     }
 
-    loop();
+    animateStories();
 
-}
+    /* ===== Mouse Drag ===== */
 
-startAuto();
+    storiesContainer.addEventListener("mousedown",function(e){
 
-/* السحب بالماوس */
+        isDragging = true;
 
-let startX = 0;
-let scrollStart = 0;
+        startX = e.clientX;
 
-storiesContainer.addEventListener("mousedown",function(e){
+        startPosition = position;
 
-    isDragging = true;
+        storiesContainer.style.cursor = "grabbing";
 
-    startX = e.pageX;
+    });
 
-    scrollStart = storiesContainer.scrollLeft;
+    document.addEventListener("mousemove",function(e){
 
-});
+        if(!isDragging) return;
 
-document.addEventListener("mouseup",function(){
+        position = startPosition - (e.clientX - startX);
 
-    isDragging = false;
+        if(position < 0){
+            position = 0;
+        }
 
-});
+        storiesContainer.style.transform =
+            `translateX(-${position}px)`;
 
-storiesContainer.addEventListener("mousemove",function(e){
+    });
 
-    if(!isDragging) return;
+    document.addEventListener("mouseup",function(){
 
-    storiesContainer.scrollLeft =
-    scrollStart - (e.pageX - startX);
+        isDragging = false;
 
-});
+        storiesContainer.style.cursor = "grab";
 
-/* السحب بالهاتف */
+    });
 
-storiesContainer.addEventListener("touchstart",function(e){
+    /* ===== Touch Drag ===== */
 
-    isDragging = true;
+    storiesContainer.addEventListener("touchstart",function(e){
 
-    startX = e.touches[0].clientX;
+        isDragging = true;
 
-    scrollStart = storiesContainer.scrollLeft;
+        startX = e.touches[0].clientX;
 
-});
+        startPosition = position;
 
-storiesContainer.addEventListener("touchmove",function(e){
+    },{passive:true});
 
-    storiesContainer.scrollLeft =
-    scrollStart - (e.touches[0].clientX - startX);
+    storiesContainer.addEventListener("touchmove",function(e){
 
-});
+        if(!isDragging) return;
 
-storiesContainer.addEventListener("touchend",function(){
+        position = startPosition - (e.touches[0].clientX - startX);
 
-    isDragging = false;
+        if(position < 0){
+            position = 0;
+        }
 
-});
+        storiesContainer.style.transform =
+            `translateX(-${position}px)`;
+
+    },{passive:true});
+
+    storiesContainer.addEventListener("touchend",function(){
+
+        isDragging = false;
+
+    });
 
 }
