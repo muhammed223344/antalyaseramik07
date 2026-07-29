@@ -1272,89 +1272,74 @@ window.addEventListener("popstate",function(){
    STORIES AUTO LOOP
 ========================================= */
 
-if(storiesContainer){
+if (storiesContainer) {
 
-    const wrapper = document.querySelector(".stories-wrapper");
+    const track = document.querySelector(".stories-track");
 
-    const firstHalf = storiesContainer.scrollWidth / 2;
-
-    let offset = 0;
-
-    let speed = 0.45;
+    let position = 0;
+    const speed = 0.45;
 
     let dragging = false;
-
     let startX = 0;
+    let startPosition = 0;
 
-    let startOffset = 0;
+    const originalWidth = storiesContainer.scrollWidth;
 
-    function loop(){
+    function animate() {
 
-        if(!dragging){
+        if (!dragging) {
 
-            offset += speed;
+            position += speed;
 
-            if(offset >= firstHalf){
-
-                offset = 0;
-
+            if (position >= originalWidth) {
+                position = 0;
             }
 
-            storiesContainer.style.transform =
-                `translateX(-${offset}px)`;
+            track.style.transform = `translateX(-${position}px)`;
 
         }
 
-        requestAnimationFrame(loop);
+        requestAnimationFrame(animate);
 
     }
 
-    loop();
+    animate();
 
+    /* ===== لمس ===== */
 
-    /* ===== Touch ===== */
-
-    wrapper.addEventListener("touchstart",function(e){
+    track.addEventListener("touchstart", function(e){
 
         dragging = true;
-
         startX = e.touches[0].clientX;
+        startPosition = position;
 
-        startOffset = offset;
+    }, {passive:true});
 
-    },{passive:true});
-
-
-    wrapper.addEventListener("touchmove",function(e){
+    track.addEventListener("touchmove", function(e){
 
         if(!dragging) return;
 
         const dx = e.touches[0].clientX - startX;
 
-        offset = startOffset - dx;
+        position = startPosition - dx;
 
-        if(offset < 0){
-
-            offset += firstHalf;
-
+        if(position < 0){
+            position += originalWidth;
         }
 
-        if(offset >= firstHalf){
-
-            offset -= firstHalf;
-
+        if(position >= originalWidth){
+            position -= originalWidth;
         }
 
-        storiesContainer.style.transform =
-            `translateX(-${offset}px)`;
+        track.style.transform = `translateX(-${position}px)`;
 
-    },{passive:true});
+    }, {passive:true});
 
-
-    wrapper.addEventListener("touchend",function(){
+    track.addEventListener("touchend", function(){
 
         dragging = false;
 
     });
 
 }
+
