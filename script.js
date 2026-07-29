@@ -1304,19 +1304,28 @@ if (storiesContainer) {
     let startX = 0;
     let startScroll = 0;
 
+    // اجعل بداية الشريط في منتصف المحتوى
+    storiesContainer.scrollLeft = storiesContainer.scrollWidth / 2;
+
     function autoScroll(){
 
         if(!isDragging){
 
             storiesContainer.scrollLeft += speed;
 
+            // عند الوصول للنهاية انتقل لنفس المكان بدون فراغ
             if(
                 storiesContainer.scrollLeft >=
                 storiesContainer.scrollWidth - storiesContainer.clientWidth
             ){
+                storiesContainer.scrollLeft =
+                    storiesContainer.scrollWidth / 2;
+            }
 
-                storiesContainer.scrollLeft = 0;
-
+            // عند الرجوع لبداية النسخة
+            if(storiesContainer.scrollLeft <= 0){
+                storiesContainer.scrollLeft =
+                    storiesContainer.scrollWidth / 2;
             }
 
         }
@@ -1336,6 +1345,8 @@ if (storiesContainer) {
         startX = e.pageX;
         startScroll = storiesContainer.scrollLeft;
 
+        cancelAnimationFrame(autoMove);
+
     });
 
     document.addEventListener("mousemove",function(e){
@@ -1343,13 +1354,18 @@ if (storiesContainer) {
         if(!isDragging) return;
 
         storiesContainer.scrollLeft =
-        startScroll - (e.pageX - startX);
+            startScroll - (e.pageX - startX);
 
     });
 
     document.addEventListener("mouseup",function(){
 
-        isDragging = false;
+        if(isDragging){
+
+            isDragging = false;
+            autoScroll();
+
+        }
 
     });
 
@@ -1362,6 +1378,8 @@ if (storiesContainer) {
         startX = e.touches[0].clientX;
         startScroll = storiesContainer.scrollLeft;
 
+        cancelAnimationFrame(autoMove);
+
     },{passive:true});
 
     storiesContainer.addEventListener("touchmove",function(e){
@@ -1369,13 +1387,18 @@ if (storiesContainer) {
         if(!isDragging) return;
 
         storiesContainer.scrollLeft =
-        startScroll - (e.touches[0].clientX - startX);
+            startScroll - (e.touches[0].clientX - startX);
 
     },{passive:true});
 
     storiesContainer.addEventListener("touchend",function(){
 
-        isDragging = false;
+        if(isDragging){
+
+            isDragging = false;
+            autoScroll();
+
+        }
 
     });
 
