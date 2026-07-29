@@ -1735,17 +1735,25 @@ color:#0A58CA;
 }
 
 .stories-track{
-    display:flex;
-    width:max-content;
+    display:block;
+    width:100%;
 }
 
 .stories-container{
     display:flex;
     gap:18px;
-    align-items:center;
+    overflow-x:auto;
+    overflow-y:hidden;
+    padding:12px 6px 18px;
+    scrollbar-width:none;
+    -ms-overflow-style:none;
     user-select:none;
     touch-action:pan-x;
     cursor:grab;
+}
+
+.stories-container::-webkit-scrollbar{
+    display:none;
 }
 
 .story-item{
