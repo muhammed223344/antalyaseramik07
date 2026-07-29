@@ -1040,7 +1040,29 @@ const storiesContainer = document.getElementById("storiesContainer");
 
 if (storiesContainer) {
 
-    stories.slice().reverse().forEach((story,index)=>{
+    storiesContainer.innerHTML = "";
+
+    // إنشاء العناصر الأصلية
+    stories.forEach((story)=>{
+
+        const item = document.createElement("div");
+
+        item.className = "story-item";
+
+        item.innerHTML = `
+            <div class="story-ring">
+                <img src="${story.avatar}" alt="${story.city}">
+            </div>
+
+            <div class="story-title">${story.city}</div>
+        `;
+
+        storiesContainer.appendChild(item);
+
+    });
+
+    // إنشاء نسخة ثانية مباشرة (للحركة اللانهائية)
+    stories.forEach((story)=>{
 
         const item = document.createElement("div");
 
