@@ -1270,81 +1270,102 @@ window.addEventListener("popstate", function(){
 });
 
 /* ===========================
-   Stories Auto Scroll
+Stories Auto Scroll + Drag
 =========================== */
 
 if (storiesContainer) {
 
-    let isDown = false;
+let speed = 0.5;
+let autoMove;
+let isDragging = false;
 
-    let startX;
-    let scrollLeft;
+function startAuto(){
 
-    storiesContainer.addEventListener("mousedown", function(e){
+    cancelAnimationFrame(autoMove);
 
-        isDown = true;
+    function loop(){
 
-        storiesContainer.classList.add("active");
+        if(!isDragging){
 
-        startX = e.pageX - storiesContainer.offsetLeft;
+            storiesContainer.scrollLeft += speed;
 
-        scrollLeft = storiesContainer.scrollLeft;
+            if(
+                storiesContainer.scrollLeft >=
+                storiesContainer.scrollWidth - storiesContainer.clientWidth
+            ){
 
-    });
+                storiesContainer.scrollLeft = 0;
 
-    storiesContainer.addEventListener("mouseleave", function(){
+            }
 
-        isDown = false;
+        }
 
-        storiesContainer.classList.remove("active");
+        autoMove = requestAnimationFrame(loop);
 
-    });
+    }
 
-    storiesContainer.addEventListener("mouseup", function(){
+    loop();
 
-        isDown = false;
+}
 
-        storiesContainer.classList.remove("active");
+startAuto();
 
-    });
+/* السحب بالماوس */
 
-    storiesContainer.addEventListener("mousemove", function(e){
+let startX = 0;
+let scrollStart = 0;
 
-        if (!isDown) return;
+storiesContainer.addEventListener("mousedown",function(e){
 
-        e.preventDefault();
+    isDragging = true;
 
-        const x = e.pageX - storiesContainer.offsetLeft;
+    startX = e.pageX;
 
-        const walk = (x - startX) * 2;
+    scrollStart = storiesContainer.scrollLeft;
 
-        storiesContainer.scrollLeft = scrollLeft - walk;
+});
 
-    });
+document.addEventListener("mouseup",function(){
 
-    /* دعم السحب على الهاتف */
+    isDragging = false;
 
-    let touchStartX = 0;
+});
 
-    let touchScroll = 0;
+storiesContainer.addEventListener("mousemove",function(e){
 
-    storiesContainer.addEventListener("touchstart", function(e){
+    if(!isDragging) return;
 
-        touchStartX = e.touches[0].clientX;
+    storiesContainer.scrollLeft =
+    scrollStart - (e.pageX - startX);
 
-        touchScroll = storiesContainer.scrollLeft;
+});
 
-    });
+/* السحب بالهاتف */
 
-    storiesContainer.addEventListener("touchmove", function(e){
+storiesContainer.addEventListener("touchstart",function(e){
 
-        const move = e.touches[0].clientX;
+    isDragging = true;
 
-        storiesContainer.scrollLeft = touchScroll - (move - touchStartX);
+    startX = e.touches[0].clientX;
 
-    });
+    scrollStart = storiesContainer.scrollLeft;
 
-   }
+});
+
+storiesContainer.addEventListener("touchmove",function(e){
+
+    storiesContainer.scrollLeft =
+    scrollStart - (e.touches[0].clientX - startX);
+
+});
+
+storiesContainer.addEventListener("touchend",function(){
+
+    isDragging = false;
+
+});
+
+}
 /* ===========================
    Stories Auto Move
 =========================== */
