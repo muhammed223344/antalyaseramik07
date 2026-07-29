@@ -1032,12 +1032,14 @@ const stories = [
     image:"Kepez Seramik Ustası.webp",
     city:"Kepez",
     desc:"تنفيذ أعمال السيراميك بمنطقة كيبيز."
-];
+}
 
-const storiesContainer = document.getElementById("storiesContainer");
+];
 /* =========================================
    CREATE STORIES
 ========================================= */
+
+const storiesContainer = document.getElementById("storiesContainer");
 
 if (storiesContainer) {
 
@@ -1064,7 +1066,7 @@ if (storiesContainer) {
 
     });
 
-    // نسخة ثانية للحركة اللانهائية
+    // إنشاء نسخة ثانية للحركة اللانهائية
     stories.forEach((story, index) => {
 
         const item = document.createElement("div");
@@ -1085,7 +1087,7 @@ if (storiesContainer) {
 
     });
 
-}
+                    }
 /* =========================================
    STORY VIEWER
 ========================================= */
@@ -1104,11 +1106,12 @@ viewer.innerHTML = `
     <button class="story-close">✕</button>
 
     <div class="story-top-avatar">
-        <img id="storyAvatar">
+        <img id="storyAvatar" src="">
     </div>
 
     <img id="storyImage"
-         class="story-main-image">
+         class="story-main-image"
+         src="">
 
     <div class="story-info">
 
@@ -1164,14 +1167,14 @@ function openStory(index){
     storyProgress.style.transition = "none";
     storyProgress.style.width = "0%";
 
-    setTimeout(()=>{
+    setTimeout(function(){
 
-        storyProgress.style.transition="width 7s linear";
-        storyProgress.style.width="100%";
+        storyProgress.style.transition = "width 7s linear";
+        storyProgress.style.width = "100%";
 
     },50);
 
-    storyTimer=setTimeout(()=>{
+    storyTimer = setTimeout(function(){
 
         history.back();
 
@@ -1179,9 +1182,9 @@ function openStory(index){
 
 }
 
-document.querySelectorAll(".story-item").forEach(item=>{
+document.querySelectorAll(".story-item").forEach(function(item){
 
-    item.addEventListener("click",()=>{
+    item.addEventListener("click",function(){
 
         openStory(Number(item.dataset.index));
 
@@ -1189,11 +1192,15 @@ document.querySelectorAll(".story-item").forEach(item=>{
 
 });
 
-viewer.querySelector(".story-close").onclick=()=>history.back();
+viewer.querySelector(".story-close").onclick = function(){
 
-viewer.onclick=(e)=>{
+    history.back();
 
-    if(e.target===viewer){
+};
+
+viewer.onclick = function(e){
+
+    if(e.target === viewer){
 
         history.back();
 
@@ -1201,7 +1208,7 @@ viewer.onclick=(e)=>{
 
 };
 
-window.addEventListener("popstate",()=>{
+window.addEventListener("popstate",function(){
 
     if(viewer.classList.contains("active")){
 
@@ -1220,7 +1227,6 @@ imageViewer.className = "image-viewer";
 
 imageViewer.innerHTML = `
 <button class="image-close">✕</button>
-
 <img id="zoomImage">
 `;
 
@@ -1229,7 +1235,7 @@ document.body.appendChild(imageViewer);
 const zoomImage = document.getElementById("zoomImage");
 const imageClose = imageViewer.querySelector(".image-close");
 
-storyImage.addEventListener("click",()=>{
+storyImage.addEventListener("click",function(){
 
     zoomImage.src = storyImage.src;
 
@@ -1239,9 +1245,13 @@ storyImage.addEventListener("click",()=>{
 
 });
 
-imageClose.onclick = ()=>history.back();
+imageClose.onclick=function(){
 
-imageViewer.onclick = (e)=>{
+    history.back();
+
+};
+
+imageViewer.onclick=function(e){
 
     if(e.target===imageViewer){
 
@@ -1251,36 +1261,43 @@ imageViewer.onclick = (e)=>{
 
 };
 
-window.addEventListener("popstate",()=>{
+window.addEventListener("popstate",function(){
 
     imageViewer.classList.remove("active");
 
 });
+
+
 /* =========================================
-   STORIES INFINITE LOOP
+   STORIES AUTO LOOP
 ========================================= */
 
-if (storiesContainer) {
+if(storiesContainer){
 
-    const wrapper = storiesContainer.parentElement;
+    const wrapper = document.querySelector(".stories-wrapper");
+
+    const firstHalf = storiesContainer.scrollWidth / 2;
 
     let offset = 0;
+
     let speed = 0.45;
 
     let dragging = false;
+
     let startX = 0;
+
     let startOffset = 0;
 
-    const halfWidth = storiesContainer.scrollWidth / 2;
+    function loop(){
 
-    function animate() {
-
-        if (!dragging) {
+        if(!dragging){
 
             offset += speed;
 
-            if (offset >= halfWidth) {
+            if(offset >= firstHalf){
+
                 offset = 0;
+
             }
 
             storiesContainer.style.transform =
@@ -1288,24 +1305,27 @@ if (storiesContainer) {
 
         }
 
-        requestAnimationFrame(animate);
+        requestAnimationFrame(loop);
 
     }
 
-    animate();
+    loop();
+
 
     /* ===== Touch ===== */
 
-    wrapper.addEventListener("touchstart", function(e){
+    wrapper.addEventListener("touchstart",function(e){
 
         dragging = true;
 
         startX = e.touches[0].clientX;
+
         startOffset = offset;
 
-    }, {passive:true});
+    },{passive:true});
 
-    wrapper.addEventListener("touchmove", function(e){
+
+    wrapper.addEventListener("touchmove",function(e){
 
         if(!dragging) return;
 
@@ -1314,22 +1334,27 @@ if (storiesContainer) {
         offset = startOffset - dx;
 
         if(offset < 0){
-            offset += halfWidth;
+
+            offset += firstHalf;
+
         }
 
-        if(offset >= halfWidth){
-            offset -= halfWidth;
+        if(offset >= firstHalf){
+
+            offset -= firstHalf;
+
         }
 
         storiesContainer.style.transform =
             `translateX(-${offset}px)`;
 
-    }, {passive:true});
+    },{passive:true});
 
-    wrapper.addEventListener("touchend", function(){
+
+    wrapper.addEventListener("touchend",function(){
 
         dragging = false;
 
     });
 
-                             }
+}
