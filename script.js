@@ -972,3 +972,364 @@ if (typingTitle) {
     typeEffect();
 
 }
+/* =========================================
+   STORIES DATA
+========================================= */
+
+const stories = [
+
+{
+    avatar:"Muratpaşa Fayans Ustası.webp",
+    image:"Muratpaşa Fayans Ustası.webp",
+    city:"Muratpaşa",
+    desc:"تركيب سيراميك وبورسلان باحترافية داخل منطقة مراد باشا."
+},
+
+{
+    avatar:"Muratpaşa Seramik Ustası.webp",
+    image:"Muratpaşa Seramik Ustası.webp",
+    city:"Muratpaşa",
+    desc:"تنفيذ أعمال السيراميك بدقة وجودة عالية."
+},
+
+{
+    avatar:"Altıntaş Fayans Ustası.webp",
+    image:"Altıntaş Fayans Ustası.webp",
+    city:"Altıntaş",
+    desc:"أحد أعمالنا المنجزة في منطقة ألطنطاش."
+},
+
+{
+    avatar:"Altıntaş Seramik Ustası.webp",
+    image:"Altıntaş Seramik Ustası.webp",
+    city:"Altıntaş",
+    desc:"تنفيذ احترافي للسيراميك والبورسلان."
+},
+
+{
+    avatar:"Varsak Fayans Ustası.webp",
+    image:"Varsak Fayans Ustası.webp",
+    city:"Varsak",
+    desc:"مشروع جديد داخل منطقة فارصاق."
+},
+
+{
+    avatar:"Varsak Seramik Ustası.webp",
+    image:"Varsak Seramik Ustası.webp",
+    city:"Varsak",
+    desc:"تنفيذ أعمال السيراميك بمنطقة فارصاق."
+},
+
+{
+    avatar:"Kepez Fayans Ustası.webp",
+    image:"Kepez Fayans Ustası.webp",
+    city:"Kepez",
+    desc:"أعمال تركيب الفيانص داخل منطقة كيبيز."
+},
+
+{
+    avatar:"Kepez Seramik Ustası.webp",
+    image:"Kepez Seramik Ustası.webp",
+    city:"Kepez",
+    desc:"تنفيذ أعمال السيراميك بمنطقة كيبيز."
+];
+
+const storiesContainer = document.getElementById("storiesContainer");
+/* =========================================
+   CREATE STORIES
+========================================= */
+
+if (storiesContainer) {
+
+    storiesContainer.innerHTML = "";
+
+    // إنشاء العناصر الأصلية
+    stories.forEach((story, index) => {
+
+        const item = document.createElement("div");
+
+        item.className = "story-item";
+
+        item.dataset.index = index;
+
+        item.innerHTML = `
+            <div class="story-ring">
+                <img src="${story.avatar}" alt="${story.city}">
+            </div>
+
+            <div class="story-title">${story.city}</div>
+        `;
+
+        storiesContainer.appendChild(item);
+
+    });
+
+    // نسخة ثانية للحركة اللانهائية
+    stories.forEach((story, index) => {
+
+        const item = document.createElement("div");
+
+        item.className = "story-item";
+
+        item.dataset.index = index;
+
+        item.innerHTML = `
+            <div class="story-ring">
+                <img src="${story.avatar}" alt="${story.city}">
+            </div>
+
+            <div class="story-title">${story.city}</div>
+        `;
+
+        storiesContainer.appendChild(item);
+
+    });
+
+}
+/* =========================================
+   STORY VIEWER
+========================================= */
+
+const viewer = document.createElement("div");
+
+viewer.className = "story-viewer";
+
+viewer.innerHTML = `
+<div class="story-card">
+
+    <div class="story-progress">
+        <span id="storyProgress"></span>
+    </div>
+
+    <button class="story-close">✕</button>
+
+    <div class="story-top-avatar">
+        <img id="storyAvatar">
+    </div>
+
+    <img id="storyImage"
+         class="story-main-image">
+
+    <div class="story-info">
+
+        <div id="storyCity"
+             class="story-city"></div>
+
+        <div id="storyDesc"
+             class="story-desc"></div>
+
+    </div>
+
+</div>
+`;
+
+document.body.appendChild(viewer);
+
+const storyAvatar = document.getElementById("storyAvatar");
+const storyImage = document.getElementById("storyImage");
+const storyCity = document.getElementById("storyCity");
+const storyDesc = document.getElementById("storyDesc");
+const storyProgress = document.getElementById("storyProgress");
+
+let storyTimer = null;
+
+function closeStory(){
+
+    viewer.classList.remove("active");
+
+    clearTimeout(storyTimer);
+
+    storyProgress.style.transition = "none";
+    storyProgress.style.width = "0%";
+
+    document.body.style.overflow = "";
+
+}
+
+function openStory(index){
+
+    const data = stories[index];
+
+    storyAvatar.src = data.avatar;
+    storyImage.src = data.image;
+    storyCity.textContent = data.city;
+    storyDesc.textContent = data.desc;
+
+    viewer.classList.add("active");
+
+    document.body.style.overflow = "hidden";
+
+    history.pushState({story:true},"");
+
+    storyProgress.style.transition = "none";
+    storyProgress.style.width = "0%";
+
+    setTimeout(()=>{
+
+        storyProgress.style.transition="width 7s linear";
+        storyProgress.style.width="100%";
+
+    },50);
+
+    storyTimer=setTimeout(()=>{
+
+        history.back();
+
+    },7000);
+
+}
+
+document.querySelectorAll(".story-item").forEach(item=>{
+
+    item.addEventListener("click",()=>{
+
+        openStory(Number(item.dataset.index));
+
+    });
+
+});
+
+viewer.querySelector(".story-close").onclick=()=>history.back();
+
+viewer.onclick=(e)=>{
+
+    if(e.target===viewer){
+
+        history.back();
+
+    }
+
+};
+
+window.addEventListener("popstate",()=>{
+
+    if(viewer.classList.contains("active")){
+
+        closeStory();
+
+    }
+
+});
+/* =========================================
+   STORY IMAGE ZOOM
+========================================= */
+
+const imageViewer = document.createElement("div");
+
+imageViewer.className = "image-viewer";
+
+imageViewer.innerHTML = `
+<button class="image-close">✕</button>
+
+<img id="zoomImage">
+`;
+
+document.body.appendChild(imageViewer);
+
+const zoomImage = document.getElementById("zoomImage");
+const imageClose = imageViewer.querySelector(".image-close");
+
+storyImage.addEventListener("click",()=>{
+
+    zoomImage.src = storyImage.src;
+
+    imageViewer.classList.add("active");
+
+    history.pushState({zoom:true},"");
+
+});
+
+imageClose.onclick = ()=>history.back();
+
+imageViewer.onclick = (e)=>{
+
+    if(e.target===imageViewer){
+
+        history.back();
+
+    }
+
+};
+
+window.addEventListener("popstate",()=>{
+
+    imageViewer.classList.remove("active");
+
+});
+/* =========================================
+   STORIES INFINITE LOOP
+========================================= */
+
+if (storiesContainer) {
+
+    const wrapper = storiesContainer.parentElement;
+
+    let offset = 0;
+    let speed = 0.45;
+
+    let dragging = false;
+    let startX = 0;
+    let startOffset = 0;
+
+    const halfWidth = storiesContainer.scrollWidth / 2;
+
+    function animate() {
+
+        if (!dragging) {
+
+            offset += speed;
+
+            if (offset >= halfWidth) {
+                offset = 0;
+            }
+
+            storiesContainer.style.transform =
+                `translateX(-${offset}px)`;
+
+        }
+
+        requestAnimationFrame(animate);
+
+    }
+
+    animate();
+
+    /* ===== Touch ===== */
+
+    wrapper.addEventListener("touchstart", function(e){
+
+        dragging = true;
+
+        startX = e.touches[0].clientX;
+        startOffset = offset;
+
+    }, {passive:true});
+
+    wrapper.addEventListener("touchmove", function(e){
+
+        if(!dragging) return;
+
+        const dx = e.touches[0].clientX - startX;
+
+        offset = startOffset - dx;
+
+        if(offset < 0){
+            offset += halfWidth;
+        }
+
+        if(offset >= halfWidth){
+            offset -= halfWidth;
+        }
+
+        storiesContainer.style.transform =
+            `translateX(-${offset}px)`;
+
+    }, {passive:true});
+
+    wrapper.addEventListener("touchend", function(){
+
+        dragging = false;
+
+    });
+
+                             }
