@@ -1735,57 +1735,29 @@ color:#0A58CA;
 .stories-container{
     display:flex;
     gap:18px;
+
     overflow-x:auto;
     overflow-y:hidden;
+
     scroll-behavior:smooth;
+
+    -webkit-overflow-scrolling:touch;
+
+    touch-action:pan-x;
+
+    white-space:nowrap;
+
     padding:10px 5px 15px;
+
+    cursor:grab;
+
+    scrollbar-width:none;
 }
 
 .stories-container::-webkit-scrollbar{
     display:none;
 }
 
-.stories-container{
-    scrollbar-width:none;
-}
-/* =========================================
-   STORIES SECTION
-========================================= */
-
-.stories-section{
-    width:100%;
-    padding:35px 15px;
-    background:#fff;
-}
-
-.stories-section h2{
-    text-align:center;
-    font-size:30px;
-    color:#0A58CA;
-    margin-bottom:25px;
-    font-weight:800;
-}
-
-.stories-wrapper{
-    overflow:hidden;
-}
-
-.stories-container{
-    display:flex;
-    gap:18px;
-    overflow-x:auto;
-    overflow-y:hidden;
-    scroll-behavior:smooth;
-    padding:10px 5px 15px;
-}
-
-.stories-container::-webkit-scrollbar{
-    display:none;
-}
-
-.stories-container{
-    scrollbar-width:none;
-    }
 /* ===========================
    Stories Scroll
 =========================== */
