@@ -1270,43 +1270,94 @@ window.addEventListener("popstate", function(){
 });
 
 /* ===========================
-   Stories Infinite Slider
+   Stories Auto Slider
 =========================== */
 
 if (storiesContainer) {
 
-    // تكرار العناصر لإنشاء دوران لا نهائي
-    storiesContainer.innerHTML += storiesContainer.innerHTML;
-
-    let speed = 0.7;
-    let position = 0;
+    let speed = 0.5;
+    let autoMove;
 
     let isDragging = false;
     let startX = 0;
-    let startPosition = 0;
+    let startScroll = 0;
 
-    function animateStories(){
+    function autoScroll(){
 
         if(!isDragging){
 
-            position += speed;
+            storiesContainer.scrollLeft += speed;
 
-            if(position >= storiesContainer.scrollWidth / 2){
+            if(
+                storiesContainer.scrollLeft >=
+                storiesContainer.scrollWidth - storiesContainer.clientWidth
+            ){
 
-                position = 0;
+                storiesContainer.scrollLeft = 0;
 
             }
 
-            storiesContainer.style.transform =
-                `translateX(-${position}px)`;
-
         }
 
-        requestAnimationFrame(animateStories);
+        autoMove = requestAnimationFrame(autoScroll);
 
     }
 
-    animateStories();
+    autoScroll();
+
+    /* ===== Mouse ===== */
+
+    storiesContainer.addEventListener("mousedown",function(e){
+
+        isDragging = true;
+
+        startX = e.pageX;
+        startScroll = storiesContainer.scrollLeft;
+
+    });
+
+    document.addEventListener("mousemove",function(e){
+
+        if(!isDragging) return;
+
+        storiesContainer.scrollLeft =
+        startScroll - (e.pageX - startX);
+
+    });
+
+    document.addEventListener("mouseup",function(){
+
+        isDragging = false;
+
+    });
+
+    /* ===== Touch ===== */
+
+    storiesContainer.addEventListener("touchstart",function(e){
+
+        isDragging = true;
+
+        startX = e.touches[0].clientX;
+        startScroll = storiesContainer.scrollLeft;
+
+    },{passive:true});
+
+    storiesContainer.addEventListener("touchmove",function(e){
+
+        if(!isDragging) return;
+
+        storiesContainer.scrollLeft =
+        startScroll - (e.touches[0].clientX - startX);
+
+    },{passive:true});
+
+    storiesContainer.addEventListener("touchend",function(){
+
+        isDragging = false;
+
+    });
+
+}
 
     /* ===== Mouse Drag ===== */
 
