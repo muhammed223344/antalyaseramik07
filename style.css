@@ -1767,7 +1767,7 @@ color:#0A58CA;
     height:82px;
     border-radius:50%;
     padding:3px;
-    background:linear-gradient(135deg,#007F4E,#D4AF37,#007F4E);
+    background:linear-gradient(135deg,#008585,#D4AF37,#008585);
     box-shadow:0 0 12px rgba(255,215,0,.45);
 }
 
@@ -1850,7 +1850,7 @@ color:#0A58CA;
     width:75px;
     height:75px;
     border-radius:50%;
-    border:4px solid #007F4E;
+    border:4px solid #008585;
     object-fit:cover;
 }
 
@@ -1866,7 +1866,7 @@ color:#0A58CA;
 }
 
 .story-city{
-    color:#007F4E;
+    color:#008585;
     font-size:26px;
     font-weight:800;
     margin-bottom:12px;
