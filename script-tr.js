@@ -57,12 +57,12 @@ window.addEventListener("load", () => {
 // Banyo Slaytı (Bathroom Slider)
 // =========================================================
 const bathroomImages = [
-    "bathroom1.png",
-    "bathroom2.png",
-    "bathroom3.png",
-    "bathroom4.png",
-    "bathroom5.png",
-    "bathroom6.png"
+    "antalya-fayans-ustasi-banyo-seramik.webp",
+    "antalya-banyo-fayans-doseme.webp",
+    "antalya-seramik-doseme-hizmeti.webp",
+    "antalya-porselen-fayans-doseme.webp",
+    "antalya-banyo-zemin-seramik.webp",
+    "antalya-banyo-tadilati-fayans.webp"
 ];
 
 /* Banyo resimlerini önceden yükleme (Preload) */
