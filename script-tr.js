@@ -232,14 +232,19 @@ player.addEventListener("click",function(){
 // =========================================================
 // Havuz Slaytı (Pool Slider)
 // =========================================================
+
 const poolImages = [
-    "pool1.jpg",
-    "pool2.jpg",
-    "pool3.jpg",
-    "pool4.jpg",
-    "pool5.jpg",
-    "pool6.jpg",
-    "pool7.jpg"
+    "antalya-havuz-seramik-doseme-ustasi.webp",
+    "antalya-havuz-seramik-yenileme.webp",
+    "antalya-havuz-seramik-tasarimi.webp",
+    "antalya-havuz-fayans-doseme.webp",
+    "antalya-havuz-seramik-kaplama.webp",
+    "antalya-havuz-seramik-mozaik.webp",
+    "antalya-profesyonel-havuz-seramik.webp",
+    "antalya-havuz-seramik-uygulamasi.webp",
+    "antalya-yuzme-havuzu-seramik.webp",
+    "antalya-havuz-fayans-kaplama.webp",
+    "antalya-luks-havuz-seramik.webp"
 ];
 
 let poolIndex = 0;
