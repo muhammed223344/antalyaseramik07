@@ -450,28 +450,7 @@ poolSlider.addEventListener("click", function () {
     });
 
 });
-/* ===========================
-   Google Translate
-=========================== */
 
-function changeLanguage(lang){
-
-const interval = setInterval(function(){
-
-const select = document.querySelector(".goog-te-combo");
-
-if(select){
-
-select.value = lang;
-select.dispatchEvent(new Event("change"));
-
-clearInterval(interval);
-
-}
-
-},500);
-
-}
 /* ===========================
    LIVE CLOCK
 =========================== */
