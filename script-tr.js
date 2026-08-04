@@ -125,7 +125,7 @@ if (bathroomSlider) {
 =========================== */
 
 const videos = [
-    "video1.mp4",
+    "video1.webp.mp4",
     "video2.mp4",
     "video3.mp4",
     "video4.mp4",
