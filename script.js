@@ -218,11 +218,7 @@ function preloadVideo(index){
 
 function preloadAround(index){
 
-    preloadVideo(index);
-
     preloadVideo(index + 1);
-
-    preloadVideo(index - 1);
 
 }
 
