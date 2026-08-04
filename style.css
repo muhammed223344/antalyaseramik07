@@ -1312,41 +1312,51 @@ color:#0A58CA;
 =========================== */
 
 .menu-toggle{
+
     position:absolute;
+
     top:14px;
+
     left:20px;
 
-    width:60px;
-    height:60px;
+    width:48px;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    height:48px;
 
     border:none;
-    border-radius:50%;
+
+    border-radius:12px;
 
     background:#0A58CA;
+
     color:#fff;
 
     font-size:32px;
+
     font-weight:bold;
 
     cursor:pointer;
+
     z-index:9999;
 
-    box-shadow:0 6px 18px rgba(0,0,0,.25);
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.18);
+
     transition:.3s;
+
 }
 
 .menu-toggle:hover{
-    transform:scale(1.08);
-    background:#084298;
-}
 
-.menu-toggle i{
-    font-size:30px;
-    line-height:1;
+    background:#084298;
+
+    transform:scale(1.05);
+
 }
 /* ===========================
    SIDE MENU
