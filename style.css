@@ -1854,7 +1854,7 @@ transform:scale(1.03);
 .stories-hint{
     text-align:center;
     margin-top:8px;
-    color:#888;
+    color:#0A58CA;
     font-size:15px;
     font-weight:700;
     animation:storiesHintMove 1.5s ease-in-out infinite;
