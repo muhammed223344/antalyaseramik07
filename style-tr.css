@@ -689,7 +689,7 @@ section {
 }
 
 /* ===========================
-   CANLI SAAT (LIVE CLOCK)
+   LIVE CLOCK
 =========================== */
 
 .live-clock {
@@ -701,41 +701,42 @@ section {
     align-items: center;
     z-index: 9999;
     font-family: 'Digital-7', monospace;
-    direction: ltr; /* تظل LTR لأن الأرقام والوقت يقرآن من اليسار دائماً */
+    direction: ltr;
 }
 
-/* Saat (Time) */
-.live-clock .time {
-    font-size: 17px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-align: center;
-    animation: clockColor 2s infinite alternate;
+/* Time */
+.live-clock .time{
+    font-size:17px;
+    font-weight:700;
+    letter-spacing:2px;
+    text-align:center;
+    animation:clockColor 2s infinite alternate;
 }
 
-@keyframes clockColor {
-    0% {
-        color: #FFD700;
+@keyframes clockColor{
+
+    0%{
+        color:#8B6508;
         text-shadow:
-            0 0 5px rgba(255,215,0,.6),
-            0 0 10px rgba(255,215,0,.4);
+        0 0 2px rgba(139,101,8,.25);
     }
-    100% {
-        color: #38BDF8;
+
+    100%{
+        color:#003E8A;
         text-shadow:
-            0 0 5px rgba(56,189,248,.6),
-            0 0 10px rgba(56,189,248,.4);
+        0 0 2px rgba(0,62,138,.25);
     }
+
 }
 
-/* Tarih (Date) */
-.live-clock .date {
-    margin-top: 4px;
-    font-size: 8px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-align: center;
-    animation: clockColor 2s infinite alternate;
+/* Date */
+.live-clock .date{
+    margin-top:4px;
+    font-size:8px;
+    font-weight:700;
+    letter-spacing:1px;
+    text-align:center;
+    animation:clockColor 2s infinite alternate;
 }
 
 /* ===========================
