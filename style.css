@@ -1881,3 +1881,47 @@ transform:scale(1.03);
     }
 
 }
+/* ===== Extra Links ===== */
+
+.extra-links{
+    background:#fff;
+    padding:40px 20px;
+    text-align:center;
+}
+
+.extra-links h3{
+    font-size:28px;
+    font-weight:800;
+    color:#0A58CA;
+    margin-bottom:25px;
+}
+
+.extra-links ul{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    align-items:center;
+}
+
+.extra-links li{
+    width:100%;
+    max-width:420px;
+}
+
+.extra-links a{
+    display:block;
+    padding:16px 22px;
+    background:#f8f9fb;
+    border-radius:14px;
+    color:#222;
+    font-size:20px;
+    font-weight:700;
+    border:1px solid #e6e6e6;
+    transition:.3s;
+}
+
+.extra-links a:hover{
+    background:#0A58CA;
+    color:#fff;
+    transform:translateY(-2px);
+}
