@@ -1881,3 +1881,88 @@ transform:scale(1.03);
     }
 
 }
+/* ===========================
+   EXTRA LINKS - PREMIUM
+=========================== */
+
+.extra-links{
+    width:92%;
+    max-width:900px;
+    margin:60px auto 40px;
+    padding:35px 30px;
+    background:#f8f9fb;
+    border-radius:24px;
+    text-align:center;
+    direction:rtl;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    border:1px solid #e9edf5;
+}
+
+.extra-links h3{
+    margin:0 0 28px;
+    color:#0A58CA;
+    font-size:30px;
+    font-weight:900;
+    letter-spacing:.5px;
+}
+
+.extra-links ul{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:14px 20px;
+    padding:0;
+    margin:0;
+}
+
+.extra-links li{
+    margin:0;
+}
+
+.extra-links li a{
+    display:block;
+    width:100%;
+    padding:14px 18px;
+    border-radius:14px;
+    background:#fff;
+    color:#333;
+    font-size:19px;
+    font-weight:700;
+    text-align:center;
+    border:1px solid #e5e9f0;
+    box-shadow:0 4px 12px rgba(0,0,0,.05);
+    transition:.3s ease;
+}
+
+.extra-links li a:hover{
+    color:#0A58CA;
+    transform:translateY(-3px);
+    border-color:#FFD700;
+    box-shadow:
+        0 8px 20px rgba(10,88,202,.12),
+        0 0 10px rgba(255,215,0,.18);
+}
+
+/* الموبايل */
+@media(max-width:768px){
+
+    .extra-links{
+        width:92%;
+        padding:28px 18px;
+        margin:45px auto 30px;
+    }
+
+    .extra-links h3{
+        font-size:28px;
+        margin-bottom:22px;
+    }
+
+    .extra-links ul{
+        grid-template-columns:1fr;
+        gap:12px;
+    }
+
+    .extra-links li a{
+        font-size:19px;
+        padding:15px 12px;
+    }
+}
