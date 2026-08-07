@@ -1907,3 +1907,8 @@ transform:scale(1.03);
     color:#444;
     font-size:21px;
 }
+section.extra-links ul li a{
+    font-size:22px !important;
+    font-weight:800 !important;
+    color:#333 !important;
+}
