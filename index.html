@@ -621,141 +621,106 @@ STORIES
 </body>
 
 </html>
-<!-- ==============================
+<!-- =========================
      FLOATING PROFILE
-================================ -->
+========================= -->
 
-<div class="profile-float" id="profileFloat">
-
-    <div class="profile-float-ring ring-one"></div>
-    <div class="profile-float-ring ring-two"></div>
+<div class="floating-profile" id="profileOpen">
+    <div class="floating-rings"></div>
 
     <img
         src="Antalya fayans ustası arıyor.jpg"
         alt="Mehmet Ali Usta"
-        class="profile-float-image"
+        class="floating-profile-img"
     >
-
 </div>
 
 
-<!-- ==============================
+<!-- =========================
      PROFILE CARD
-================================ -->
+========================= -->
 
-<div class="profile-modal" id="profileModal">
+<div class="profile-overlay" id="profileOverlay">
 
     <div class="profile-card">
 
-        <button
-            type="button"
-            class="profile-close"
-            id="profileClose"
-            aria-label="إغلاق"
-        >
-            ×
+        <button class="profile-close" id="profileClose">
+            ✕
         </button>
 
+        <!-- الصورة الشخصية -->
+        <div class="profile-avatar">
 
-        <!-- صورة محمد -->
-
-        <div class="profile-photo-box">
-
-            <div class="profile-photo-ring photo-ring-one"></div>
-            <div class="profile-photo-ring photo-ring-two"></div>
+            <span class="profile-ring ring-1"></span>
+            <span class="profile-ring ring-2"></span>
 
             <img
                 src="Antalya fayans ustası arıyor.jpg"
-                alt="Mehmet Ali Usta
-              "
-                class="profile-photo"
+                alt="Mehmet Ali Usta"
             >
 
         </div>
 
 
         <!-- الاسم -->
-
-        <h2 class="profile-name profile-animation profile-item-1">
-             Mehmet Ali Usta
-          
+        <h2 class="profile-name profile-item">
+            Mehmet Ali Usta
         </h2>
 
 
         <!-- المهنة -->
-
-        <div class="profile-job profile-animation profile-item-2">
+        <div class="profile-job profile-item">
             Fayans & Seramik Ustası
         </div>
 
 
         <!-- الموقع -->
-
-        <div class="profile-location profile-animation profile-item-3">
-
-            <span class="profile-icon">📍</span>
-
-            Antalya ve çevresinde hizmet
-
+        <div class="profile-location profile-item">
+            📍 Antalya ve çevresinde hizmet
         </div>
 
 
-        <!-- الهاتف -->
-
+        <!-- البريد -->
         <a
-            href="tel:05319667732"
-            class="profile-contact profile-animation profile-item-4"
+            href="mailto:info@antalyafayansustasi.com"
+            class="profile-email profile-item"
         >
-
-            <span>📞</span>
-
-            <span>0531 966 77 32</span>
-
+            ✉️ info@antalyafayansustasi.com
         </a>
 
 
-        <!-- البريد -->
-
+        <!-- الهاتف -->
         <a
-            href="mailto:info@antalyafayansustasi.com"
-            class="profile-contact profile-animation profile-item-5"
+            href="tel:05319667732"
+            class="profile-phone profile-item"
         >
-
-            <span>✉️</span>
-
-            <span>info@antalyafayansustasi.com</span>
-
+            📞 0531 966 77 32
         </a>
 
 
         <!-- النبذة -->
-
-        <p class="profile-description profile-animation profile-item-6">
-
-            Antalya'da fayans ve seramik döşeme hizmetleri sunan
-            bir ustayım. Banyo, mutfak, balkon ve teras gibi
-            alanlarda temiz, düzgün ve titiz çalışmaya önem veriyorum.
-
+        <p class="profile-description profile-item">
+            Antalya'da fayans ve seramik döşeme hizmetleri sunan bir ustayım.
+            Banyo, mutfak, balkon ve teras gibi alanlarda temiz, düzgün ve
+            titiz çalışmaya önem veriyorum.
         </p>
 
 
         <!-- أزرار التواصل -->
-
-        <div class="profile-buttons profile-animation profile-item-7">
+        <div class="profile-buttons profile-item">
 
             <a
                 href="tel:05319667732"
-                class="profile-button profile-call"
+                class="profile-call"
             >
                 📞 Ara
             </a>
-
 
             <a
                 href="https://wa.me/905319667732"
                 target="_blank"
                 rel="noopener"
-                class="profile-button profile-whatsapp"
+                class="profile-whatsapp"
             >
                 WhatsApp
             </a>
