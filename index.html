@@ -616,43 +616,31 @@ STORIES
     </div>
 
 </div>
-<script src="script.js"></script>
-
-</body>
-
-</html>
-<!-- =========================
+  <!-- =========================
      FLOATING PROFILE
 ========================= -->
 
-<div class="floating-profile" id="profileOpen">
-    <div class="floating-rings"></div>
-
+<div id="profileFloating" class="profile-floating">
     <img
         src="Antalya fayans ustası arıyor.jpg"
         alt="Mehmet Ali Usta"
-        class="floating-profile-img"
     >
 </div>
-
 
 <!-- =========================
      PROFILE CARD
 ========================= -->
 
-<div class="profile-overlay" id="profileOverlay">
+<div id="profileOverlay" class="profile-overlay">
 
     <div class="profile-card">
 
-        <button class="profile-close" id="profileClose">
-            ✕
-        </button>
+        <button id="profileClose" class="profile-close">×</button>
 
-        <!-- الصورة الشخصية -->
         <div class="profile-avatar">
 
-            <span class="profile-ring ring-1"></span>
-            <span class="profile-ring ring-2"></span>
+            <span></span>
+            <span></span>
 
             <img
                 src="Antalya fayans ustası arıyor.jpg"
@@ -661,53 +649,39 @@ STORIES
 
         </div>
 
-
-        <!-- الاسم -->
-        <h2 class="profile-name profile-item">
+        <h2 class="profile-name">
             Mehmet Ali Usta
         </h2>
 
-
-        <!-- المهنة -->
-        <div class="profile-job profile-item">
+        <div class="profile-job">
             Fayans & Seramik Ustası
         </div>
 
-
-        <!-- الموقع -->
-        <div class="profile-location profile-item">
+        <div class="profile-location">
             📍 Antalya ve çevresinde hizmet
         </div>
 
-
-        <!-- البريد -->
         <a
+            class="profile-email"
             href="mailto:info@antalyafayansustasi.com"
-            class="profile-email profile-item"
         >
             ✉️ info@antalyafayansustasi.com
         </a>
 
-
-        <!-- الهاتف -->
         <a
+            class="profile-phone"
             href="tel:05319667732"
-            class="profile-phone profile-item"
         >
             📞 0531 966 77 32
         </a>
 
-
-        <!-- النبذة -->
-        <p class="profile-description profile-item">
-            Antalya'da fayans ve seramik döşeme hizmetleri sunan bir ustayım.
-            Banyo, mutfak, balkon ve teras gibi alanlarda temiz, düzgün ve
-            titiz çalışmaya önem veriyorum.
+        <p class="profile-bio">
+            Antalya'da fayans ve seramik döşeme hizmetleri sunan
+            bir ustayım. Banyo, mutfak, balkon ve teras gibi
+            alanlarda temiz, düzgün ve titiz çalışmaya önem veriyorum.
         </p>
 
-
-        <!-- أزرار التواصل -->
-        <div class="profile-buttons profile-item">
+        <div class="profile-buttons">
 
             <a
                 href="tel:05319667732"
@@ -719,7 +693,6 @@ STORIES
             <a
                 href="https://wa.me/905319667732"
                 target="_blank"
-                rel="noopener"
                 class="profile-whatsapp"
             >
                 WhatsApp
@@ -730,3 +703,8 @@ STORIES
     </div>
 
 </div>
+<script src="script.js"></script>
+
+</body>
+
+</html>
