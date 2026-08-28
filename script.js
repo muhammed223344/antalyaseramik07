@@ -1296,95 +1296,94 @@ if (storiesContainer) {
     }, { passive:true });
 
 }
-/* =========================================
+/* =========================
    PROFILE CARD
-========================================= */
+========================= */
 
-const profileFloat =
-    document.getElementById("profileFloat");
-
-const profileModal =
-    document.getElementById("profileModal");
-
-const profileClose =
-    document.getElementById("profileClose");
+const profileOpen = document.getElementById("profileOpen");
+const profileOverlay = document.getElementById("profileOverlay");
+const profileClose = document.getElementById("profileClose");
 
 
-/* فتح البطاقة */
+function openProfileCard() {
 
-if(profileFloat && profileModal){
+    if (!profileOverlay) return;
 
-    profileFloat.addEventListener("click", function(){
+    profileOverlay.classList.add("active");
 
-        profileModal.classList.add("active");
+    document.body.style.overflow = "hidden";
 
-        document.body.style.overflow = "hidden";
+    history.pushState(
+        { profileCard: true },
+        ""
+    );
+}
+
+
+function closeProfileCard() {
+
+    if (!profileOverlay) return;
+
+    profileOverlay.classList.remove("active");
+
+    document.body.style.overflow = "";
+}
+
+
+/* الضغط على الصورة العائمة */
+
+if (profileOpen) {
+
+    profileOpen.addEventListener("click", function () {
+
+        openProfileCard();
 
     });
 
 }
 
 
-/* إغلاق البطاقة */
-
-function closeProfileCard(){
-
-    if(!profileModal) return;
-
-    profileModal.classList.remove("active");
-
-    document.body.style.overflow = "";
-
-}
-
-
 /* زر X */
 
-if(profileClose){
+if (profileClose) {
 
-    profileClose.addEventListener(
-        "click",
-        closeProfileCard
-    );
+    profileClose.addEventListener("click", function () {
+
+        history.back();
+
+    });
 
 }
 
 
 /* الضغط خارج البطاقة */
 
-if(profileModal){
+if (profileOverlay) {
 
-    profileModal.addEventListener(
-        "click",
-        function(e){
+    profileOverlay.addEventListener("click", function (e) {
 
-            if(e.target === profileModal){
+        if (e.target === profileOverlay) {
 
-                closeProfileCard();
-
-            }
+            history.back();
 
         }
-    );
+
+    });
 
 }
 
 
-/* زر ESC */
+/* زر الرجوع في الهاتف */
 
-document.addEventListener(
-    "keydown",
-    function(e){
+window.addEventListener("popstate", function () {
 
-        if(
-            e.key === "Escape" &&
-            profileModal &&
-            profileModal.classList.contains("active")
-        ){
+    if (
+        profileOverlay &&
+        profileOverlay.classList.contains("active")
+    ) {
 
-            closeProfileCard();
-
-        }
+        closeProfileCard();
 
     }
-);
+
+});
