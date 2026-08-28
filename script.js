@@ -1296,3 +1296,95 @@ if (storiesContainer) {
     }, { passive:true });
 
 }
+/* =========================================
+   PROFILE CARD
+========================================= */
+
+const profileFloat =
+    document.getElementById("profileFloat");
+
+const profileModal =
+    document.getElementById("profileModal");
+
+const profileClose =
+    document.getElementById("profileClose");
+
+
+/* فتح البطاقة */
+
+if(profileFloat && profileModal){
+
+    profileFloat.addEventListener("click", function(){
+
+        profileModal.classList.add("active");
+
+        document.body.style.overflow = "hidden";
+
+    });
+
+}
+
+
+/* إغلاق البطاقة */
+
+function closeProfileCard(){
+
+    if(!profileModal) return;
+
+    profileModal.classList.remove("active");
+
+    document.body.style.overflow = "";
+
+}
+
+
+/* زر X */
+
+if(profileClose){
+
+    profileClose.addEventListener(
+        "click",
+        closeProfileCard
+    );
+
+}
+
+
+/* الضغط خارج البطاقة */
+
+if(profileModal){
+
+    profileModal.addEventListener(
+        "click",
+        function(e){
+
+            if(e.target === profileModal){
+
+                closeProfileCard();
+
+            }
+
+        }
+    );
+
+}
+
+
+/* زر ESC */
+
+document.addEventListener(
+    "keydown",
+    function(e){
+
+        if(
+            e.key === "Escape" &&
+            profileModal &&
+            profileModal.classList.contains("active")
+        ){
+
+            closeProfileCard();
+
+        }
+
+    }
+);
