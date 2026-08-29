@@ -1919,7 +1919,7 @@ section.extra-links ul li a{
 .profile-floating{
     position: fixed !important;
 
-    bottom: 110px !important;
+    bottom: 80px !important;
     left: 15px !important;
 
     top: auto !important;
