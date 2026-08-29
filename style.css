@@ -1922,7 +1922,9 @@ section.extra-links ul li a{
 
     bottom:50px;
     left:12px;
-
+top:auto;    /* إلغاء موضع الأعلى */
+    right:auto;  /* إلغاء موضع اليمين */
+    
     width:60px;
     height:60px;
 
