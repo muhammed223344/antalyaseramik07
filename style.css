@@ -1920,11 +1920,9 @@ section.extra-links ul li a{
 
     position:fixed;
 
-    bottom:50px;
-    left:12px;
-top:auto;    /* إلغاء موضع الأعلى */
-    right:auto;  /* إلغاء موضع اليمين */
-    
+    bottom:10px;
+    left:8px;
+
     width:60px;
     height:60px;
 
@@ -1949,8 +1947,8 @@ top:auto;    /* إلغاء موضع الأعلى */
 
 .profile-floating img{
 
-    width:105px;
-    height:105px;
+    width:60px;
+    height:60px;
 
     object-fit:cover;
 
