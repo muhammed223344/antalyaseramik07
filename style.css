@@ -1920,11 +1920,11 @@ section.extra-links ul li a{
 
     position:fixed;
 
-    top:80px;
-    right:18px;
+    top:50px;
+    right:12px;
 
-    width:150px;
-    height:150px;
+    width:60px;
+    height:60px;
 
     display:flex;
 
