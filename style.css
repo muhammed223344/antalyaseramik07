@@ -1917,11 +1917,11 @@ section.extra-links ul li a{
 ===================================================== */
 
 .profile-floating{
+    position:fixed !important;
 
-    position:fixed;
+    bottom:145px !important;
+    left:12px !important;
 
-    bottom:10px;
-    left:8px;
 
     width:60px;
     height:60px;
