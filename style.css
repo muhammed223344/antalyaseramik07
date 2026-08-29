@@ -1912,3 +1912,788 @@ section.extra-links ul li a{
     font-weight:800 !important;
     color:#333 !important;
 }
+/* =====================================================
+   FLOATING PROFILE IMAGE
+===================================================== */
+
+.profile-floating{
+
+    position:fixed;
+
+    top:80px;
+    right:18px;
+
+    width:150px;
+    height:150px;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:9998;
+
+    cursor:pointer;
+
+    text-decoration:none;
+
+    animation:
+        profileFloat 3.5s ease-in-out infinite;
+
+}
+
+
+/* الصورة */
+
+.profile-floating img{
+
+    width:105px;
+    height:105px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:4px solid #fff;
+
+    position:relative;
+
+    z-index:5;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.25);
+
+    transition:
+        transform .3s ease;
+
+}
+
+
+/* تكبير بسيط */
+
+.profile-floating:hover img{
+
+    transform:scale(1.07);
+
+}
+
+
+/* الدائرتان */
+
+.profile-floating::before,
+.profile-floating::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:120px;
+    height:120px;
+
+    border-radius:50%;
+
+    border:3px solid #0A58CA;
+
+    pointer-events:none;
+
+    animation:
+        floatingProfileRing 2.5s ease-out infinite;
+
+}
+
+
+/* تأخير الدائرة الثانية */
+
+.profile-floating::after{
+
+    animation-delay:1.25s;
+
+}
+
+
+/* حركة الدوائر */
+
+@keyframes floatingProfileRing{
+
+    0%{
+
+        transform:scale(.85);
+
+        opacity:.9;
+
+    }
+
+    100%{
+
+        transform:scale(1.55);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* حركة الصورة */
+
+@keyframes profileFloat{
+
+    0%,
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-7px);
+
+    }
+
+}
+
+
+/* =====================================================
+   PROFILE PAGE
+===================================================== */
+
+.profile-page{
+
+    min-height:100vh;
+
+    background:#fff;
+
+    color:#222;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    padding:70px 20px;
+
+}
+
+
+.profile-page-card{
+
+    width:100%;
+
+    max-width:500px;
+
+    background:#fff;
+
+    border-radius:28px;
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.12);
+
+    border:1px solid #eee;
+
+}
+
+
+/* =====================================================
+   PROFILE PAGE AVATAR
+===================================================== */
+
+.profile-page-avatar{
+
+    width:170px;
+    height:170px;
+
+    margin:0 auto 25px;
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+/* الصورة */
+
+.profile-page-avatar img{
+
+    width:125px;
+    height:125px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:4px solid #0A58CA;
+
+    position:relative;
+
+    z-index:5;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.22);
+
+}
+
+
+/* الدائرتان */
+
+.profile-page-avatar span{
+
+    position:absolute;
+
+    width:135px;
+    height:135px;
+
+    border-radius:50%;
+
+    border:3px solid #0A58CA;
+
+    animation:
+        profilePageRing 2.5s ease-out infinite;
+
+}
+
+
+.profile-page-avatar span:nth-child(2){
+
+    animation-delay:1.25s;
+
+}
+
+
+@keyframes profilePageRing{
+
+    0%{
+
+        transform:scale(.75);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:scale(1.5);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* =====================================================
+   PROFILE INFORMATION
+===================================================== */
+
+.profile-page-name{
+
+    font-size:32px;
+
+    font-weight:800;
+
+    color:#222;
+
+    margin-bottom:5px;
+
+    opacity:0;
+
+}
+
+
+.profile-page-job{
+
+    font-size:20px;
+
+    font-weight:700;
+
+    color:#0A58CA;
+
+    margin-bottom:10px;
+
+    opacity:0;
+
+}
+
+
+.profile-page-location{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:8px;
+
+    font-size:17px;
+
+    color:#555;
+
+    margin-bottom:14px;
+
+    opacity:0;
+
+}
+
+
+.profile-page-location i{
+
+    color:#0A58CA;
+
+}
+
+
+.profile-page-email,
+.profile-page-phone{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:#0A58CA;
+
+    text-decoration:none;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    margin:10px 0;
+
+    opacity:0;
+
+}
+
+
+.profile-page-email i,
+.profile-page-phone i{
+
+    font-size:16px;
+
+}
+
+
+.profile-page-bio{
+
+    margin:22px 5px;
+
+    font-size:17px;
+
+    line-height:1.9;
+
+    color:#555;
+
+    opacity:0;
+
+}
+
+
+/* =====================================================
+   CONTACT BUTTONS
+===================================================== */
+
+.profile-page-buttons{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-top:20px;
+
+    opacity:0;
+
+}
+
+
+.profile-page-buttons a{
+
+    flex:1;
+
+    padding:14px 10px;
+
+    border-radius:13px;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-weight:800;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:8px;
+
+    transition:
+        transform .25s ease;
+
+}
+
+
+.profile-page-buttons a:hover{
+
+    transform:translateY(-4px);
+
+}
+
+
+.profile-page-call{
+
+    background:#0A58CA;
+
+}
+
+
+.profile-page-whatsapp{
+
+    background:#16a34a;
+
+}
+
+
+/* =====================================================
+   BACK BUTTON
+===================================================== */
+
+.profile-back{
+
+    position:absolute;
+
+    top:15px;
+    left:15px;
+
+    width:42px;
+    height:42px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    background:#f1f1f1;
+
+    color:#0A58CA;
+
+    text-decoration:none;
+
+    font-size:20px;
+
+    transition:
+        transform .25s ease,
+        background .25s ease;
+
+}
+
+
+.profile-back:hover{
+
+    transform:translateX(-4px);
+
+    background:#e8eefc;
+
+}
+
+
+/* =====================================================
+   PROFILE PAGE ANIMATIONS
+===================================================== */
+
+
+/* الاسم من اليمين */
+
+.profile-page.loaded .profile-page-name{
+
+    animation:
+        profileRight
+        .6s
+        .15s
+        forwards;
+
+}
+
+
+/* المهنة من اليسار */
+
+.profile-page.loaded .profile-page-job{
+
+    animation:
+        profileLeft
+        .6s
+        .30s
+        forwards;
+
+}
+
+
+/* الموقع */
+
+.profile-page.loaded .profile-page-location{
+
+    animation:
+        profileBottom
+        .6s
+        .45s
+        forwards;
+
+}
+
+
+/* البريد */
+
+.profile-page.loaded .profile-page-email{
+
+    animation:
+        profileBottom
+        .6s
+        .60s
+        forwards;
+
+}
+
+
+/* الهاتف */
+
+.profile-page.loaded .profile-page-phone{
+
+    animation:
+        profileBottom
+        .6s
+        .72s
+        forwards;
+
+}
+
+
+/* النبذة */
+
+.profile-page.loaded .profile-page-bio{
+
+    animation:
+        profileBottom
+        .6s
+        .86s
+        forwards;
+
+}
+
+
+/* الأزرار */
+
+.profile-page.loaded .profile-page-buttons{
+
+    animation:
+        profileBottom
+        .6s
+        1s
+        forwards;
+
+}
+
+
+/* =====================================================
+   KEYFRAMES
+===================================================== */
+
+@keyframes profileRight{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateX(55px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateX(0);
+
+    }
+
+}
+
+
+@keyframes profileLeft{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateX(-55px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateX(0);
+
+    }
+
+}
+
+
+@keyframes profileBottom{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:600px){
+
+    .profile-floating{
+
+        top:65px;
+
+        right:8px;
+
+        width:95px;
+        height:95px;
+
+    }
+
+
+    .profile-floating img{
+
+        width:68px;
+        height:68px;
+
+        border-width:3px;
+
+    }
+
+
+    .profile-floating::before,
+    .profile-floating::after{
+
+        width:76px;
+        height:76px;
+
+        border-width:2px;
+
+    }
+
+
+    .profile-page{
+
+        padding:50px 15px;
+
+    }
+
+
+    .profile-page-card{
+
+        max-width:370px;
+
+        padding:30px 18px 25px;
+
+        border-radius:22px;
+
+    }
+
+
+    .profile-page-avatar{
+
+        width:145px;
+        height:145px;
+
+    }
+
+
+    .profile-page-avatar img{
+
+        width:105px;
+        height:105px;
+
+    }
+
+
+    .profile-page-avatar span{
+
+        width:115px;
+        height:115px;
+
+    }
+
+
+    .profile-page-name{
+
+        font-size:27px;
+
+    }
+
+
+    .profile-page-job{
+
+        font-size:18px;
+
+    }
+
+
+    .profile-page-location,
+    .profile-page-email,
+    .profile-page-phone{
+
+        font-size:15px;
+
+    }
+
+
+    .profile-page-bio{
+
+        font-size:15px;
+
+    }
+
+}
