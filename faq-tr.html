@@ -1,673 +1,1231 @@
 <!DOCTYPE html>
-<html lang="tr" dir="ltr">
-
+<html lang="tr">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fayans, Seramik ve Porselen Hakkında Sık Sorulan Sorular | Antalya Fayans Ustası</title>
 
-<title>Sık Sorulan Sorular</title>
+  <meta name="description" content="Antalya fayans ustası hizmetleri hakkında 40 sık sorulan soru ve cevap. Fayans, seramik, porselen, banyo, mutfak, balkon, teras, havuz, su yalıtımı ve döşeme hakkında bilgiler.">
 
-<style>
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
-body{
-    margin:0;
-    padding:35px;
-    font-family:'Cairo',sans-serif;
-    background:#ffffff;
-    color:#333;
-    line-height:2;
-    font-size:22px;
-}
+  <link rel="canonical" href="https://antalyafayansustasi.com/faq-tr.html">
 
-.content{
-    max-width:1000px;
-    margin:auto;
-}
+  <link rel="alternate" hreflang="tr" href="https://antalyafayansustasi.com/faq-tr.html">
+  <link rel="alternate" hreflang="ar" href="https://antalyafayansustasi.com/faq.html">
+  <link rel="alternate" hreflang="x-default" href="https://antalyafayansustasi.com/faq-tr.html">
 
-.content p{
-    margin:0 0 18px;
-    text-align:left;
-}
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Fayans, Seramik ve Porselen Hakkında Sık Sorulan Sorular">
+  <meta property="og:description" content="Fayans ve seramik döşeme, porselen, banyo, mutfak, balkon, teras, havuz ve su yalıtımı hakkında 40 soru ve cevap.">
+  <meta property="og:url" content="https://antalyafayansustasi.com/faq-tr.html">
+  <meta property="og:site_name" content="Antalya Fayans Ustası">
+  <meta property="og:locale" content="tr_TR">
 
-.blue{
-    color:#0A58CA;
-    font-weight:bold;
-    font-size:24px;
-}
+  <style>
+    :root {
+      --primary: #0A58CA;
+      --primary-dark: #084298;
+      --text: #263238;
+      --muted: #5f6b73;
+      --border: #e2e8f0;
+      --bg: #f7f9fc;
+      --white: #ffffff;
+    }
 
-</style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Tahoma,
+        Arial,
+        sans-serif;
+      background: #ffffff;
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .faq-wrapper {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .breadcrumb {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin: 10px 0 30px;
+      padding: 10px 14px;
+      background: var(--bg);
+      border-radius: 8px;
+    }
+
+    .breadcrumb span {
+      margin: 0 5px;
+    }
+
+    .faq-header {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .faq-header h1 {
+      margin: 0 0 15px;
+      color: var(--primary);
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      line-height: 1.4;
+    }
+
+    .faq-header p {
+      max-width: 760px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .intro-box {
+      margin-top: 25px;
+      padding: 18px 20px;
+      border-left: 4px solid var(--primary);
+      background: #f7faff;
+      border-radius: 8px;
+      text-align: left;
+    }
+
+    .faq-category {
+      margin-bottom: 42px;
+    }
+
+    .faq-category h2 {
+      color: var(--primary);
+      font-size: 1.35rem;
+      margin: 0 0 18px;
+      padding-bottom: 9px;
+      border-bottom: 2px solid #dbe7f5;
+    }
+
+    .faq-item {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 12px;
+      overflow: hidden;
+      transition: 0.2s ease;
+    }
+
+    .faq-item:hover {
+      border-color: #b8cbe3;
+    }
+
+    .faq-item[open] {
+      background: #ffffff;
+      border-color: var(--primary);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    }
+
+    .faq-item summary {
+      position: relative;
+      cursor: pointer;
+      list-style: none;
+      padding: 17px 48px 17px 18px;
+      font-size: 1.03rem;
+      font-weight: 700;
+      color: #263238;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::before {
+      content: "+";
+      position: absolute;
+      left: 18px;
+      top: 14px;
+      width: 25px;
+      height: 25px;
+      line-height: 24px;
+      text-align: center;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .faq-item[open] summary::before {
+      content: "−";
+    }
+
+    .faq-content {
+      padding: 0 20px 20px 20px;
+      color: #4b5563;
+      font-size: 0.98rem;
+      border-top: 1px solid #edf2f7;
+    }
+
+    .faq-content p {
+      margin: 15px 0 0;
+    }
+
+    .faq-content ul {
+      margin: 12px 0 0;
+      padding-left: 22px;
+    }
+
+    .faq-content li {
+      margin-bottom: 7px;
+    }
+
+    .faq-content strong {
+      color: #263238;
+    }
+
+    .faq-cta {
+      margin: 45px 0 20px;
+      padding: 28px 22px;
+      text-align: center;
+      background: #f4f8ff;
+      border: 1px solid #d8e6fa;
+      border-radius: 12px;
+    }
+
+    .faq-cta h2 {
+      color: var(--primary);
+      margin-top: 0;
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 12px 24px;
+      background: var(--primary);
+      color: #ffffff;
+      border-radius: 7px;
+      font-weight: 700;
+    }
+
+    .cta-button:hover {
+      background: var(--primary-dark);
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .internal-links {
+      margin-top: 25px;
+      padding: 20px;
+      background: #fafafa;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+
+    .internal-links h2 {
+      font-size: 1.2rem;
+      color: var(--primary);
+      margin-top: 0;
+    }
+
+    .internal-links ul {
+      padding-left: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .faq-wrapper {
+        padding: 15px;
+      }
+
+      .faq-header {
+        margin-bottom: 30px;
+      }
+
+      .faq-item summary {
+        font-size: 0.98rem;
+        padding: 16px 45px 16px 45px;
+      }
+
+      .faq-content {
+        font-size: 0.95rem;
+        padding: 0 15px 17px;
+      }
+    }
+  </style>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+
+      {
+        "@type": "WebSite",
+        "@id": "https://antalyafayansustasi.com/#website",
+        "url": "https://antalyafayansustasi.com/",
+        "name": "Antalya Fayans Ustası",
+        "inLanguage": "tr"
+      },
+
+      {
+        "@type": "WebPage",
+        "@id": "https://antalyafayansustasi.com/faq-tr.html#webpage",
+        "url": "https://antalyafayansustasi.com/faq-tr.html",
+        "name": "Fayans, Seramik ve Porselen Hakkında Sık Sorulan Sorular",
+        "description": "Fayans, seramik, porselen, banyo, mutfak, balkon, teras, havuz ve su yalıtımı hakkında sık sorulan sorular ve cevaplar.",
+        "isPartOf": {
+          "@id": "https://antalyafayansustasi.com/#website"
+        },
+        "about": {
+          "@id": "https://antalyafayansustasi.com/faq-tr.html#service"
+        },
+        "inLanguage": "tr"
+      },
+
+      {
+        "@type": "Service",
+        "@id": "https://antalyafayansustasi.com/faq-tr.html#service",
+        "name": "Antalya Fayans ve Seramik Döşeme Hizmeti",
+        "serviceType": [
+          "Fayans döşeme",
+          "Seramik döşeme",
+          "Porselen döşeme",
+          "Banyo fayans döşeme",
+          "Mutfak seramik döşeme",
+          "Zemin ve duvar seramiği",
+          "Balkon ve teras fayans döşeme",
+          "Havuz seramiği",
+          "Su yalıtımı"
+        ],
+        "provider": {
+          "@type": "Organization",
+          "name": "Antalya Fayans Ustası",
+          "url": "https://antalyafayansustasi.com/",
+          "telephone": "+905319667732"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Muratpaşa, Antalya"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Konyaaltı, Antalya"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Kepez, Antalya"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Döşemealtı, Antalya"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Aksu, Antalya"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Serik, Antalya"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Kemer, Antalya"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Manavgat, Antalya"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Alanya, Antalya"
+          }
+        ]
+      },
+
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://antalyafayansustasi.com/faq-tr.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Ana Sayfa",
+            "item": "https://antalyafayansustasi.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Sık Sorulan Sorular",
+            "item": "https://antalyafayansustasi.com/faq-tr.html"
+          }
+        ]
+      }
+
+    ]
+  }
+  </script>
 
 </head>
 
 <body>
 
-<div class="content">
+<main class="faq-wrapper">
 
- <p>Seramik uygulamasından sonra ve derz dolgusu yapılmadan önce, karolar arasında kot farkı (diş yapma) olmadığını doğrulamak için yüzey düzgünlüğü nasıl kontrol edilir؟</p>
-<p>Su soğutmalı bıçaklar kullanılarak aşırı sert porselenleri kesmenin doğru yöntemi nedir؟</p>
-<p>Mutfak duvarlarında, seramik arkasındaki sıva kalınlığı farkından kaynaklanan boşluklarla nasıl başa çıkılır؟</p>
-<p>Zemin altına döşenen bakır yerden ısıtma borularının zarar görmesini önlemek için hangi önlemler alınmalıdır؟</p>
-<p>Çocuk odalarında dış seramik köşelerini korumak için esnek plastik köşe profilleri nasıl kullanılır؟</p>
-<p>Kil oranı yüksek kum kullanımının, karoların altındaki harcın yapışma mukavemetine etkisi nedir؟</p>
-<p>Banyo kapısının arkasında su birikmesini önlemek için zemin eğimi nasıl ölçülür ve ayarlanır؟</p>
-<p>Depremden etkilenmemelerini sağlamak için müstakil villaların dış cephelerine seramik uygulamanın doğru yolu nedir؟</p>
-<p>İki beton duvarın dik açıyla birleştiği noktalarda karolarda çatlama oluşması nasıl önlenir؟</p>
-<p>Köşelerin ve çizgilerin düzgün bir şekilde birleşmesini sağlamak için altıgen karoların döşenmesindeki teknik detaylar nelerdir؟</p>
-<p>Mat seramik yüzeyindeki kurumuş epoksi derz kalıntıları, yüzeyi çizmeden nasıl temizlenir؟</p>
-<p>Tesviye sistemi (klipsler) söküldükten ve derz boşlukları ayarlandıktan hemen sonra bazı karoların çökmesinin nedenleri nelerdir؟</p>
-<p>Banyo neminin, seramik süpürgeliğin altından yan odaya sızmaması nasıl garanti edilir؟</p>
-<p>Kenarları düzgün olmayan (rustik/doğal kenarlı) seramiklerin derz aralarına derz dolgusu uygulamanın doğru yöntemi nedir؟</p>
-<p>Mutfak duvar seramiklerinin yatay çizgi hizasının kalitesi nasıl kontrol edilir؟</p>
-<p>Nem yalıtım malzemesiyle işlem görmüş bir duvara harcın yapışmasında zorluk yaşanırsa ne yapılmalıdır؟</p>
-<p>Bina genleşmesini absorbe etmek için büyük ebatlı karolarda uygun derz genişliği nasıl seçilir؟</p>
-<p>Dikdörtgen merdivenlerde kenarlarda eğri kesim (şatrap) oluşmasını önlemek için seramik döşeme teknikleri nelerdir؟</p>
-<p>Estetik bir görünüm sağlamak için klima boru çıkışlarının etrafına seramik döşeme yöntemi nedir؟</p>
-<p>Takılıp düşmeleri önlemek için oda seramiği ile banyo seramiği arasındaki kot farkı nasıl giderilir؟</p>
-<p>Derzin daha sonra dökülmesini önlemek için, derz dolgusu yapılmadan önce derz boşluklarının yeterli derinlikte temizlenmesinin önemi nedir؟</p>
-<p>Dış mekan balkonlarındaki eğimli beton tavanlara seramik nasıl döşenir؟</p>
-<p>Karışımdaki kum oranının fazla olması nedeniyle çimento esaslı yapıştırıcının ufalanıp toz haline gelmesinin nedenleri nelerdir؟</p>
-<p>Hava sıkışmasını önlemek için yapıştırıcının karo altına paralel ve düz çizgiler halinde taranması nasıl sağlanır؟</p>
-<p>Bıçağın körelmesini önlemek için fiberglas file takviyeli porselenleri kesmenin doğru yolu nedir؟</p>
-<p>Banyo seramik uygulaması bittikten sonra zemin süzgecinin düşük kotta kalması sorunuyla nasıl başa çıkılır؟</p>
-<p>Seramikleri seyreltilmiş asitli maddelerle temizlerken gözleri ve cildi korumak için hangi önlemler alınmalıdır؟</p>
-<p>Alüminyum mastar ve su terazisi aynı anda kullanılarak karoların düzlüğü nasıl kontrol edilir؟</p>
-<p>Arkası fileli mozaik karoların süs havuzlarına döşenme yöntemi nedir؟</p>
-<p>Derz dolgusu kuruduktan iki gün sonra yüzeyinde beyaz lekelerin (çiçeklenme) oluşmasının nedenleri nelerdir؟</p>
-<p>Açık teraslardaki yağmur suyu tahliye süzgeçlerinin etrafında seramikler nasıl kesilir ve şekillendirilir؟</p>
-<p>Ağır yükleri ve yoğun yaya trafiğini taşıyabilmesi için ticari showroomlarda seramik döşeme teknikleri nelerdir؟</p>
-<p>Geniş plastik genleşme derz profilleriyle birleşim yerlerinde karoların aynı seviyede kalması nasıl sağlanır؟</p>
-<p>Alçıpan duvar, yapıştırıcının suyunu çok hızlı emip yapışma mukavemetini düşürürse ne yapılmalıdır؟</p>
-<p>Derz dolgusu uygulamadan önce seramik derzleri alçı sıva kalıntılarından ve tozdan nasıl temizlenir؟</p>
-<p>Haşere kovucu maddelerle işlem görmüş ahşap panellerin üzerine seramik döşeme yöntemi nedir؟</p>
-<p>İnce seramiklerin plastik çekiçle sıkıştırılması esnasında köşelerinin kırılması nasıl önlenir؟</p>
-<p>Yeni döşenen seramik zeminler, boya badana işleri sırasında tavan boyalarından en iyi nasıl korunur؟</p>
-<p>Ağır yük araçlarının sarsıntılarına maruz kalan ticari depo cephelerindeki seramiklerin sabitliği nasıl garanti edilir؟</p>
-<p>En fazla 2 cm genişliğinde ince bir kapama parçası (galaika) elde etmek için tam boy bir karoyu düzgün kesmenin doğru yolu nedir؟</p>
-<p>Yaz aylarında harç sürülmeden önce beton zemin yüzeyinin hızlı kuruması durumuyla nasıl başa çıkılır؟</p>
-<p>Hijyen ve kolay sterilizasyon sağlamak için büyük ticari mutfaklarda seramik döşemenin doğru yöntemi nedir؟</p>
-<p>Daire odalarına komşu asansör boşluğu duvarlarındaki titreşimler nedeniyle seramiklerin çatlaması nasıl önlenir؟</p>
-<p>Derinlik farkı oluşmaması için duvarlardaki 3 boyutlu kabartmalı karoların döşenme teknikleri nelerdir؟</p>
-<p>Karo altında hiç boşluk kalmayacak şekilde seramik yapıştırıcısının tamamen yayılması nasıl sağlanır؟</p>
-<p>Eski bir epoksi su yalıtım katmanının üzerine seramik döşerken alınması gereken önlemler nelerdir؟</p>
-<p>Çatlamayı önlemek için parlak karolar ile mat karolara uygun spiral (avuç taşlama) kesici diskleri nasıl seçilir؟</p>
-<p>Diğer sıraların düzgün gitmesini sağlamak için banyodaki ilk sıra duvar seramiğinin terazisi nasıl alınır؟</p>
-<p>Sürekli ve estetik derz çizgileri sağlamak için kare kolonların etrafına seramik uygulaması nasıl yapılır؟</p>
-<p>Aşırı sert porselenlerde büyük sıhhi tesisat boru delikleri açmanın doğru yöntemi nedir؟</p>
-<p>Dik açılı olmayan odalarda seramik fire ve zayiat oranı nasıl hesaplanır؟</p>
-<p>Çimento esaslı harcın yapışma mukavemetini artırmak için kil içerikli karoların arkasını önceden ıslatmanın rolü nedir؟</p>
-<p>Uygulamadan birkaç ay sonra derzlerde beyaz boşlukların oluşması nasıl önlenir؟</p>
-<p>Yeniden derz dolgusu yapmadan önce mutfak seramik derzlerindeki yağ ogres lekelerini temizlemenin en iyi yolu nedir؟</p>
-<p>Her iki malzemenin de serbestçe genleşebilmesi için seramik ve parke arasında kot/geçiş derzi nasıl yapılır؟</p>
-<p>Derz dolgusunun kuruduktan sonra toz halinde derzlerden dökülmesinin nedenleri nelerdir؟</p>
-<p>Derz çizgilerinin hat boyunca düz gitmesini sağlamak için uzun koridorlarda seramik döşeme işlemi nasıl yönetilir؟</p>
-<p>Çok düz ve pürüzsüz beton duvarlara, çentikleme yapmadan seramik yapıştırıcısı uygulamanın doğru yolu nedir؟</p>
-<p>Yüksek binalara taşıma ve çıkarma sırasında porselen köşelerinin kırılmaya karşı tam olarak korunması nasıl sağlanır؟</p>
-<p>Şık görünümü korurken kaymayı önlemek için dış mekan merdivenlerini pürüzlü seramiklerle kaplamanın teknikleri nelerdir؟</p>
-<p>Gün boyu doğrudan güneş ışığına maruz kalan açık balkonlardaki seramiklerin genleşmesi nasıl kontrol altına alınır؟</p>
-<p>İlk temizlik aşaması kaçırıldıktan sonra seramik yüzeyindeki kurumuş çimento lekelerini temizlemenin doğru yolu nedir؟</p>
-<p>Aynı gün içinde geniş alanlar döşenirken duvar seramiklerinin üst sıralarının aşağı kayması nasıl önlenir؟</p>
-<p>Porselen için tasarlanmış elektrikli titreşimli vantuzlar kullanarak büyük karoları sıkıştırmanın teknikleri nelerdir؟</p>
-<p>Desenlerin veya damarların yönünün değişmesini önlemek için uygulama sırasında karo arkasındaki yön oklarının takibi nasıl sağlanır؟</p>
-<p>Ahşap görünümlü uzun seramiklerdeki belirgin bükülme (bel verme) sorunuyla nasıl başa çıkılır ve bunu gizlemek için derzler nasıl dağıtılır؟</p>
-<p>Karoların altında su ve toz birikmesini önlemek için süpürgelik ile zemin arasındaki boşluklar nasıl kapatılır؟</p>
-<p>Hastane ve tıbbi laboratuvarlarda bakteri ve mantar oluşumunu önlemek için seramik döşerken alınması gereken önlemler nelerdir؟</p>
-<p>Banyo içinde duvar ve zemin seviyelerini aynı anda ayarlamak için 3 boyutlu lazer hizalama cihazı nasıl kullanılır؟</p>
-<p>Yapıştırıcının beton zemine tamamen yapışık kalmasına rağmen porselenin yapıştırıcıdan tamamen ayrılmasının nedenleri nelerdir؟</p>
-<p>Büyük alışveriş merkezlerinin zeminlerinde yapısal genleşme derzlerinin yerleri nasıl belirlenir؟</p>
-<p>Spiral ve elmas zımpara diskleri kullanılarak manuel olarak 45 derecelik pah (şev) kırma işleminin doğru yolu nedir؟</p>
-<p>Derz çizgilerini ve hizalamayı ayarlarken aynı kutudan çıkan karolar arasındaki hafif boyut farklılıklarıyla nasıl başa çıkılır؟</p>
-<p>Suyu yüksek oranda emen yüzeylerde seramik uygulamadan önce astar (primer) kullanılmasının önemi nedir؟</p>
-<p>Derz dolgu işlemine başlamadan önce derz aralarındaki sertleşmiş yapıştırıcı kalıntıları nasıl temizlenir ve boşaltılır؟</p>
-<p>Havuzların kavisli duvarlarına dalgalanma olmadan mozaik karo döşemenin doğru yöntemi nedir؟</p>
-<p>Seramik süpürgeliğin çökmesi ve zemin karosuyla arasında boşluk kalması nasıl önlenir؟</p>
-<p>Araç girişleri için tasarlanmış kalın porselen karoların, yarı kuru kum-çimento harcı (şap) üzerine döşenmesindeki teknik detaylar nelerdir؟</p>
-<p>Gizli dalgalanmaların olmadığını doğrulamak için duvara sürülen yapıştırıcı tabakasının düzgünlüğü nasıl kontrol edilir؟</p>
-<p>Restoran mutfaklarında yağ dökülmesi sırasında çalışanların kaymasını önlemek için alınacak güvenlik önlemleri nelerdir؟</p>
-<p>Uygulama sırasında derzlerin kayması ve kademeli olarak genişlemesi sorunuyla nasıl başa çıkılır؟</p>
-<p>Isı yalıtımlı hafif gazbeton duvarların üzerine seramik döşemenin doğru yolu nedir؟</p>
-<p>Uygulamanın ilk günlerinde ağır mobilyaların sürüklenmesi nedeniyle yeni seramiklerin çizilmelere karşı korunması nasıl sağlanır؟</p>
-<p>Döşendikten bir yıl sonra karoların altında boşluklar oluşmasının ve hafif tınlama (toptobil) sesi gelmesinin nedenleri nelerdir؟</p>
-<p>Kapalı çalışma alanlarında yoğun toz oluşumunu önlemek için sulu porselen kesimi nasıl yapılır؟</p>
-<p>Yapıştırıcı kısmen kuruduktan sonra hafifçe çöken bir karonun seviyesini düzeltmenin doğru yöntemi nedir؟</p>
-<p>Seramiklerin alüminyum pencere kasalarının kenarlarıyla birleştiği yerlerde derzler nasıl yönetilir؟</p>
-<p>Zemine yapıştırıcı sürmenin yanı sıra, büyük karoların arkasına juga ince bir tabaka yapıştırıcı uygulamanın (çift taraflı yapıştırma) önemi nedir؟</p>
-<p>Mutfak duvar seramiklerinin derz çizgileri ile komşu banyonun duvar seramiklerinin derz çizgilerinin paralel gitmesi nasıl sağlanır؟</p>
-<p>Çok sıcak havalarda karo döşemek ile soğuk ve yağmurlu havalarda döşemek arasındaki temel farklar nelerdir؟</p>
-<p>Yüksek oranda klor veya tuz içeren suyla temizlik yapıldığında çimento esaslı derz dolgusunun renginin bozulması nasıl önlenir؟</p>
-<p>Silindirik kolonları, ince ve eşit parçalara bölünmüş dikdörtgen karolarla kaplamanın teknikleri nelerdir؟</p>
-<p>Karoları sıkıştırma ve hizalama sırasında plastik derz artılarının yerinden oynamaması nasıl sağlanır؟</p>
-<p>Uygulama sırasında seramiğin sırlı yüzeyinde oluşan hafif çizikleri onarmanın ve gizlemenin en iyi yolu nedir؟</p>
-<p>Dış avlu seramiğinin eğimi, suyun komşu bahçe drenajına doğru akmasını sağlayacak şekilde nasıl ayarlanır؟</p>
-<p>Sıcak harçla yapılan uygulamadan hemen sonra seramik yüzeyinde ince kılcal çatlakların oluşmasının nedenleri nelerdir؟</p>
-<p>Karoların ağırlığı nedeniyle bükülebilecek ham alçıpan duvarlara seramik döşerken süreç nasıl yönetilir؟</p>
-<p>Elektrik ve su borularının etrafındaki karmaşık ölçüleri aktarmak için çok açılı ölçüm şablonu kullanmanın doğru yolu nedir؟</p>
-<p>Büyük depolarda seramik genleşme derzlerinden toz ve pislik sızmaması nasıl sağlanır؟</p>
-<p>Modern banyolardaki gömme rezervuar kutularının etrafına seramik döşemenin teknikleri nelerdir؟</p>
-  <p>Oda alanı ve yayma kalınlığına göre gereken yapıştırıcı miktarı nasıl hesaplanır؟</p>
-<p>Nemden dolayı zarar görmesini önlemek için yapıştırıcı ve çimento torbalarını depolamanın doğru yolu nedir؟</p>
-<p>Tesviye sistemi söküldükten hemen sonra zemin karolarında şişme veya kabarma oluşması sorunuyla nasıl başa çıkılır؟</p>
-<p>Şoklama odaları ve soğuk hava depolarında seramik döşerken alınması gereken önlemler nelerdir؟</p>
-<p>Her zaman hassas kesim sağlamak için manuel seramik kesme makinesi nasıl temizlenir ve bakımı nasıl yapılır؟</p>
-<p>Zeminlerin güçlü deterjanlarla ilk kez yıkanmasından sonra derz renginin solmasının nedenleri nelerdir؟</p>
-<p>Belirgin pürüzleri olan bir duvarda seramik süpürgeliğin düzgünlüğünü nasıl garanti edersiniz؟</p>
-<p>Dik açılı olmayan köşelere döşemek için porseleni geniş açıyla kesmenin teknik detayları nelerdir؟</p>
-<p>Ağır lastik çekiç kullanırken harcın karo derzlerinden yukarı çıkması durumuyla nasıl başa çıkılır؟</p>
-<p>Avlulardaki rögarların etrafına seramik döşemenin ideal yolu nedir؟</p>
-<p>Banyo zemini ile dış koridordaki parkenin birleştiği yerde döşeme kotu nasıl ayarlanır؟</p>
-<p>Taşıma ve düzenleme sırasında hassas porselen köşelerinin kırılmasını önlemek için alınacak önlemler nelerdir؟</p>
-<p>Yüzücülerin yaralanmasını önlemek için yuvarlak kenarlı havuz karolarını döşemenin doğru yolu nedir؟</p>
-<p>Beyaz derz dolgusu uygulandıktan sonra mat seramik üzerinde gri sünger lekelerinin oluşması nasıl önlenir؟</p>
-<p>Beş kattan yüksek dış cephelerde seramik uygulamasıyla nasıl başa çıkılır؟</p>
-<p>Girişlerin ve dış kapıların yakınında seramik karoların altında boşluklar oluşmasının nedenleri nelerdir؟</p>
-<p>Ticari projelerin hızlı teslim edilmesini sağlamak için hızlı kuruyan yapıştırıcı nasıl kullanılır؟</p>
-<p>İnce porselen (slim porcelain) gibi devasa ebatlı karoları kırmadan döşemenin teknikleri nelerdir؟</p>
-<p>Çok akışkan veya hafif kıvamlı yapıştırıcı kullanıldığında büyük karoların köşelerinin çökmemesi nasıl garanti edilir؟</p>
-<p>Çatılardaki ortak su ve ısı yalıtımı üzerine seramik döşemenin doğru yolu nedir؟</p>
-<p>Yüksek binaların duvarları seramik kaplanırken düşey yapısal derzlerle nasıl başa çıkılır؟</p>
-<p>Sıfırın altındaki sıcaklıklara maruz kaldığında yapıştırıcının seramik altında çözülüp ufalanmasının nedenleri nelerdir؟</p>
-<p>Uzun süre ikamet ettikten sonra çimento esaslı derzler toz ve kirden nasıl temizlenir؟</p>
-<p>Ağır vasıta bakım merkezlerinin zeminlerini kaplarken alınması gereken önlemler nelerdir؟</p>
-<p>Aralarındaki eşikler kaldırıldığında farklı odaların karo kotlarının mükemmel şekilde eşleşmesi nasıl sağlanır؟</p>
-<p>Yan yağmur suyu tahliye çıkışlarına uyması için seramiği kesmenin doğru yolu nedir؟</p>
-<p>Tesviye takozları sökülürken yüzey sırlı tabakası zarar gören karo ile nasıl başa çıkılır؟</p>
-<p>Duş kabini köşelerindeki beyaz derzlerin kararmasının nedenleri nelerdir ve nasıl tedavi edilir؟</p>
-<p>Alüminyum mastar ve çekül ipi kullanılarak duvar sıvasının düzgünlük kalitesi nasıl kontrol edilir؟</p>
-<p>Kuru karışım ve ıslak montaj yöntemiyle dış cephe seramiği döşemenin doğru yolu nedir؟</p>
-<p>Yalıtımsız sıcak su borularının üzerine döşenecek seramiklerde çatlak oluşması nasıl önlenir؟</p>
-<p>Yağmur suyunun akmasını sağlamak ve basamakta birikmesini önlemek için açık merdiven döşeme teknikleri nelerdir؟</p>
-<p>Aynı model numarasına sahip farklı kutular arasındaki karo renk tonu farklılıklarıyla nasıl başa çıkılır؟</p>
-<p>Otel ve tatil köylerinin merkezi mutfaklarında seramik döşerken alınması gereken önlemler nelerdir؟</p>
-<p>Çift taraflı yapıştırma yöntemiyle döşeme yaparken duvar karolarının arkasında hava boşluğu kalmaması nasıl sağlanır؟</p>
-<p>Çıkıntılı pencere kenarlarının etrafında yumuşak kavisli karo köşeleri oluşturmanın doğru yolu nedir؟</p>
-<p>Karışımın kalitesini öğrenmek için uygulamadan bir saat sonra yapıştırıcının tutunma gücü nasıl test edilir؟</p>
-<p>Uygulamadan kısa süre sonra seramik duvarlarda aşağıdan yukarıya doğru tuzlanma (çiçeklenme) oluşmasının nedenleri nelerdir؟</p>
-<p>Eski epoksi zeminlerin üzerine, onları tamamen sökmeden seramik döşeme işlemi nasıl yönetilir؟</p>
-<p>Dış cephelerde farklı kalınlıktaki taş karoların uyumlu görünmesi için döşeme teknikleri nelerdir؟</p>
-<p>Beş milimetreden geniş derz boşluklarında çimento esaslı derzin çatlamaması nasıl sağlanır؟</p>
-<p>Çok dar silindirik beton kolonlara seramik döşemenin doğru yolu nedir؟</p>
-<p>Genel çamaşırhane veya lavabo zeminlerinde suyun hızlı tahliye edilmesini sağlamak için eğim kotu nasıl ölçülür ve ayarlanır؟</p>
-<p>Ağır inşaat aletlerinin düşmesi nedeniyle cilalı seramiklerin zarar görmesini önlemek için alınacak önlemler nelerdir؟</p>
-<p>Beton duvarda gizli bir su sızıntısından kaynaklanan sürekli nem varlığıyla nasıl başa çıkılır؟</p>
-<p>Kil bulaşmış çok ince kum kullanıldığında karonun altındaki çimento harcının ufalanmasının nedenleri nelerdir؟</p>
-<p>Balkonların mühürlenmiş eğimli tavanlarına ve dış saçaklara döşenen karoların sabitliği nasıl garanti edilir؟</p>
-<p>Tamamen pürüzsüz kenarlar elde etmek için kaymaz taş porseleni kesmenin ideal yöntemi nedir؟</p>
-<p>Parlak seramik, üzerini kaplayan koruyucu fabrika mum kalıntılarından nasıl temizlenir؟</p>
-<p>Sağlık standartlarını karşılamak için soğuk odalarda ve gıda depolarında seramik döşeme teknikleri nelerdir؟</p>
-<p>Banyolarda bitümlü rulo su yalıtımlarının üzerine karo döşeme işlemiyle nasıl başa çıkılır؟</p>
-<p>Dar alanlarda ve keskin köşelerde epoksi derz dolgusu uygulamanın doğru yolu nedir؟</p>
-<p>Zemin seramiği demir merdiven tabanları ile birleştiğinde karoların düzlüğü nasıl garanti edilir؟</p>
-<p>Yapıştırıcı tamamen kuruduktan sonra porselen köşelerinin çökme nedenleri nelerdir ve bundan nasıl kaçınılır؟</p>
-<p>Koridor uçlarındaki küçük kapama parçalarının (galaiklerin) fark edilmeyecek şekilde hesaplanması ve dağıtılması nasıl yapılır؟</p>
-<p>Kenarlarda boya tabakasının soyulmasını önlemek için renkli seramik keserken alınması gereken önlemler nelerdir؟</p>
-<p>Tek bir süzgece doğru çift eğimli olan zeminlerin döşenmesiyle nasıl başa çıkılır؟</p>
-<p>Zımparalama ve kesme işlemleri bittikten sonra karo derzlerini tozdan temizlemenin doğru yolu nedir؟</p>
-<p>Sürekli titreşime maruz kalan alçıpan duvarlarda seramik süpürgeliğin sabitliği nasıl garanti edilir؟</p>
-<p>Çizgilerin doğruluğunu ve sürekliliğini sağlamak için karmaşık geometrik tasarımlı karoların döşeme teknikleri nelerdir؟</p>
-<p>Aynı kutuda iki milimetre boyut farkı olan karolarla nasıl başa çıkılır؟</p>
-<p>Seramik süpürgeliğin altında boşluklar oluşmasının nedenleri nelerdir ve haşereleri önleyecek şekilde nasıl doldurulur؟</p>
-<p>Oda seramiği ile eş zamanlı monte edilen mermer kapı eşiklerinin kırılmaya karşı korunması nasıl sağlanır؟</p>
-<p>Çok büyük karoları yüksek salon duvarlarına yapıştırıcı ile sabitlemenin ideal yolu nedir؟</p>
-<p>Duvarlardaki merkezi klima tesisat çıkışlarının etrafında karoların çatlaması sorunuyla nasıl başa çıkılır؟</p>
-<p>İlk kez suyla temizlendikten sonra koyu renkli derz dolgusunun renginin solmasının nedenleri nelerdir ve rengi nasıl geri kazanılır؟</p>
-<p>Düşey seramik cephelerin düzlüğü total station cihazları kullanılarak nasıl kontrol edilir؟</p>
-<p>Neme maruz kalan yer altı otopark zeminlerini kaplarken alınması gereken önlemler nelerdir؟</p>
-<p>Kalın beton duvarlara yakın köşelerdeki karolarda boşluk sesi oluşmaması nasıl sağlanır؟</p>
-<p>Eğri beton kolon tabanlarına uyması için porseleni kesmenin ve şekillendirmenin doğru yolu nedir؟</p>
-<p>Karışımdaki fazla su nedeniyle karo altındaki çimento harcının çökmesiyle nasıl başa çıkılır؟</p>
-<p>Karo seviyesinin drenaj kanalları ile uyumlu olmasını sağlamak için büyük mutfaklarda döşeme teknikleri nelerdir؟</p>
-<p>Çok pürüzsüz alçı yüzeylere uygulandığında seramik yapıştırıcısının tutunması nasıl garanti edilir؟</p>
-<p>Uzun porselen karoların kutudan çıkarıldıktan hemen sonra bükülme veya kavis alma nedenleri nelerdir ve bununla nasıl başa çıkılır؟</p>
-<p>Kaya dokulu pürüzlü seramiklerin gözeneklerine sıkışan kurumuş yapıştırıcı nasıl temizlenir؟</p>
-<p>Taşlama motoru yüksek hızlarda kullanılırken seramik ustasını korumak için gerekli güvenlik önlemleri nelerdir؟</p>
-<p>Karoların düşeyliğini ayarlamaya çalışırken dışa doğru eğimli banyo duvar köşeleriyle nasıl başa çıkılır؟</p>
-<p>Fabrika zeminlerinde hazır plastik genleşme derzi profillerini kullanmanın doğru yolu nedir؟</p>
-<p>Cephe seramik filesi sabitlenirken banyo duvarlarında uygulanan su yalıtımının zarar görmemesi nasıl sağlanır؟</p>
-<p>Ayaklara zarar verecek keskin kenarların oluşmaması için zemin süzgeçlerinin etrafında döşeme teknikleri nelerdir؟</p>
-<p>Çimento esaslı derzin kullanımdan önce nemden dolayı bozulmadığını doğrulamak için kalitesi nasıl kontrol edilir؟</p>
-<p>Uzun süre doğrudan güneş ışığına maruz kaldığında seramiğin parlak sırlı tabakasının ayrılmasının nedenleri nelerdir؟</p>
-<p>Birleşim yerinde duvar seramiği ile zemin porseleni arasındaki belirgin kalınlık farklarıyla nasıl başa çıkılır؟</p>
-<p>Daha geniş ve estetik görünmesi için dar koridorlara karo döşemenin doğru yolu nedir؟</p>
-<p>Şiddetli don dönemlerinde dış balkonlara döşenen seramiklerin çatlamaması nasıl garanti edilir؟</p>
-<p>Duvara asılan ekranların etrafına özel dekoratif çerçeveler yapmak için seramik kesme teknikleri nelerdir؟</p>
-<p>Banyolarda asma klozet veya lavabo montajı yapılırken seramik arkasındaki geniş boşluklar nasıl doldurulur؟</p>
-<p>Koyu renkli derz dolgusu uygulanırken sırsız porselen kenarlarının lekelenmesini önlemek için alınacak önlemler nelerdir؟</p>
-<p>Ortadan başlamayı zorlaştıran oda köşelerindeki büyük eğriliklerle veya şatraplarla nasıl başa çıkılır؟</p>
-<p>Ahşap kulübelerde suya dayanıklı işlem görmüş ahşap panellerin üzerine seramik döşemenin doğru yolu nedir؟</p>
-<p>Elektrik ve sıhhi tesisat borularının geçtiği yerlerde karoların çökmesi nasıl önlenir؟</p>
-<p>Çimento harcı ile döşendikten sonra beyaz porselen yüzeyinde sarı lekeler belirmesinin nedenleri nelerdir؟</p>
-<p>Derzleri düzeltmek, pürüzsüz ve derin görünmelerini sağlamak için ıslak sünger nasıl kullanılır؟</p>
-<p>Güçlü yapışma sağlamak için pas önleyici işlem görmüş metal veya demir yüzeylerin üzerine döşeme teknikleri nelerdir؟</p>
-<p>Oda köşesinde düşey sapma olduğunda duvar seramiği sırasındaki son karo ile nasıl başa çıkılır؟</p>
-<p>Tesviye klipsleri takıldıktan sonra büyük boyutlu bir karonun konumunu düzeltmenin doğru yolu nedir؟</p>
-<p>Dişli mala kullanırken büyük karoların altındaki sıkışmış havanın tamamen çıkması nasıl sağlanır؟</p>
-<p>Esnek silikon kullanılmaması nedeniyle genleşme derzlerindeki dolgunun ufalanmasının nedenleri nelerdir؟</p>
-<p>Duvar karolarına spot lamba montajı için son derece hassas dairesel delikler nasıl kesilir؟</p>
-<p>Ses yalıtımı ve güçlü yapışma sağlamak için apartman dairelerinde ses yalıtım malzemelerinin üzerine karo döşeme teknikleri nelerdir؟</p>
- <p>Zemindeki nem oranının, üzerine yapıştırıcı sürülmeye uygun olduğunu doğrulamak için beton dökümünden sonra ne kadar süre beklenmesi gerekir؟</p>
-<p>Seramik yüzeyinde çatlama veya kılcal çizgiler oluşturmadan porselen karolarda dairesel delikler açmanın doğru yöntemi nedir؟</p>
-<p>Banyo zeminlerinde, duvar birleşim yerlerindeki dik açısızlık (şatrap) nedeniyle oluşan boşluklarla nasıl başa çıkılır؟</p>
-<p>Zemin altı ısıtma kablolarının üzerine doğrudan seramik döşerken kabloların kopmasını önlemek için hangi önlemler alınmalıdır؟</p>
-<p>Hastanelerin acil servis koridorlarında duvar dış köşelerini sedye çarpmalarına karşı korumak için metal köşe profilleri nasıl monte edilir؟</p>
-<p>Yüksek oranda tuz içeren kuyu suyunun, karoların altındaki çimento harcının priz alma süresine etkisi nedir؟</p>
-<p>Balkon kapısı eşiğinde su sızıntısını önlemek ve suyun içeri girmesini engellemek için zemin eğimi nasıl ayarlanır؟</p>
-<p>Yoğun rüzgar ve fırtına yüküne maruz kalan gökdelenlerin dış cephelerine porselen kaplamanın doğru yolu nedir؟</p>
-<p>Farklı zamanlarda dökülmüş iki betonarme döşemenin birleşim sınırında karolarda çatlama oluşması nasıl önlenir؟</p>
-<p>Derz çizgilerinin birbirini tam takip etmesini sağlamak için baklava desenli (diyagonal) karo döşemenin teknik detayları nelerdir؟</p>
-<p>Pürüzlü dış cephe porselenleri üzerindeki kurumuş çimento ve harç lekeleri, yüzeye zarar vermeden nasıl temizlenir؟</p>
-<p>Tesviye takozları söküldükten sonra geniş ebatlı karoların ortasında hafif bir çökme (bel verme) oluşmasının nedenleri nelerdir؟</p>
-<p>Süzgeç etrafından sızan suyun, banyo zemin kaplamasının altından koridor duvarlarına ulaşmaması nasıl garanti edilir؟</p>
-<p>Hafif kavisli veya bombeli duvar yüzeylerine küçük ebatlı seramikleri düzgün bir hat üzerinde döşemenin doğru yöntemi nedir؟</p>
-<p>Yüksek tavanlı lobilerde duvar seramiklerinin dikey çizgi hizasının sapmasız gitmesi nasıl kontrol edilir؟</p>
-<p>Poliüretan esaslı sıvı su yalıtım malzemesiyle kaplanmış bir zemine çimento esaslı yapıştırıcının tutunması için ne yapılmalıdır؟</p>
-<p>Mekanik ve ısıl genleşmeleri karşılamak amacıyla endüstriyel tesis zeminlerinde uygun derz boşluğu genişliği nasıl seçilir؟</p>
-<p>Döner merdivenlerin basamaklarında karo firesini en aza indirmek ve estetik görünüm sağlamak için seramik döşeme teknikleri nelerdir؟</p>
-<p>Görüntü kirliliğini önlemek için duvardaki elektrik sigorta kutularının etrafına seramik döşeme yöntemi nedir؟</p>
-<p>Engelli kullanımına uygun banyolarda, duş alanı ile kuru alan arasındaki kot farkı ve geçişi nasıl çözülür؟</p>
-<p>Derz dolgusunun karoya tam tutunması için, uygulama öncesinde derz aralarındaki toz ve şerbet tabakasının temizlenmesinin önemi nedir؟</p>
-<p>Ahşap karkas üzerine inşa edilmiş prefabrik yapıların esnek zeminlerine seramik nasıl döşenir؟</p>
-<p>Kullanım ömrünü tamamlamış eski yapıştırıcıların mukavemetini kaybederek karonun altından kolayca ayrılmasının nedenleri nelerdir؟</p>
-<p>Yapıştırıcı sürülürken tarak dişlerinin karo boyutuna uygun seçilmesi ve tam dolu yataklama elde edilmesi nasıl sağlanır؟</p>
-<p>Kesim esnasında porselen karonun sırlı yüzeyinde mikro çatlaklar oluşmasını önlemek için elmas bıçağın bakımı nasıl yapılır؟</p>
-<p>Gömme duş süzgeçlerinin (lineer süzgeç) seramik montajı bittikten sonra yüksekte kalması sorunuyla nasıl başa çıkılır؟</p>
-<p>Kimyasal temizleyiciler kullanılırken seramik yüzeyindeki metalik kaplamaların (altın/gümüş yaldız) zarar görmemesi için hangi önlemler alınmalıdır؟</p>
-<p>Lazer terazi yardımıyla geniş bir salonun dört köşesindeki başlangıç kotları nasıl eşitlenir؟</p>
-<p>Cam mozaiklerin termal havuzların iç yüzeylerine dökülmeyecek şekilde döşenme yöntemi nedir؟</p>
-<p>Derz dolgu uygulamasından sonraki günlerde derz yüzeyinde mikro çatlaklar ve kılcal yarıklar oluşmasının nedenleri nelerdir؟</p>
-<p>Dairesel kolonların zemin birleşim yerlerinde seramikler dairesel olarak nasıl kesilir ve şekillendirilir؟</p>
-<p>Sürekli titreşim ve ağır darbelere maruz kalan tren istasyonu peronlarında seramik döşeme teknikleri nelerdir؟</p>
-<p>Metalle birleşen karo kenarlarında esnekliği korumak ve çatlamayı önlemek için poliüretan mastik nasıl uygulanır؟</p>
-<p>Nemi çok hızlı emen gazbeton duvarlarda yapıştırıcının erken kuruyarak mukavemet kaybetmesi durumunda ne yapılmalıdır؟</p>
-<p>Derz dolgu işlemi bittikten sonra pürüzlü ve mat karoların gözeneklerinde kalan derz buğusu ve kalıntıları nasıl temizlenir؟</p>
-<p>Yüksek ısıya maruz kalan şömine arkası duvarlara seramik döşeme yöntemi nedir؟</p>
-<p>Geniş porselen panellerin (slab) vantuzlu taşıma çerçeveleri yardımıyla montajı sırasında kırılmaları nasıl önlenir؟</p>
-<p>Şantiye aşamasındaki diğer işlerin (iskele kurulumu, alçı sıva vb.) yeni döşenen seramiklere zarar vermesi nasıl önlenir؟</p>
-<p>Yoğun yaya trafiği altındaki metro geçitlerinde duvar seramiklerinin dökülmemesi ve sabit kalması nasıl garanti edilir؟</p>
-<p>Köşe birleşimlerinde profil kullanmak istemeyen müşteriler için iki seramik kenarının 45 derece pahlanarak (gönyede) birleştirilmesinin doğru yolu nedir؟</p>
-<p>Dış mekan zemin döşemelerinde kışın donma-çözülme çevrimleri nedeniyle yapıştırıcının özelliğini yitirmesiyle nasıl başa çıkılır؟</p>
-<p>Yoğun kimyasal temizliğe maruz kalan mandıra ve süt işleme tesislerinde seramik döşemenin doğru yöntemi nedir؟</p>
-<p>Havalandırma şaftı duvarlarından geçen mekanik tesisat titreşimlerinin banyo seramiklerini çatlatması nasıl önlenir؟</p>
-<p>Duvar karolarında yatayda ve dikeyde dalgalanma oluşmasını önlemek için ip çekme ve mastarlama teknikleri nelerdir؟</p>
-<p>Çift taraflı yapıştırma yönteminde, karo arkasına sürülen yapıştırıcı yönü ile zemin yapıştırıcı yönünün paralel olmasının önemi nedir؟</p>
-<p>Eski seramiklerin üzerine geçiş astarı sürülmeden doğrudan yeni seramik döşenmesi durumunda alınması gereken riskler nelerdir؟</p>
-<p>Porselen karoları pürüzsüz ve sıfır çapakla kesmek için sulu tezgah kesme makinelerinde su debisi nasıl ayarlanır؟</p>
-<p>Duş duvarlarındaki ilk sıra seramiğin, zemin eğimi nedeniyle eğri gitmesini önlemek için teraziye alınması nasıl yapılır؟</p>
-<p>Dilatasyon derzlerinin (bina genleşme derzleri) üzerinden geçen seramiklerin serbest hareket edebilmesi için uygulama nasıl yapılır؟</p>
-<p>Porselen karolarda spiral motoru ile kare şeklinde priz deliği açmanın doğru yöntemi nedir؟</p>
-<p>Büyük boyutlu projelerde farklı üretim partilerine (ton ve kalibre) ait seramiklerin karışmasını önlemek için depo yönetimi nasıl yapılır؟</p>
-<p>Çimento harcına katılan priz geciktirici kimyasalların, seramiğin arkasındaki emicilik düzeyi düşük porselenlere etkisi nedir؟</p>
-<p>Uygulamadan bir süre sonra banyo zemin derzlerinin altından su sızması ve alt kat tavanında nem oluşturması nasıl önlenir؟</p>
-<p>Gıda hazırlama alanlarında derz aralarında biriken organik atıkların temizlenmesi için en uygun kimyasal temizleme yöntemi nedir؟</p>
-<p>Zemin seramiği ile lamine parke geçişinde kot farkını kapatan metal geçiş profilleri nasıl monte edilir؟</p>
-<p>Derz dolgusu uygulamasında aşırı su kullanılarak silim yapılması nedeniyle derz renginde ton farklılıkları oluşmasının nedenleri nelerdir؟</p>
-<p>Çok geniş açık otopark zeminlerinde seramik döşenirken genleşme derzi aralıkları nasıl planlanır؟</p>
-<p>Beton perdeler üzerindeki kalıp yağı kalıntılarının temizlenmeden yapıştırıcı sürülmesi durumunda ne yapılmalıdır؟</p>
-<p>Büyük ebatlı porselen panellerin şantiyede dikey olarak taşınması sırasında kırılmasını önleyici güvenlik önlemleri nelerdir؟</p>
-<p>Havuz kenarlarındaki kaymaz özellikli tırtıklı seramiklerin üst üste binmeden, sıfır kotta birleşme teknikleri nelerdir؟</p>
-<p>Güneş enerjisi panellerinin kurulu olduğu çatılarda rüzgar yükü ve titreşimlerin seramik döşemesine etkisi nasıl kontrol edilir؟</p>
-<p>İnşaat temizliği bittikten sonra seramik yüzeyinde kalan inatçı kireç ve harç kalıntılarını temizlemenin doğru yolu nedir؟</p>
-<p>Dış cephe porselen kaplamalarında rüzgar vakum yüküne karşı mekanik montajda ankraj vidalarının yerleşimi nasıl yapılır؟</p>
-<p>Porselen karoların altına tam oturmasını sağlamak için ağır kauçuk tokmakların doğru kullanım teknikleri nelerdir؟</p>
-<p>Karo desenlerinin birbirini takip ederek akışkan bir görsel oluşturması için döşeme öncesi kuru dizim (yerleşim planı) nasıl yapılır؟</p>
-<p>Ahşap dokulu uzun seramiklerin (porselen parke) döşenmesinde 1/3 veya 1/4 derz şaşırtma kuralının uygulanma nedeni nedir؟</p>
-<p>Süpürgelik montajı sonrasında duvar dibinde biriken toz ve kirlerin temizlenmesini kolaylaştırmak için derzler nasıl doldurulur؟</p>
-<p>İlaç fabrikaları temiz odalarında (cleanroom) epoksi esaslı antibakteriyel seramik döşerken alınması gereken önlemler nelerdir؟</p>
-<p>Geniş alanlarda zemin dalgalanmalarını sıfıra indirmek için döner kafalı tesviye klipsleri nasıl kullanılır؟</p>
-<p>Astar tabakasının kurumadan üzerine yapıştırıcı sürülmesi durumunda seramiklerin duvardan tamamen ayrılmasının nedenleri nelerdir؟</p>
-<p>Alışveriş merkezlerinde gece yapılan hızlı tadilatlarda ekspres seramik yapıştırıcılarının kullanım kuralları nelerdir؟</p>
-<p>Porselen karoların 45 derecelik köşe birleşim yerlerinde pah kırılmasını ve keskinliği gidermek için elmas zımpara nasıl uygulanır؟</p>
-<p>Aynı mekanda farklı kalınlıktaki seramik ve mermerlerin birlikte kullanılmasında yapıştırıcı kalınlığı nasıl dengelenir؟</p>
-<p>Çok emici kireç sıvalı duvarlarda seramik yapıştırıcısının suyunu kaybetmesini önlemek için ön hazırlık nasıl yapılır؟</p>
-<p>Derz boşluklarının eşit ve düzgün kalmasını sağlamak için kullanılan plastik derz artıları derz dolgudan önce nasıl sökülür؟</p>
-<p>Termal havuzların iç kaplamalarında sıcaklık değişimlerine dayanıklı esnek epoksi yapıştırıcı döşeme yöntemi nedir؟</p>
-<p>Süpürgeliklerin duvarla birleştiği üst kısımların toz toplamaması için bu bölgeler nasıl kapatılır ve düzeltilir؟</p>
-<p>Ağır yük forkliftlerinin çalıştığı endüstriyel depo zeminlerinde kalın porselen karo döşemenin teknik detayları nelerdir؟</p>
-<p>Zemin kaplama işlemlerinde kot ve düzlük kontrolü için üç ayaklı nivo cihazı nasıl kullanılır؟</p>
-<p>Mutfak tezgah arkası seramiklerinde priz deliklerinin tam hizasında kesilmesi için ölçü alma teknikleri nelerdir؟</p>
-<p>Uygulama esnasında derz aralarından taşan yapıştırıcıların derz dolgudan önce temizlenmemesi durumunda ne yapılmalıdır؟</p>
-<p>Balkon korkuluk direklerinin zemin seramiğiyle birleştiği noktalarda su yalıtımının sürekliliği nasıl sağlanır؟</p>
-<p>Yeni döşenmiş seramik zeminlerin üzerinde koruyucu karton serilmeden önce harcın kuruması için ne kadar beklenmelidir؟</p>
-<p>Zemin şapının tam kürlenmesini tamamlamadan üzerine hızlıca seramik döşenmesinin nedenleri ve sonuçları nelerdir؟</p>
-<p>Kesme disklerinin aşırı ısınarak porselen kenarlarını çatlatmasını önlemek için kuru kesim teknikleri nelerdir؟</p>
-<p>Banyo dolabı ve ayna montajı için duvar seramiği delinirken karonun çatlamasını önlemenin doğru yöntemi nedir؟</p>
-<p>Yerden ısıtmalı zeminlerde ilk çalıştırma esnasında seramiklerin genleşerek patlamasını önlemek için hangi önlemler alınmalıdır؟</p>
-<p>Dış mekan merdiven basamaklarında kaymayı önleyici yivli porselen karoların döşenme yöntemi nedir؟</p>
-<p>İki oda arasındaki kapı geçişlerinde derz çizgilerinin kesintisiz devam etmesi nasıl sağlanır؟</p>
-<p>Derz dolgusunun hazırlanmasında mikser yerine elle karıştırma yapıldığında topaklanma oluşması nasıl önlenir؟</p>
-<p>Cam kapı menteşelerinin zemine sabitlendiği noktalarda seramik karoların kırılmaması için nasıl bir uygulama yapılmalıdır؟</p>
-<p>Asit banyoları ve kimyasal tankların iç yüzeylerine aside dayanıklı porselen karo döşerken alınması gereken önlemler nelerdir؟</p>
-<p>Seramik arkasındaki yapıştırıcı şeritlerinin düzgün taranıp taranmadığını kontrol etmek için karoyu kaldırarak test etme yöntemi nedir؟</p>
-<p>Mutfak tezgahı ile duvar seramiğinin birleştiği köşe derzlerinde neden çimento esaslı derz yerine silikon kullanılmalıdır؟</p>
-<p>Büyük ebatlı karoların şantiyede taşınması sırasında esneyerek kırılmasını önleyen vakumlu taşıma aparatları nasıl kullanılır؟</p>
-<p>Çok soğuk kış günlerinde seramik yapıştırıcısının donarak özelliğini kaybetmesinin nedenleri ve çözümleri nelerdir؟</p>
-<p>Dış cephelerde mekanik askı sistemiyle porselen montajı yapılırken dikey rayların teraziye alınması nasıl yapılır؟</p>
-<p>Banyo zeminlerinde suyun süzgece rahat akabilmesi için zarf usulü (dört yönlü) eğim verme teknikleri nelerdir؟</p>
-<p>Geniş ticari showroom zeminlerinde ağır teşhir stantlarının altına gelen seramiklerin kırılmaması nasıl garanti edilir؟</p>
-<p>Epoksi derz dolgusunun temizliğinde kullanılan özel temizlik süngerleri ve selülozik keçelerin doğru kullanım yöntemi nedir؟</p>
-  <p>Dış cephelerde mekanik montaj yöntemiyle porselen döşerken arka boşlukların havalandırılması ve yoğuşma suyunun tahliyesi nasıl sağlanır؟</p>
-<p>Zemindeki genleşme derzlerinin üzerine seramik döşenirken derz dolgu malzemesi olarak esnek poliüretan mastik seçilmesinin teknik nedenleri nelerdir؟</p>
-<p>Yüzme havuzu deşarj kanallarının etrafındaki kavisli porselen parçaların kırılmadan ve hatasız kesilmesinin püf noktaları nelerdir؟</p>
-<p>Ahşap zeminlerin esnekliğinden kaynaklanan titreşimlerin, üzerine döşenecek seramiklerin yapışma mukavemetini düşürmemesi için hangi önlemler alınmalıdır؟</p>
-<p>Bebek odaları ve kreşlerde kullanılacak seramiklerin kaymazlık sınıfı ve hijyenik yüzey özellikleri nasıl seçilmelidir؟</p>
-<p>Agrega boyutu büyük olan kaba kumun, ince yataklama harcının yayılma ve tesviye kolaylığına etkisi nedir؟</p>
-<p>Mutfak adalarının zemin birleşim noktalarında su birikmesini ve temizlik zorluğunu önlemek için seramikler nasıl yerleştirilmelidir؟</p>
-<p>Yüksek tuzlu deniz havasına maruz kalan sahil şeridindeki binaların dış cephe porselen kaplamalarında hangi yapıştırıcı sınıfı tercih edilmelidir؟</p>
-<p>Çelik yapı elemanları ile betonarme duvarların birleştiği geçiş bölgelerinde seramiklerde çatlama oluşması nasıl önlenir؟</p>
-<p>Köşelerde estetik ve simetrik bir bitiş elde etmek için üçgen veya çokgen mozaik karoların döşenmesindeki teknik detaylar nelerdir؟</p>
-<p>Sırlı seramik yüzeyine bulaşan ve sertleşen poliüretan köpük kalıntıları, yüzeye zarar vermeden ve çizmeden nasıl temizlenir؟</p>
-<p>Zemin seramiği döşendikten hemen sonra üzerinde yürünmesi nedeniyle oluşan kot farkı (diş yapma) hataları nasıl düzeltilir؟</p>
-<p>Banyo eşik mermerinin altından koridor zeminine su sızmasını önlemek için su yalıtım bandı nasıl uygulanır؟</p>
-<p>Kenarları pahsız ve rektifiyesiz (doğal kesim) karoların döşenmesinde derz dolgu derinliği ve doluluk oranı nasıl ayarlanmalıdır؟</p>
-<p>Mutfak tezgah üstü duvarlarında, priz ve anahtar deliklerinin yatay ve dikey eksen çizgileriyle mükemmel uyumu nasıl kontrol edilir؟</p>
-<p>Akrilik esaslı sıvı su yalıtım katmanı üzerine döşenecek seramiklerde yapıştırıcının kuruma süresinin uzaması durumunda ne yapılmalıdır؟</p>
-<p>Isı değişimlerinin çok yüksek olduğu sauna ve buhar odası zeminlerinde genleşme derz genişliği ve sıklığı nasıl planlanmalıdır؟</p>
-<p>Sahanlıklı merdivenlerde, rıht ve basamak birleşimlerinde şatrap (eğri kesim) oluşmasını önlemek için seramik yerleşim planı nasıl yapılır؟</p>
-<p>Dış cephelerdeki yağmur suyu tahliye borusu kelepçelerinin etrafına, su sızıntısını önleyecek şekilde seramik montajı nasıl yapılır؟</p>
-<p>Banyo zeminindeki duş alanı ile banyo genel alanı arasındaki seviye farkını kapatmak için porselen geçiş profilleri nasıl monte edilir؟</p>
-<p>Uygulamadan yıllar sonra derz dolgularının ufalanarak dökülmesini önlemek için, uygulama anında harç suyunun emilmesini engelleyici hangi önlemler alınmalıdır؟</p>
-<p>Asma katların metal trapez sac zeminleri üzerine seramik döşerken zemin hazırlığı ve astar seçimi nasıl olmalıdır؟</p>
-<p>Çimento esaslı yapıştırıcıların yüksek ortam sıcaklığında (40°C ve üzeri) suyunu çok hızlı kaybederek "yanması" durumunun önüne nasıl geçilir؟</p>
-<p>Karoların altına sürülen yapıştırıcının tarak izlerinin, karo monte edildiğinde ezilerek tek bir düzgün tabakaya dönüşmesi nasıl sağlanır؟</p>
-<p>Çok sert porselen karoların kesimi esnasında bıçağın aşırı ısınarak elmas uçların körelmesini önlemek için sulu kesim sistemlerinde nelere dikkat edilmelidir؟</p>
-<p>Zemin süzgecinin seramik döşeme bittikten sonra hafifçe sola veya sağa kaymış olması estetik olarak nasıl gizlenir؟</p>
-<p>Asit içerikli temizlik maddelerinin banyo bataryaları ve metalik seramik dekorlarına zarar vermemesi için temizlikten sonra hangi işlemler yapılmalıdır؟</p>
-<p>Geniş alanlarda mastar kontrolü yaparken gözden kaçabilecek küçük dalgalanmaları tespit etmek için ışık yansıtma yöntemi nasıl kullanılır؟</p>
-<p>Havuz içi cam mozaik uygulamalarında kağıt yüzlü mozaiklerin kağıtlarının sökülmesi ve derzleme işlemi nasıl yönetilir؟</p>
-<p>Derz dolgusu uygulandıktan sonra rüzgarlı veya aşırı sıcak ortamlarda derzlerin çatlamasını önlemek için nemlendirme işlemi nasıl yapılır؟</p>
-<p>Çatılardaki parapet duvarlarının dip kısımlarında seramiklerin eğimli olarak kesilmesi ve su yalıtımının korunması nasıl sağlanır؟</p>
-<p>Ağır makine ve forklift trafiğine maruz kalan fabrika zeminlerinde seramiklerin kırılmasını önlemek için çift taraflı yapıştırma yöntemi nasıl uygulanır؟</p>
-<p>Geniş alanlarda kullanılan metal genleşme derz profillerinin, şapın genleşme derzleri ile tam olarak çakışması nasıl sağlanır؟</p>
-<p>Alçı blok veya alçıpan bölme duvarların seramik yapıştırıcısındaki suyu emerek şişmesini önlemek için hangi bariyer astarları kullanılmalıdır؟</p>
-<p>Derz dolgusu yapılmadan önce karo kenarlarında kalan harç artıklarının kazınması esnasında seramik sırrının zarar görmemesi için hangi aletler tercih edilmelidir؟</p>
-<p>Yoğun neme ve suya maruz kalan ahşap marin kontrplak zeminlerin üzerine seramik döşemenin püf noktaları nelerdir؟</p>
-<p>İnce porselen panellerin (slab) taranmış yapıştırıcı üzerine yerleştirildikten sonra hava boşluklarını atmak için el vibratörü nasıl kullanılmalıdır؟</p>
-<p>İnşaat süresince döşenmiş zemin seramiklerinin üzerine serilen koruyucu naylonların altında nem birikmesi ve leke oluşması nasıl önlenir؟</p>
-<p>Ağır sanayi tesislerindeki asitli ortam zeminlerinde seramik döşemek için reaksiyon reçeneli (epoksi) yapıştırıcılar nasıl uygulanır؟</p>
-<p>Porselen karolarda 45 derecelik pah (şev) kırma işlemi yapılırken kenarlarda pürüzsüz ve keskin bir hat elde etmek için spiral taşının devri nasıl ayarlanmalıdır؟</p>
-<p>Yaz aylarında açık havada yapılan uygulamalarda, rüzgarın yapıştırıcı yüzeyinde oluşturduğu kuru kabuklaşma engeli nasıl aşılır؟</p>
-<p>Gıda sanayi zeminlerinde hijyen standartlarına uygun, derz aralarında bakteri üremesini engelleyen epoksi derz dolgusu nasıl uygulanır؟</p>
-<p>Asansör motor dairesine komşu duvarlarda oluşan yüksek frekanslı titreşimlerin seramiklerin yapışma mukavemetine etkisi nasıl azaltılır؟</p>
-<p>Duvarlarda üç boyutlu (3D) veya dalgalı dekoratif seramikler döşenirken derz hizalaması ve ışık gölge oyunlarının estetik görünümü nasıl ayarlanır؟</p>
-<p>Yapıştırıcının karo arkasındaki temas alanının en az %95 oranında olmasını sağlamak için taraklama yönü neden tek yönlü (paralel) olmalıdır؟</p>
-<p>Sürme esaslı çimento-akrilik su yalıtımı üzerine seramik döşenirken yapıştırıcının yalıtım katmanını yumuşatmaması için hangi önlemler alınmalıdır؟</p>
-<p>Porselen karoları pürüzsüz kesmek için elmas bıçakların bilenmesi işleminde kum taşı veya klinker tuğla nasıl kullanılır؟</p>
-<p>Banyo duvarlarında ilk sıra seramik döşenirken, zemin süzgecinin eğiminden kaynaklanan kot farkları duvar başlangıcında nasıl dengelenir؟</p>
-<p>Kolonların dikdörtgen köşelerinde pah kırma işlemi yerine alüminyum veya pirinç köşe profilleri kullanmanın teknik avantajları nelerdir؟</p>
-<p>Porselen karolarda elmas panç (buat açıcı) yardımıyla temiz ve pürüzsüz dairesel delikler açılırken suyla soğutma nasıl yapılır؟</p>
-<p>Farklı odalarda farklı yönlere döşenen seramiklerin kapı eşiğinde düzgün bir birleşim çizgisi oluşturması nasıl sağlanır؟</p>
-<p>Çimento esaslı harçların yapışma gücünü artırmak için kullanılan sıvı polimer katkıların porselen karolardaki etkisi nedir؟</p>
-<p>Derz dolgusu yapıldıktan sonra banyo zemininde oluşan su sızıntılarını tespit etmek için suyla doldurma (test etme) yöntemi nasıl uygulanır؟</p>
-<p>Endüstriyel mutfaklarda zemin seramiklerinin üzerine dökülen sıcak yağların derz dolgusunu eritmesini önlemek için hangi malzeme kullanılmalıdır؟</p>
-<p>Seramik zemin ile laminat parke geçişinde kot farkı yoksa, iki malzeme arasında esnek bir birleşim sağlamak için mantar şeritler nasıl kullanılır؟</p>
-<p>Derz dolgusu kuruduktan sonra üzerinde beliren beyaz kireç lekelerini (çiçeklenme) gidermek için asitsiz özel temizleyiciler nasıl uygulanır؟</p>
-<p>Büyük açık alan zeminlerinde seramik döşerken genleşme derzlerinin genişliği ile ortam sıcaklığı arasındaki ilişki nasıl hesaplanır؟</p>
-<p>Beton yüzeyindeki düzgünsüzlükleri gidermek için seramik öncesi kendiliğinden yayılan şap (self-leveling) uygulaması nasıl yapılır؟</p>
-<p>Büyük ebatlı porselen plakaların taşınması ve montajı esnasında iş güvenliğini sağlamak için hangi ekipmanlar zorunludur؟</p>
-<p>Yüzme havuzu merdiven basamaklarında kaymayı önleyici seramiklerin montajında kot farkı oluşmaması nasıl sağlanır؟</p>
-<p>Güneş paneli montaj ayaklarının çatı seramikleri ile birleştiği yerlerde su yalıtımı nasıl detaylandırılır؟</p>
-<p>Seramik yüzeyinde inşaat sonrası kalan inatçı yapıştırıcı kalıntılarını temizlemek için solvent bazlı temizleyiciler nasıl kullanılır؟</p>
-<p>Dış cephe porselen kaplamalarında rüzgar yüküne karşı mekanik montajda kullanılan paslanmaz çelik klipslerin dayanımı nasıl test edilir؟</p>
-<p>Porselen karoların altına tam oturmasını sağlamak ve hava boşluklarını gidermek için kullanılan vakumlu el vibratörlerinin frekansı nasıl ayarlanır؟</p>
-<p>Karoların renk ve desen dağılımının doğal görünmesi için döşeme öncesinde farklı kutulardan karıştırma işlemi nasıl yapılır؟</p>
-<p>Ahşap görünümlü uzun porselen karoların döşenmesinde oluşabilecek bükülme (bel verme) hatasını önlemek için hangi tesviye aparatları kullanılır؟</p>
-<p>Süpürgelik montajından sonra duvar birleşim yerlerinde estetik bir görünüm sağlamak için akrilik mastik nasıl uygulanır؟</p>
-<p>İlaç ve gıda sanayi zeminlerinde epoksi esaslı antibakteriyel seramik döşerken ortamın nem oranı nasıl kontrol edilmelidir؟</p>
-<p>Geniş alan zeminlerinde dalgalanmaları sıfıra indirmek ve düz bir yüzey elde etmek için üç boyutlu tesviye sistemleri nasıl kullanılır؟</p>
-<p>Astar tabakasının tamamen kurumasını beklemeden üzerine yapıştırıcı sürülmesi durumunda seramiklerin yapışma mukavemeti nasıl etkilenir؟</p>
-<p>Hızlı tadilat gerektiren işlerde ekspres seramik yapıştırıcılarının priz alma süresi ve üzerine basılma süresi nasıl ayarlanır؟</p>
-<p>Porselen karoların 45 derecelik köşe birleşim yerlerinde pah kırılmasını önlemek için elmas zımpara pedleri hangi sırayla kullanılmalıdır؟</p>
-<p>Aynı mekanda farklı kalınlıktaki seramik ve mermerlerin birlikte kullanılmasında oluşacak kot farklarını önlemek için şap nasıl kademelendirilir؟</p>
-<p>Çok emici gazbeton veya kireç sıvalı duvarlarda yapıştırıcının suyunu kaybetmesini önlemek için astar uygulaması nasıl yapılır؟</p>
-<p>Derz boşluklarının eşit kalmasını sağlayan plastik derz artılarının derz dolgudan önce sökülmesinin kolay yolu nedir؟</p>
-<p>Termal havuz iç kaplamalarında sıcaklık değişimlerine dayanıklı esnek epoksi yapıştırıcıların karışım oranları nasıl ayarlanmalıdır؟</p>
-<p>Süpürgeliklerin üst kısımlarının toz ve kir toplamasını önlemek için duvarla birleştiği yerlere silikon nasıl çekilir؟</p>
-<p>Ağır yük forkliftlerinin çalıştığı endüstriyel zeminlerde kalın porselen karoların altındaki şapın dayanım sınıfı ne olmalıdır؟</p>
-<p>Zemin kaplama işlemlerinde kot ve düzlük kontrolünü milimetrik olarak yapmak için dijital nivo cihazı nasıl kullanılır؟</p>
-<p>Mutfak tezgah arkası seramiklerinde priz deliklerinin tam hizasında kesilmesi için şablon çıkarma teknikleri nelerdir؟</p>
-<p>Uygulama esnasında derz aralarından taşan yapıştırıcıların derz dolgudan önce temizlenmesi için hangi fırçalar kullanılır؟</p>
-<p>Balkon korkuluk direklerinin zemin seramiğiyle birleştiği noktalarda su sızıntısını önlemek için poliüretan mastik nasıl uygulanır؟</p>
-<p>Yeni döşenmiş seramik zeminlerin üzerinde koruyucu karton serilmeden önce harcın tamamen kuruması için kaç saat beklenmelidir؟</p>
-<p>Zemin şapının tam kürlenmesini tamamlamadan (nemini atmadan) üzerine hızlıca seramik döşenmesinin zararları nelerdir؟</p>
-<p>Kesme disklerinin aşırı ısınarak porselen kenarlarını çatlatmasını önlemek için kuru kesimde kesme motoru nasıl dinlendirilir؟</p>
-<p>Banyo dolabı ve ayna montajı için duvar seramiği delinirken karonun çatlamasını önlemek için matkap ucu nasıl seçilmelidir؟</p>
-<p>Yerden ısıtmalı zeminlerde ilk çalıştırma esnasında seramiklerin genleşerek patlamasını önlemek için ısıtma sistemi nasıl kademeli açılır؟</p>
-<p>Dış mekan merdiven basamaklarında kaymayı önleyici yivli porselen karoların döşenmesinde su tahliyesi nasıl sağlanır؟</p>
-<p>İki oda arasındaki kapı geçişlerinde derz çizgilerinin kesintisiz devam etmesi için başlangıç noktası nasıl ayarlanır؟</p>
-<p>Derz dolgusunun hazırlanmasında mikser yerine elle hızlı karıştırma yapıldığında topaklanma oluşması nasıl önlenir؟</p>
-<p>Cam kapı menteşelerinin zemine sabitlendiği noktalarda seramik karoların kırılmaması için açılacak delik çapı nasıl belirlenir؟</p>
-<p>Asit banyoları ve kimyasal tankların iç yüzeylerine aside dayanıklı porselen karo döşerken hangi derz dolgusu kullanılmalıdır؟</p>
-<p>Seramik arkasındaki yapıştırıcı şeritlerinin düzgün taranıp taranmadığını kontrol etmek için karoyu kaldırarak test etme yöntemi nasıl uygulanır؟</p>
-<p>Mutfak tezgahı ile duvar seramiğinin birleştiği köşe derzlerinde neden çimento esaslı derz yerine antibakteriyel silikon kullanılmalıdır؟</p>
-<p>Büyük ebatlı karoların şantiyede taşınması sırasında esneyerek kırılmasını önleyen vakumlu taşıma aparatları nasıl kullanılır؟</p>
-<p>Çok soğuk kış günlerinde seramik yapıştırıcısının donarak özelliğini kaybetmesinin nedenleri ve çözümleri nelerdir؟</p>
-<p>Dış cephelerde mekanik askı sistemiyle porselen montajı yapılırken dikey rayların teraziye alınması nasıl yapılır؟</p>
-<p>Banyo zeminlerinde suyun süzgece rahat akabilmesi için zarf usulü (dört yönlü) eğim verme teknikleri nelerdir؟</p>
-<p>Geniş ticari showroom zeminlerinde ağır teşhir stantlarının altına gelen seramiklerin kırılmaması nasıl garanti edilir؟</p>
-<p>Epoksi derz dolgusunun temizliğinde kullanılan özel temizlik süngerleri ve selülozik keçelerin doğru kullanım yöntemi nedir؟</p>
-  <p>Dış mekanda kullanılan seramiklerin genleşme derzlerinde poliüretan mastik uygulamasından önce derz derinliğini ayarlamak için derz dolgu fitili nasıl kullanılır؟</p>
-<p>Zemindeki kılcal yapısal çatlakların seramik yüzeyine yansımasını önlemek için çatlak köprüleme membranları nasıl uygulanır؟</p>
-<p>Havuz taşma kanallarının köşe birleşim yerlerinde su sızdırmazlığını sağlamak için epoksi esaslı pah bantları nasıl monte edilir؟</p>
-<p>Yerden ısıtmalı zeminlerde kullanılacak seramik yapıştırıcılarının esneklik (S1 veya S2) sınıfı nasıl seçilmelidir؟</p>
-<p>Yoğun yaya trafiğine maruz kalan okul koridorlarında kullanılacak seramiklerin aşınma dayanımı (PEI) değeri ne olmalıdır؟</p>
-<p>İnce yataklama yapıştırıcısı ile döşenecek mozaiklerin altındaki şapın yüzey düzgünlüğü toleransı en fazla kaç milimetre olmalıdır؟</p>
-<p>Mutfak tezgahı arkasındaki priz çerçevelerinin seramik yüzeyine sıfır oturması için duvar kesim derinliği nasıl ayarlanır؟</p>
-<p>Deniz suyuna doğrudan temas eden dalgakıran ve liman yapılarındaki seramik kaplamalarda hangi tip harçlar kullanılmalıdır؟</p>
-<p>Çelik kolonların banyo veya ıslak hacim duvarlarıyla birleştiği noktalarda seramik kırılmalarını önleyici derz detayları nelerdir؟</p>
-<p>Altıgen mozaiklerin duvara döşenmesinde dikey kaymaları önlemek için başlangıç sırası nasıl sabitlenir؟</p>
-<p>Sırsız porselen karoların yüzeyine nüfuz eden yağ lekelerini temizlemek için alkali bazlı temizleyiciler nasıl uygulanır؟</p>
-<p>Zemin seramiği döşendikten sonra priz süresi tamamlanmadan üzerine ağır yük konulması nedeniyle oluşan çökmeler nasıl düzeltilir؟</p>
-<p>Banyo kapı kasalarının alt kısımlarında ahşabın nemden şişmesini önlemek için seramik birleşimleri nasıl yalıtılır؟</p>
-<p>Eski binaların düzgün olmayan taş duvarlarına seramik döşemeden önce kaba sıva ile teraziye alma işlemi nasıl yapılır؟</p>
-<p>Mutfak duvarlarındaki seramik derzlerinin, mutfak dolaplarının asılacağı askı profili çizgisiyle paralel gitmesi nasıl kontrol edilir؟</p>
-<p>Su yalıtımı yapılmış çimento esaslı yüzeylerde yapıştırıcının açıkta kalma (bekleme) süresi sıcak havalarda nasıl değişir؟</p>
-<p>Hamamlarda ve sıcak su havuzlarında kullanılacak derz dolgularının sıcaklık dayanımı ve esneklik özellikleri ne olmalıdır؟</p>
-<p>Merdiven rıhtlarının basamakla birleştiği iç köşelerde su birikmesini önlemek için rıht karoları nasıl eğimlendirilir؟</p>
-<p>Dış cephe porselen kaplamalarında cephe ankrajlarının betonarme perdeye sabitlenmesinde tork anahtarı nasıl kullanılır؟</p>
-<p>Duş teknesi kenarlarında silikon çekilmeden önce yüzeyin kuru ve tozsuz olduğunu doğrulamak için hangi temizlik solventleri kullanılır؟</p>
-<p>Derz dolgularının zamanla renk değiştirerek sararmasını önlemek için UV dayanımlı poliüretan derz koruyucular nasıl uygulanır؟</p>
-<p>Asma tavanların duvarla birleştiği üst kotlarda seramik bitiş çizgisi nasıl gizlenir veya dekore edilir؟</p>
-<p>Çimento esaslı yapıştırıcıların soğuk havalarda (5°C ve altı) priz süresinin uzaması durumunda mukavemet kaybı nasıl önlenir؟</p>
-<p>Karo arkasındaki yapıştırıcının tarak dişlerinin ezilerek tam temas sağlaması için plastik tokmaklama açısı nasıl ayarlanmalıdır؟</p>
-<p>Çok kalın porselen karoların (2 cm ve üzeri) kesimi esnasında elmas bıçağın yalpalamasını önlemek için makine rayı bakımı nasıl yapılır؟</p>
-<p>Zemin süzgecinin çevresindeki seramik kesimlerinde keskin köşe kalmaması için elmas zımpara taşları nasıl kullanılır؟</p>
-<p>Asidik temizleyicilerin seramik yüzeyindeki metalik dekor şeritlerini karartmaması için ne kadar süre sonra durulama yapılmalıdır؟</p>
-<p>Geniş ticari zeminlerde ışık yansıması altında beliren gölgeleri gidermek için karoların yönsel dizilimi nasıl kontrol edilir؟</p>
-<p>Havuz içi cam mozaiklerin derz dolgusu olarak kullanılan epoksi malzemelerin havuz suyu kloruna karşı dayanımı nasıl test edilir؟</p>
-<p>Dış mekan zemin derzlerinin kış aylarında donarak çatlamasını önlemek için su itici emprenye malzemeleri nasıl uygulanır؟</p>
-<p>Teras parapet duvarlarının dış cepheyle birleştiği damlalık noktalarında seramik kesim detayları nasıl olmalıdır؟</p>
-<p>Endüstriyel zeminlerde yüksek basınçlı yıkama makinelerinin derz dolgularını sökmesini önlemek için hangi derz mukavemet sınıfı seçilmelidir؟</p>
-<p>Yapısal genleşme derzlerindeki pirinç veya alüminyum profillerin şap betonuna mekanik olarak sabitlenmesi nasıl yapılır؟</p>
-<p>Alçıpan bölme duvarların seramik ağırlığı altında esneyip bel vermesini önlemek için dikey profil aks aralıkları nasıl düşürülmelidir؟</p>
-<p>Derz dolgusu yapılmadan önce karoların arasına sıkışan harçları temizlemek için üretilen elektrikli derz kazıma makineleri nasıl kullanılır؟</p>
-<p>Ahşap zeminlerin üzerine seramik döşemeden önce zeminin esnemesini önleyen yüksek yoğunluklu elyaflı plakalar nasıl serilir؟</p>
-<p>İnce porselen panellerin (slab) duvara montajında hava kabarcığı kalmaması için çift yönlü taraklama yönleri nasıl seçilmelidir؟</p>
-<p>İnşaat temizliği sırasında seramik yüzeyini çizebilecek metal spatula ve tel fırçaların kullanılmaması için işçiler nasıl uyarılmalıdır؟</p>
-<p>Asit banyolu endüstriyel tesis zeminlerinde porselen karoların altındaki yalıtım tabakasının aside dayanımı nasıl test edilir؟</p>
-<p>Porselen karolarda 45 derecelik köşe birleşimlerinde sıfır hata elde etmek için sulu kesim makinelerinde köşe kesim aparatı nasıl kullanılır؟</p>
-<p>Yüksek rüzgarlı havalarda açık alanda yapılan seramik uygulamalarında yapıştırıcının kuruma süresini uzatan rüzgar kırıcı paneller nasıl kurulur؟</p>
-<p>Gıda depolarında kullanılan epoksi derz dolgularının gıdaya uygunluk (food-grade) sertifikaları nasıl kontrol edilir؟</p>
-<p>Jeneratör odalarına komşu duvarlarda oluşan mekanik titreşimlerin seramik yapıştırıcısına zarar vermemesi için hangi esnek yapıştırıcılar tercih edilmelidir؟</p>
-<p>Duvarlarda dalgalı yüzeyli seramiklerin köşe birleşimlerinde derz çizgilerinin sürekliliği için lazer terazi ile kılavuz çizgisi nasıl çizilir؟</p>
-<p>Büyük ebatlı karoların duvara yapıştırılmasında kaymayı önleyici (Thixotropic) özellikli yapıştırıcılar neden tercih edilmelidir؟</p>
-<p>Nem bariyeri özelliği olan epoksi astarların su yalıtımlı zeminlerde seramik uygulaması öncesinde kuruma süresi nasıl ölçülür؟</p>
-<p>Porselen kesici elmas disklerin keskinliğini geri kazandırmak için kullanılan bileyici blokların kullanım sıklığı ne olmalıdır؟</p>
-<p>Duş duvarı köşelerinde sızdırmazlığı garanti etmek için seramik altına uygulanan su yalıtım bantlarının biniş genişliği en az kaç santimetre olmalıdır؟</p>
-<p>Dış cephe köşelerinde alüminyum profil yerine porselenin kendi dokusuyla birleşen özel köşe elemanları nasıl monte edilir؟</p>
-<p>Porselen karolarda elmas buat açıcı pançlar kullanılırken karonun arkasının kırılmasını önlemek için delme işlemi nasıl sonlandırılır؟</p>
-<p>Farklı odalardaki zemin seramiklerinin yönlerinin kapı eşiğinde kesiştiği durumlarda estetik geçiş mermerleri nasıl yerleştirilir؟</p>
-<p>Çimento esaslı harçların esnekliğini artıran latex sıvı katkılarının karışıma eklenme oranları nasıl hesaplanır؟</p>
-<p>Banyo zeminlerinde su yalıtımı ve derz dolgusu tamamlandıktan sonra sızdırmazlık testi için suyun banyoda bekletilme süresi en az kaç saat olmalıdır؟</p>
-<p>Endüstriyel mutfaklarda zemin temizliğinde kullanılan ağır kimyasalların seramik yapıştırıcısına ulaşmasını engelleyen sızdırmazlık bariyerleri nasıl yapılır؟</p>
-<p>Zemin seramiği ile parke geçişinde kot farkını kapatmak için kullanılan ahşap görünümlü geçiş profilleri nasıl monte edilir؟</p>
-<p>Derz dolgusu sonrasında oluşan beyaz dumanlı buğulanmayı temizlemek için asit içermeyen mikro gözenekli temizlik süngerleri nasıl kullanılır؟</p>
-<p>Açık teraslarda sıcaklık farklarından dolayı oluşabilecek boyutsal değişimleri absorbe etmek için genleşme derzleri kaç metrede bir bırakılmalıdır؟</p>
-<p>Kendiliğinden yayılan şap (self-leveling) öncesinde zemin emiciliğini dengelemek ve hava kabarcığı oluşumunu önlemek için astar uygulaması nasıl yapılır؟</p>
-<p>Büyük ebatlı porselen plakaların montajında kullanılan vakumlu taşıma çerçevelerinin basınç göstergeleri uygulama boyunca nasıl takip edilir؟</p>
-<p>Havuz merdivenlerindeki kaymaz seramiklerin birleşim yerlerinde su sirkülasyonunu engellemeyecek şekilde derzleme nasıl yapılır؟</p>
-<p>Güneş paneli montaj aparatlarının çatı kaplamasını deldiği noktalarda esnekliği koruyan poliüretan mastikler nasıl uygulanır؟</p>
-<p>Seramik yüzeyinde kuruyan harç lekelerini temizlemek için kullanılan özel temizlik jelleri dikey yüzeylerde akmadan nasıl uygulanır؟</p>
-<p>Dış cephe kaplamalarında kullanılan paslanmaz çelik klipslerin korozyona karşı dayanımını artırmak için hangi çelik sınıfları tercih edilmelidir؟</p>
-<p>Vakumlu el vibratörlerinin porselen karolardaki mikro çatlakları tetiklememesi için maksimum titreşim frekansı nasıl sınırlandırılır؟</p>
-<p>Doğal taş görünümlü karoların döşenmesinde tekrarlayan desenlerin yan yana gelmesini önlemek için şantiyede yerleşim planı nasıl yapılır؟</p>
-<p>Ahşap görünümlü uzun porselen karoların döşenmesinde tesviye klipslerinin yerleşimi karo uçlarından kaç santimetre içeride olmalıdır؟</p>
-<p>Süpürgeliklerin duvarla birleştiği üst kısımların boya tadilatı sırasında lekelenmemesi için maskeleme bantları nasıl uygulanır؟</p>
-<p>İlaç fabrikası temiz odalarında kullanılacak epoksi derz dolgularının aşınma ve kimyasal dezenfektan dayanımı nasıl test edilir؟</p>
-<p>Geniş alanlarda zemin dalgalanmalarını önlemek için kullanılan üç boyutlu tesviye klipslerinin uygulama sonrası sökülme yönü ne olmalıdır؟</p>
-<p>Astar tabakasının kurumadan yapıştırıcıyla temas etmesi halinde yapıştırıcının kimyasal priz reaksiyonunun bozulma nedenleri nelerdir؟</p>
-<p>Hızlı tadilat gerektiren dükkan zeminlerinde kullanılan hızlı sertleşen yapıştırıcıların üzerine trafiğe açılma süresi kaç saattir؟</p>
-<p>Porselen karoların 45 derecelik birleşim yerlerindeki keskinliği gidermek için kullanılan elmas zımparaların kum (grit) değerleri sırasıyla nasıl seçilir؟</p>
-<p>Farklı kalınlıktaki seramik ve mermerlerin birleşiminde kot farkı oluşmaması için harç yatağı kalınlığı milimetrik olarak nasıl ayarlanır؟</p>
-<p>Çok yüksek emiciliğe sahip gazbeton duvarlarda seramik uygulamadan önce uygulanacak astarın kat sayısı ve bekleme süresi ne olmalıdır؟</p>
-<p>Derz aralarındaki plastik derz artılarının derz dolgusu yapılmadan önce kolayca çıkarılması için tasarlanmış özel penseler nasıl kullanılır؟</p>
-<p>Termal havuzlarda sıcaklık dalgalanmalarına dayanıklı epoksi yapıştırıcıların A ve B bileşenlerinin mikserle karıştırılma süresi ne kadar olmalıdır؟</p>
-<p>Süpürgeliklerin üst kısımlarının toz toplamasını önlemek ve estetik görünmesini sağlamak için çekilecek silikonun kalınlığı nasıl ayarlanır؟</p>
-<p>Ağır yük forkliftlerinin çalıştığı fabrika zeminlerinde seramik altındaki şapın basınç dayanımı (C25 veya üzeri) nasıl kontrol edilir؟</p>
-<p>Zemin seramik kaplama işlemlerinde kot ve düzlük kontrolünü milimetrik olarak yapmak için kullanılan dijital nivo cihazlarının kalibrasyonu nasıl yapılır؟</p>
-<p>Mutfak tezgah arkası seramiklerinde elektrik buatlarının tam hizasında kesim yapmak için kağıt şablon çıkarma yöntemi nasıl uygulanır؟</p>
-<p>Seramik uygulaması sırasında derzlerden taşan yapıştırıcıların kurumadan önce nemli süngerle temizlenmesinin önemi nedir؟</p>
-<p>Balkon korkuluklarının zemin seramiğini delerek monte edildiği noktalarda su sızıntısını önlemek için sızdırmazlık halkaları nasıl yerleştirilir؟</p>
-<p>Yeni döşenmiş seramik zeminlerin üzerinde boya ve alçı işleri yapılırken seramik yüzeyinin çizilmesini önleyecek koruyucu keçe astarlar nasıl serilir؟</p>
-<p>Zemin şapının kuruma sürecinde (her 1 cm şap kalınlığı için 1 hafta) tam kürlenmesini tamamlamadan seramik döşenmesinin riskleri nelerdir؟</p>
-<p>Kesme disklerinin aşırı ısınarak porselen kenarlarını çatlatmasını önlemek için kuru kesimde kesme motorunun devir hızı nasıl ayarlanmalıdır؟</p>
-<p>Banyo duvar seramiklerinde delik açarken matkap ucunun kaymasını ve seramik sırlı yüzeyini çizmesini önlemek için maskeleme bandı nasıl kullanılır؟</p>
-<p>Yerden ısıtmalı zeminlerde ilk çalıştırma esnasında ısıtma suyunun sıcaklığı her gün kaç derece artırılarak kademeli açılmalıdır؟</p>
-<p>Dış mekan merdiven basamaklarında su birikmesini ve buzlanmayı önlemek için basamak seramiklerine verilecek minimum eğim açısı ne olmalıdır؟</p>
-<p>İki oda arasındaki kapı geçişlerinde derz çizgilerinin kesintisiz devam etmesi için oda merkezlerinden alınan hizalama ipleri nasıl çekilir؟</p>
-<p>Derz dolgusunun hazırlanmasında mikser devrinin çok yüksek olması durumunda harç içinde hava kabarcığı oluşması nasıl önlenir؟</p>
-<p>Cam kapı zemin menteşelerinin yerleştirildiği noktalarda seramik karoların kırılmasını önlemek için kullanılacak esnek kauçuk contalar nasıl yerleştirilir؟</p>
-<p>Asit banyolarında aside dayanıklı porselen karo döşerken kullanılacak silikat esaslı derz dolgularının karıştırma ve uygulama kuralları nelerdir؟</p>
-<p>Seramik arkasındaki yapıştırıcı şeritlerinin düzgün taranıp taranmadığını kontrol etmek için taze yapıştırılmış karoyu kaldırıp bakma sıklığı ne olmalıdır؟</p>
-<p>Mutfak tezgahı ile duvar seramiğinin birleştiği köşe derzlerinde çimento esaslı derz yerine neden mantar önleyici (anti-fungal) silikon kullanılmalıdır؟</p>
-<p>Büyük ebatlı karoların şantiyede taşınması sırasında esneyerek kırılmasını önlemek için üretilen karbon takviyeli taşıma barları nasıl monte edilir؟</p>
-<p>Çok soğuk kış günlerinde seramik yapıştırıcısının donmasını önlemek için şantiye ortamında kullanılacak endüstriyel ısıtıcılar nasıl konumlandırılmalıdır؟</p>
-<p>Dış cephelerde mekanik askı sistemiyle porselen montajı yapılırken dikey alüminyum rayların terazi kontrolünde şakül kullanımı nasıl yapılır؟</p>
-<p>Banyo zeminlerinde suyun süzgece rahat akabilmesi için zarf usulü (dört yönlü) eğim verirken üçgen kesim çizgileri nasıl belirlenir؟</p>
-<p>Geniş ticari showroom zeminlerinde ağır teşhir stantlarının altına gelen seramiklerin kırılmaması için şap altına serilen çelik hasır mukavemeti nasıl seçilir؟</p>
-<p>Epoksi derz dolgusunun temizliğinde kullanılan özel temizlik sıvıları ve selülozik keçelerin karo yüzeyini matlaştırmaması için hangi silim teknikleri uygulanır؟</p>
-  <p>Dış mekanda kullanılan seramiklerin genleşme derzlerindeki poliüretan mastiklerin üzerine doğrudan boya uygulaması yapılabilir mi, boyanın soyulmaması için ne yapılmalıdır؟</p>
-<p>Zemindeki hareketli çatlakların seramik kaplamaya zarar vermesini önlemek için ayrıcı membranlar (uncoupling membranes) nasıl serilir؟</p>
-<p>Yarı olimpik yüzme havuzlarının köşe birleşim yerlerinde su sızdırmazlığını sağlamak için esnek yalıtım bantları hangi yapıştırıcıyla yapıştırılır؟</p>
-<p>Yerden ısıtmalı zeminlerde kullanılacak seramik yapıştırıcılarının TS EN 12004 standartlarına göre esneklik kodları neyi ifade eder؟</p>
-<p>Yoğun yaya trafiğine maruz kalan metro istasyonu zeminlerinde kullanılacak seramiklerin aşınma dayanımı (PEI) ve sertlik (Mohs) değerleri kaç olmalıdır؟</p>
-<p>İnce yataklama yapıştırıcısı ile döşenecek ince porselen mozaiklerin altındaki şapın düzgünlüğünü sağlamak için zımparalama işlemi nasıl yapılır؟</p>
-<p>Mutfak tezgahı arkasındaki elektrik priz kutularının seramik döşendikten sonra gevşememesi için hangi montaj vidaları tercih edilmelidir؟</p>
-<p>Deniz suyuna maruz kalan liman yapılarındaki beton yüzeylerin üzerine seramik döşemeden önce korozyon önleyici katman nasıl uygulanır؟</p>
-<p>Çelik yapıların genleşme birleşim noktalarında duvar seramiklerinin kırılmasını önleyici esnek dilatasyon derzleri nasıl oluşturulur؟</p>
-<p>Altıgen ve sekizgen karoların duvara döşenmesinde derz çizgilerinin düzgünlüğünü korumak için ara derz aparatları nasıl kullanılır؟</p>
-<p>Sırsız ve mat porselen karoların gözeneklerine nüfuz eden zorlu mürekkep veya kahve lekelerini temizlemek için hangi kimyasallar kullanılır؟</p>
-<p>Zemin seramiği döşendikten sonra üzerinde erken yürünmesi nedeniyle çöken karoların harcı kurumadan sökülüp yeniden döşenmesi nasıl yapılır؟</p>
-<p>Banyo kapı pervazlarının alt kısımlarında ahşabın zemin suyunu emerek çürümesini önlemek için silikon yalıtımı nasıl uygulanır؟</p>
-<p>Tarihi taş duvarların düzgün olmayan yüzeylerine seramik döşerken yapıştırıcı kalınlığının mukavemete olumsuz etkisi nasıl önlenir؟</p>
-<p>Mutfak duvarlarındaki seramik derzlerinin, üst dolapların alt çizgisiyle tam olarak çakışması için ilk sıra yüksekliği nasıl ayarlanır؟</p>
-<p>Su yalıtımı yapılmış banyo zeminlerinde yapıştırıcının kuruma süresini hızlandırmak için ortam havalandırması nasıl yapılmalıdır؟</p>
-<p>Hamamlardaki göbek taşı ve sıcaklık alanlarında kullanılacak derz dolgularının kimyasal ve termal dayanımı nasıl artırılır؟</p>
-<p>Merdiven basamak seramiklerinin rıht seramiklerinin üzerine binmesi durumunda köşe kırılmalarını önleyici detaylar nelerdir؟</p>
-<p>Dış cephe porselen kaplamalarında kullanılan alüminyum düşey profillerin genleşme boşlukları rüzgar yüküne göre nasıl hesaplanır؟</p>
-<p>Duş teknesi ve küvet kenarlarına silikon çekilmeden önce yüzeyin tamamen kuru olmasını sağlamak için sıcak hava tabancası nasıl kullanılır؟</p>
-<p>Derz dolgularının banyo neminden dolayı küflenmesini önlemek için kullanılan nano-teknolojik derz koruyucu spreyler nasıl uygulanır؟</p>
-<p>Asma tavanların duvar seramikleri ile birleştiği yerlerdeki kot farklarını ve eğrilikleri kapatmak için hangi profiller tercih edilmelidir؟</p>
-<p>Çimento esaslı yapıştırıcıların soğuk havalarda donmasını önlemek için harç suyuna katılan don önleyici katkıların dozajı nasıl ayarlanır؟</p>
-<p>Karo arkasındaki yapıştırıcının düzgün ezilmesi için vibrasyonlu vantuzların dairesel hareketlerle kullanılması neden önemlidir؟</p>
-<p>Çok kalın ve sert porselen karoları keserken elmas bıçağın ömrünü uzatmak için kesim esnasında uygulanacak baskı gücü nasıl ayarlanır؟</p>
-<p>Zemin süzgecinin etrafındaki seramiklerin kesim yerlerinde su sızıntısını önlemek için süzgeç yakası su yalıtımı nasıl yapılır؟</p>
-<p>Asidik temizleyicilerin seramik yüzeyindeki altın yaldızlı dekoratif bordürlere zarar vermesini önleyici koruyucu cilalar nasıl uygulanır؟</p>
-<p>Geniş ticari zeminlerde farklı ışık kaynaklarının karolar üzerindeki yansıma farklılıklarını gidermek için aydınlatma açısı nasıl ayarlanmalıdır؟</p>
-<p>Havuz içi cam mozaiklerin derz dolgusu olarak kullanılan epoksi malzemelerin UV ışınlarına karşı sararma direnci nasıl test edilir؟</p>
-<p>Dış mekan zemin derzlerinin kışın donma nedeniyle çatlamasını önlemek için kullanılan silikon esaslı emprenye malzemeleri nasıl uygulanır؟</p>
-<p>Teras parapet duvarlarının üstünü kaplayan seramik harpuştaların damlalık çıkıntısı genişliği en az kaç santimetre olmalıdır؟</p>
-<p>Endüstriyel zeminlerde yüksek basınçlı buharla temizlik yapıldığında derz dolgularının çözülmesini önlemek için hangi derz tipi seçilmelidir؟</p>
-<p>Yapısal genleşme derzlerindeki profillerin seramik zeminle aynı kotta kalmasını sağlamak için montaj esnasında hangi aparatlar kullanılır؟</p>
-<p>Alçıpan bölme duvarların seramik ağırlığı altında esnemesini önlemek için çift kat alçıpan vidalama tekniği nasıl uygulanır؟</p>
-<p>Derz dolgusu yapılmadan önce karoların arasına sıkışan harçları temizlemek için üretilen manuel derz kazıma bıçakları nasıl kullanılır؟</p>
-<p>Ahşap döşeme üzerine seramik kaplama yaparken ahşabın çalışmasından kaynaklanan gerilmeleri sönümleyen esnek levhalar nasıl monte edilir؟</p>
-<p>Büyük ebatlı ince porselen panellerin duvara montajında hava kabarcıklarını kenarlara doğru itmek için izlenecek süpürme sırası nedir؟</p>
-<p>İnşaat temizliği sırasında seramik yüzeyindeki harç kalıntılarını sökmek için tel fırça yerine neden plastik keçeler tercih edilmelidir؟</p>
-<p>Asit banyolu endüstriyel tesis zeminlerinde seramik yapıştırmada kullanılan epoksi reçinelerin karıştırma esnasında ısınması (egzotermik reaksiyon) nasıl kontrol edilir؟</p>
-<p>Porselen karolarda 45 derecelik şev kırma işlemi yapılırken kenarlarda sır dökülmesini önlemek için spiral taşı kesim yönü nasıl olmalıdır؟</p>
-<p>Yaz aylarında açık havada yapılan uygulamalarda, rüzgarın yapıştırıcı yüzeyinde oluşturduğu kuru kabuğu kırmak için yapıştırıcı neden tekrar taranmalıdır؟</p>
-<p>Gıda sanayi zeminlerinde kullanılan epoksi derz dolgularının yüksek sıcaklıktaki suya ve buhara karşı dayanımı nasıl test edilir؟</p>
-<p>Asansör boşluklarına komşu banyo duvarlarında oluşan titreşimleri sönümlemek için seramik arkasına esnek mantar şilteler nasıl serilir؟</p>
-<p>Duvarlarda dalgalı veya rölyefli seramiklerin köşe birleşimlerinde derzlerin kaymasını önlemek için kullanılacak köşe şablonları nasıl hazırlanır؟</p>
-<p>Büyük ebatlı ağır karoların duvara monte edilmesinde kullanılan kayma direnci yüksek (T sınıfı) yapıştırıcıların özellikleri nelerdir؟</p>
-<p>Nem bariyeri özelliği olan epoksi astarların taze beton zemin üzerine seramik döşemeden önce uygulanma kuralları nelerdir؟</p>
-<p>Porselen kesici elmas disklerin körleştiğini gösteren kıvılcım rengi ve kesim hızı değişiklikleri nasıl takip edilir؟</p>
-<p>Duş duvarı köşelerinde su yalıtımının sürekliliğini sağlamak için kullanılan pah bantlarının köşe dönüş elemanları nasıl monte edilir؟</p>
-<p>Dış cephe köşelerinde alüminyum profil yerine porselenin kendisinden üretilen "L" şeklindeki köşe seramikleri nasıl yapıştırılır؟</p>
-<p>Porselen karolarda elmas buat açıcı pançlar kullanılırken matkabın darbe modunun kesinlikle kapatılmasının önemi nedir؟</p>
-<p>Farklı odalardaki zemin seramiklerinin kapı eşiğindeki geçişlerinde metal profiller yerine esnek mantar derzler nasıl uygulanır؟</p>
-<p>Çimento esaslı harçların esnekliğini ve yapışma gücünü artıran sıvı akrilik latex katkılarının kuruma süresine etkisi nedir؟</p>
-<p>Banyo zeminlerinde su yalıtımı bittikten sonra sızdırmazlık testi için banyonun suyla doldurulmasında su seviyesi ne kadar olmalıdır؟</p>
-<p>Endüstriyel mutfak zeminlerinde seramik derzlerinden sızabilecek suların betonarme döşemeye ulaşmasını önleyen ikincil drenaj sistemleri nasıl yapılır؟</p>
-<p>Zemin seramiği ile halı geçişinde kot farkını kapatmak ve halı kenarının sökülmesini önlemek için hangi profiller kullanılır؟</p>
-<p>Derz dolgusu sonrasında oluşan beyaz dumanlı buğulanmayı temizlemek için kullanılan asidik olmayan özel temizlik jelleri nasıl uygulanır؟</p>
-<p>Açık teraslarda sıcaklık farklarından dolayı oluşabilecek genleşmeleri karşılamak için genleşme derzlerinin genişliği en az kaç milimetre olmalıdır؟</p>
-<p>Kendiliğinden yayılan şap uygulaması öncesinde zemin emiciliğini dengelemek için kullanılan akrilik astarların seyreltme oranları nasıl ayarlanır؟</p>
-<p>Büyük ebatlı porselen plakaların montajında kullanılan vakumlu taşıma çerçevelerinin vantuz lastiklerinin temizliği nasıl yapılır؟</p>
-<p>Havuz merdivenlerindeki kaymaz seramiklerin birleşim yerlerinde suyun tahliyesini kolaylaştıracak eğimli derzler nasıl yapılır؟</p>
-<p>Güneş paneli montaj aparatlarının çatı kaplamasını deldiği noktalarda su sızdırmazlığını sağlayan EPDM contalar nasıl monte edilir؟</p>
-<p>Seramik yüzeyinde kuruyan inatçı harç lekelerini temizlemek için kullanılan organik asit içerikli temizleyiciler nasıl uygulanır؟</p>
-<p>Dış cephe kaplamalarında kullanılan paslanmaz çelik klipslerin rüzgar vakum yükü altında esneme miktarları nasıl hesaplanır؟</p>
-<p>Vakumlu el vibratörlerinin porselen karolarda oluşturabileceği mikro çatlakları önlemek için vibratör taban kauçuğu nasıl seçilmelidir؟</p>
-<p>Doğal taş görünümlü karoların döşenmesinde aynı desenin üst üste gelmesini önlemek için şantiyede uygulanan kuru dizim kuralları nelerdir؟</p>
-<p>Ahşap görünümlü uzun porselen karoların döşenmesinde tesviye klipslerinin sıkma kuvveti karo kalınlığına göre nasıl ayarlanır؟</p>
-<p>Süpürgeliklerin duvarla birleştiği üst kısımların boyanması esnasında seramik yüzeyinin lekelenmemesi için hangi maskeleme bantları tercih edilmelidir؟</p>
-<p>İlaç fabrikası temiz odalarında kullanılacak epoksi derz dolgularının hidrojen peroksit gibi dezenfektanlara karşı kimyasal direnci nasıl test edilir؟</p>
-<p>Geniş alanlarda zemin dalgalanmalarını önlemek için kullanılan vidalı tesviye sistemlerinin sökülmesinde plastik çekicin vuruş yönü ne olmalıdır؟</p>
-<p>Astar tabakasının kurumadan yapıştırıcıyla temas etmesi halinde astarın duvardan soyularak yapıştırıcıya yapışması hatası nasıl önlenir؟</p>
-<p>Hızlı tadilat gerektiren dükkan zeminlerinde kullanılan hızlı sertleşen yapıştırıcıların tam kürlenme ve üzerine ağır yük taşıma süresi kaç gündür؟</p>
-<p>Porselen karoların 45 derecelik birleşim yerlerindeki keskinliği gidermek için kullanılan elmas zımparaların suyla ıslatılarak kullanılmasının avantajları nelerdir؟</p>
-<p>Farklı kalınlıktaki seramik ve mermerlerin birleşiminde kot farkı oluşmaması için şap üzerine sürülecek kendiliğinden yayılan şap kalınlığı nasıl ayarlanır؟</p>
-<p>Çok yüksek emiciliğe sahip gazbeton duvarlarda seramik uygulamadan önce uygulanacak astarın duvara nüfuz etme derinliği nasıl kontrol edilir؟</p>
-<p>Derz aralarındaki plastik derz artılarının derz dolgusu yapılmadan önce kolayca çıkarılması için tasarlanmış özel derz cımbızları nasıl kullanılır؟</p>
-<p>Termal havuzlarda sıcaklık dalgalanmalarına dayanıklı epoksi yapıştırıcıların karışımında hava kabarcığı oluşmasını önlemek için mikser devri kaç olmalıdır؟</p>
-<p>Süpürgeliklerin üst kısımlarının toz toplamasını önlemek ve estetik görünmesini sağlamak için çekilecek silikonun düzeltilmesinde kullanılan spatulalar nasıl seçilir؟</p>
-<p>Ağır yük forkliftlerinin çalıştığı fabrika zeminlerinde seramik altındaki şapın eğilmede çekme dayanımı sınıfı ne olmalıdır؟</p>
-<p>Zemin seramik kaplama işlemlerinde kot ve düzlük kontrolünü milimetrik olarak yapmak için kullanılan dijital nivo cihazlarının okuma hassasiyeti nasıl ayarlanır؟</p>
-<p>Mutfak tezgah arkası seramiklerinde elektrik buatlarının tam hizasında kesim yapmak için kullanılan karbür uçlu dairesel kesici pançlar nasıl seçilir؟</p>
-<p>Seramik uygulaması sırasında derzlerden taşan yapıştırıcıların derz dolgu rengini bozmaması için temizliğinde kullanılan fırçaların sertliği ne olmalıdır؟</p>
-<p>Balkon korkuluklarının zemin seramiğini delerek monte edildiği noktalarda su sızıntısını önlemek için flanş altı yalıtım dolgusu nasıl yapılır؟</p>
-<p>Yeni döşenmiş seramik zeminlerin üzerinde alçı işleri yapılırken seramik yüzeyinin çizilmesini önleyecek koruyucu muşamba örtüler nasıl serilir؟</p>
-<p>Zemin şapının kuruma sürecinde ortam neminin şapın içindeki suyun hızlı buharlaşmasına etkisi nasıl kontrol altına alınır؟</p>
-<p>Kesme disklerinin aşırı ısınarak porselen kenarlarını çatlatmasını önlemek için kuru kesimde kullanılacak soğutucu balmumu (wax) nasıl uygulanır؟</p>
-<p>Banyo duvar seramiklerinde delik açarken matkap ucunun kaymasını önlemek için kullanılan vantuzlu delme kılavuzları nasıl monte edilir؟</p>
-<p>Yerden ısıtmalı zeminlerde ilk çalıştırma esnasında zemin sıcaklığının maksimum kaç dereceye kadar yükseltilmesine izin verilir؟</p>
-<p>Dış mekan merdiven basamaklarında su birikmesini önlemek için basamak seramiklerine verilecek eğim yönü ve açısı nasıl ayarlanır؟</p>
-<p>İki oda arasındaki kapı geçişlerinde derz çizgilerinin kesintisiz devam etmesi için kapı kasası altındaki seramik yerleşimi nasıl planlanır؟</p>
-<p>Derz dolgusunun hazırlanmasında mikserle karıştırma yapıldıktan sonra harcın olgunlaşması (dinlendirilmesi) için neden beklenmelidir؟</p>
-<p>Cam kapı zemin menteşelerinin yerleştirildiği noktalarda seramik karoların kırılmasını önlemek için kullanılan çelik koruma kutuları nasıl monte edilir؟</p>
-<p>Asit banyolarında aside dayanıklı porselen karo döşerken kullanılacak çift bileşenli epoksi yapıştırıcıların ortam sıcaklığına göre priz alma süreleri nasıl değişir؟</p>
-<p>Seramik arkasındaki yapıştırıcı şeritlerinin düzgün taranıp taranmadığını kontrol etmek için karoyu kaldırıp bakarken yapıştırıcının karo arkasına transfer oranı yüzde kaç olmalıdır؟</p>
-<p>Mutfak tezgahı ile duvar seramiğinin birleştiği köşe derzlerinde çimento esaslı derz yerine kullanılan silikonların solvent dayanımı nasıl olmalıdır؟</p>
-<p>Büyük ebatlı karoların şantiyede taşınması sırasında esneyerek kırılmasını önlemek için kullanılan teleskobik taşıma barları nasıl ayarlanır؟</p>
-<p>Çok soğuk kış günlerinde seramik yapıştırıcısının donmasını önlemek için harç hazırlama suyunu ısıtmak amacıyla kullanılan elektrikli ısıtıcılar nasıl kullanılır؟</p>
-<p>Dış cephelerde mekanik askı sistemiyle porselen montajı yapılırken yatay alüminyum profillerin dikey profillere sabitlenmesinde hangi perçinler kullanılır؟</p>
-<p>Banyo zeminlerinde suyun süzgece rahat akabilmesi için zarf usulü eğim verirken süzgeç etrafındaki seramiklerin pah kırma işlemleri nasıl yapılır؟</p>
-<p>Geniş ticari showroom zeminlerinde ağır teşhir stantlarının altına gelen seramiklerin kırılmaması için kullanılan çimento esaslı kendiliğinden yayılan şapların basınç dayanımı ne olmalıdır؟</p>
-<p>Epoksi derz dolgusunun temizliğinde kullanılan selülozik keçelerin karo yüzeyinde kalan epoksi reçinesini tamamen temizlemesi için hangi temizlik jelleri kullanılır؟</p>
-  
-</div>
+  <!-- Breadcrumb -->
 
-<script>
+  <nav class="breadcrumb" aria-label="Sayfa yolu">
+    <a href="/">Ana Sayfa</a>
+    <span>›</span>
+    <span>Sık Sorulan Sorular</span>
+  </nav>
 
-document.addEventListener("DOMContentLoaded", function () {
 
-    const questions = document.querySelectorAll(".content p");
+  <!-- Header -->
 
-    questions.forEach((q, index) => {
+  <header class="faq-header">
 
-        const questionNumber = index + 1;
+    <h1>
+      Fayans, Seramik ve Porselen Hakkında Sık Sorulan Sorular
+    </h1>
 
-        const position = (questionNumber - 1) % 12;
+    <p>
+      Antalya fayans ustası hizmetleri hakkında fayans, seramik,
+      porselen, banyo, mutfak, balkon, teras, havuz, su yalıtımı
+      ve döşeme uygulamalarıyla ilgili 40 soru ve cevap.
+    </p>
 
-        if(position === 10 || position === 11){
-            q.classList.add("blue");
-        }
+    <div class="intro-box">
+      Bu sayfada fayans ve seramik döşemesi yaptırmadan önce veya
+      uygulama sırasında merak edilen önemli konular açıklanmaktadır.
+      Kullanılacak malzeme ve uygulama yöntemi; seramiğin türüne,
+      yüzeyin durumuna, kullanım alanına ve üretici talimatlarına göre
+      değişebilir.
+    </div>
 
-    });
+  </header>
 
-});
 
-</script>
+  <!-- 1 -->
+
+  <section class="faq-category">
+
+    <h2>1. Fayans, Seramik ve Porselen Seçimi</h2>
+
+
+    <details class="faq-item">
+      <summary>Seramik ile porselen arasındaki fark nedir?</summary>
+      <div class="faq-content">
+        <p>
+          Porselen karolar genellikle daha düşük su emme oranına ve
+          daha yoğun bir yapıya sahiptir. Seramik ürünlerin ise farklı
+          kullanım alanlarına uygun birçok çeşidi bulunur. Doğru seçim;
+          kullanım alanı, ürün özellikleri, zemin veya duvar uygulaması
+          ve tasarıma göre yapılmalıdır.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>Banyo zemininde porselen kullanılabilir mi?</summary>
+      <div class="faq-content">
+        <p>
+          Evet. Banyo zeminlerinde kullanıma uygun porselen ürünler
+          kullanılabilir. Ancak ürünün zemin kullanımına uygun olması,
+          yüzeyin doğru hazırlanması, su yalıtımı, eğim ve gider detaylarının
+          doğru uygulanması önemlidir.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>Porselen fayans duvara döşenir mi?</summary>
+      <div class="faq-content">
+        <p>
+          Evet, duvara uygun porselen ürünler kullanılabilir. Ancak karonun
+          ağırlığı, ölçüsü, yüzeyin taşıma kapasitesi ve kullanılacak yapıştırıcı
+          birlikte değerlendirilmelidir.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>Banyo için hangi fayans ölçüsü daha uygundur?</summary>
+      <div class="faq-content">
+        <p>
+          Her banyo için tek bir ideal ölçü yoktur. Banyonun büyüklüğü,
+          duvarların ölçüsü, giderlerin konumu, köşeler ve istenen tasarım
+          dikkate alınarak ölçü seçilmelidir. Büyük ebatlı karolar daha az
+          derz oluşturabilir ancak daha düzgün bir yüzey ve daha hassas
+          uygulama gerektirir.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>Büyük ebatlı fayans döşemek daha mı zordur?</summary>
+      <div class="faq-content">
+        <p>
+          Büyük ebatlı karoların taşınması, kesilmesi, yapıştırılması ve
+          terazisinin ayarlanması daha fazla dikkat gerektirebilir. Yüzey
+          düzgünlüğü ve yapıştırıcının doğru dağıtılması özellikle önemlidir.
+        </p>
+      </div>
+    </details>
+
+  </section>
+
+
+  <!-- 2 -->
+
+  <section class="faq-category">
+
+    <h2>2. Fayans Yapıştırıcısı ve Döşeme Yöntemi</h2>
+
+
+    <details class="faq-item">
+      <summary>C1 ve C2 fayans yapıştırıcısı arasındaki fark nedir?</summary>
+      <div class="faq-content">
+        <p>
+          C1 ve C2 sınıflandırmaları çimento esaslı fayans yapıştırıcılarının
+          performans özellikleriyle ilgilidir. C2, geliştirilmiş özelliklere
+          sahip yapıştırıcı sınıfını ifade eder. Seçim yapılırken karo türü,
+          ölçüsü, yüzey ve uygulama alanının şartları dikkate alınmalıdır.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>C2 yapıştırıcı porselen için uygun mudur?</summary>
+      <div class="faq-content">
+        <p>
+          Porselen için uygun C2 sınıfı yapıştırıcılar bulunmaktadır.
+          Ancak yalnızca C2 ibaresine bakmak yeterli değildir. Ürünün teknik
+          özellikleri ve porselen karonun üretici tavsiyeleri kontrol edilmelidir.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>C2S1 gibi esnek yapıştırıcı ne zaman kullanılır?</summary>
+      <div class="faq-content">
+        <p>
+          Bazı uygulamalarda yüzey hareketleri, sıcaklık değişimleri veya
+          belirli zemin koşulları nedeniyle daha esnek bir yapıştırıcı
+          gerekebilir. C2S1 veya başka bir ürünün seçimi yüzey, karo ve
+          uygulama şartlarına göre yapılmalıdır.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>Porselen fayans sadece çimento ve kum ile döşenir mi?</summary>
+      <div class="faq-content">
+        <p>
+          Uygulama yöntemi karo ve yüzey özelliklerine göre belirlenmelidir.
+          Günümüzde porselen karoların birçok uygulamasında ürüne uygun
+          yapıştırıcı sistemleri kullanılmaktadır. Sadece çimento ve kuma
+          göre karar vermek doğru değildir.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>Fayans döşerken taraklı mala neden kullanılır?</summary>
+      <div class="faq-content">
+        <p>
+          Taraklı mala, yapıştırıcının yüzeye daha düzenli bir kalınlıkta
+          yayılmasına yardımcı olur. Mala dişinin ölçüsü karo boyutu,
+          yüzey ve kullanılan yapıştırıcıya göre belirlenir.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>Büyük porselen karolarda çift taraflı yapıştırma gerekir mi?</summary>
+      <div class="faq-content">
+        <p>
+          Büyük ebatlı bazı karolarda yapıştırıcının hem yüzeye hem de
+          karonun arka yüzüne uygulanması gerekebilir. Bu yöntem karo ölçüsü,
+          yüzey ve üretici talimatlarına göre belirlenir.
+        </p>
+      </div>
+    </details>
+
+  </section>
+
+
+  <!-- 3 -->
+
+  <section class="faq-category">
+
+    <h2>3. Fayans Altında Boşluk, Kabarma ve Seviye Farkları</h2>
+
+
+    <details class="faq-item">
+      <summary>Fayans altında neden boşluk oluşur?</summary>
+      <div class="faq-content">
+        <p>
+          Boşluk oluşmasının nedenleri arasında yapıştırıcının yeterince
+          yayılmaması, yüzeyin uygun hazırlanmaması, yanlış uygulama yöntemi
+          veya zemindeki problemler bulunabilir.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>Fayans neden bir süre sonra yerinden çıkar?</summary>
+      <div class="faq-content">
+        <p>
+          Yapışmanın yetersiz olması, zemindeki hareket veya çatlaklar,
+          nem, uygun olmayan yapıştırıcı kullanılması ya da uygulama hataları
+          fayansın zamanla ayrılmasına neden olabilir. Kesin neden için
+          yüzeyin ve mevcut karoların incelenmesi gerekir.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>Fayans döşemesinde tırnaklanma veya seviye farkı nedir?</summary>
+      <div class="faq-content">
+        <p>
+          Yan yana gelen iki karonun kenarlarının aynı seviyede olmaması
+          yüzeyde seviye farkı oluşturabilir. Bunun nedeni yüzey düzgünlüğü,
+          karo toleransları, yapıştırma yöntemi veya uygulama sırasında
+          yeterli tesviye yapılmaması olabilir.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>Fayans seviye tesviye klipsleri faydalı mıdır?</summary>
+      <div class="faq-content">
+        <p>
+          Tesviye klipsleri, uygun koşullarda komşu karolar arasındaki
+          seviye farkını azaltmaya yardımcı olabilir. Ancak çok bozuk bir
+          zemini düzeltmez ve yanlış yapıştırıcı uygulamasının yerine geçmez.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>Fayans derzleri neden çatlar?</summary>
+      <div class="faq-content">
+        <p>
+          Derz çatlakları yüzey hareketi, büzülme ve genleşme, uygun olmayan
+          derz malzemesi, hareket derzlerinin eksikliği veya alt tabakadaki
+          sorunlardan kaynaklanabilir.
+        </p>
+      </div>
+    </details>
+
+  </section>
+
+  <!-- 4 -->
+
+  <section class="faq-category">
+
+    <h2>4. Banyo, Su Yalıtımı ve Zemin Eğimi</h2>
+
+
+    <details class="faq-item">
+      <summary>Banyo fayansı döşenmeden önce su yalıtımı yapılmalı mı?</summary>
+      <div class="faq-content">
+        <p>
+          Suya maruz kalan alanlarda uygun bir su yalıtım sistemi önemli bir
+          koruma katmanıdır. Yalıtımın köşeler, boru geçişleri ve gider
+          çevrelerinde sistem kurallarına uygun şekilde uygulanması gerekir.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>Banyo zemini fayans döşemesine nasıl hazırlanır?</summary>
+      <div class="faq-content">
+        <p>
+          Öncelikle yüzey kontrol edilir, zayıf veya bozuk bölgeler düzeltilir,
+          yüzey temizlenir, gider yönünde uygun eğim hazırlanır ve gerekiyorsa
+          su yalıtımı uygulanır. Daha sonra yüzey fayans döşemesine hazır hale
+          getirilir.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>Banyo zemininde gidere doğru ne kadar eğim olmalıdır?</summary>
+      <div class="faq-content">
+        <p>
+          Gerekli eğim; gider tipi, banyo tasarımı ve uygulama sistemine göre
+          değişebilir. Birçok uygulamada yaklaşık %1 ile %2 arasında eğim
+          kullanılabilir. Kesin değer mevcut alan ve sistem dikkate alınarak
+          belirlenmelidir.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>Banyo zemininde su neden birikiyor?</summary>
+      <div class="faq-content">
+        <p>
+          Yetersiz eğim, zemindeki düşük noktalar, gider yüksekliği veya
+          fayans seviyesindeki farklılıklar su birikmesine neden olabilir.
+          Fayans döşenmeden önce eğim ve gider seviyesi kontrol edilmelidir.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>Su yalıtımının üzerine fayans döşenir mi?</summary>
+      <div class="faq-content">
+        <p>
+          Evet, fayans döşemesine uygun olarak tasarlanmış su yalıtım
+          sistemlerinin üzerine uygun yapıştırıcı ile seramik döşenebilir.
+          Kullanılan yalıtım ve yapıştırıcının birbiriyle uyumlu olması gerekir.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>Su yalıtımı yapıldıktan sonra fayans ne zaman döşenir?</summary>
+      <div class="faq-content">
+        <p>
+          Bekleme süresi kullanılan yalıtım ürününe göre değişir. Üreticinin
+          belirttiği kuruma ve kaplama süresine uyulmalı ve yüzeyin fayans
+          döşemeye hazır olduğu kontrol edilmelidir.
+        </p>
+      </div>
+    </details>
+
+  </section>
+
+
+  <!-- 5 -->
+
+  <section class="faq-category">
+
+    <h2>5. Derz ve Hareket Derzleri</h2>
+
+
+    <details class="faq-item">
+      <summary>Fayanslar arasında derz bırakmak gerekli mi?</summary>
+      <div class="faq-content">
+        <p>
+          Çoğu fayans döşeme sisteminde derz aralıkları önemlidir. Derzler
+          karoların düzgün hizalanmasına ve sistemin hareketlerini karşılamasına
+          yardımcı olur. Gerekli derz genişliği karo ve uygulama şartlarına göre
+          değişir.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>Fayans derz aralığı kaç milimetre olmalıdır?</summary>
+      <div class="faq-content">
+        <p>
+          Tek bir standart ölçü her karo için geçerli değildir. Rektifiyeli
+          karolar daha dar derzlerle uygulanabilirken bazı ürünler daha geniş
+          derz gerektirebilir. Üretici tavsiyesi ve uygulama alanı dikkate alınmalıdır.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>Normal derz ile hareket derzi arasındaki fark nedir?</summary>
+      <div class="faq-content">
+        <p>
+          Normal derz karolar arasındaki boşluktur ve genellikle derz dolgu
+          malzemesi ile doldurulur. Hareket derzi ise yüzeyde oluşabilecek
+          hareketleri karşılamak için tasarlanan ve uygun elastik malzeme
+          gerektiren özel bir detaydır.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>Hareket derzleri sadece derz dolgusu ile kapatılır mı?</summary>
+      <div class="faq-content">
+        <p>
+          Hareket için tasarlanmış derzler normal derz gibi rijit bir malzeme
+          ile kapatılmamalıdır. Uygun elastik malzeme ve doğru detaylandırma
+          kullanılmalıdır.
+        </p>
+      </div>
+    </details>
+
+  </section>
+
+
+  <!-- 6 -->
+
+  <section class="faq-category">
+
+    <h2>6. Seramik Döşemeden Önce Yüzey Hazırlığı</h2>
+
+
+    <details class="faq-item">
+      <summary>Seramik döşemeden önce fayansı suya yatırmak gerekir mi?</summary>
+      <div class="faq-content">
+        <p>
+          Bu işlem karo türüne ve kullanılan döşeme sistemine bağlıdır.
+          Eski tip geleneksel harç uygulamalarında bazı seramiklerde
+          nemlendirme yapılabilirken modern yapıştırıcı sistemlerinde
+          farklı uygulama kuralları vardır.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>Porselen fayans suya yatırılır mı?</summary>
+      <div class="faq-content">
+        <p>
+          Yapıştırıcı ile yapılan modern porselen uygulamalarında genellikle
+          suya yatırma işlemi yapılmaz. Yüzeyin hazırlanması ve uygun
+          yapıştırıcının kullanılması daha önemlidir.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>Bozuk zeminin üzerine fayans döşenir mi?</summary>
+      <div class="faq-content">
+        <p>
+          Küçük yüzey farklılıkları uygulama sistemine göre giderilebilir.
+          Ancak zemindeki büyük bozuklukların önceden düzeltilmesi gerekir.
+          Fazla yapıştırıcı kullanarak büyük seviye farklarını kapatmak
+          doğru bir çözüm değildir.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>Fayans döşemeden önce zemin neden temizlenir?</summary>
+      <div class="faq-content">
+        <p>
+          Toz, yağ, boya kalıntıları ve zayıf yüzey tabakaları yapıştırıcının
+          zemine tutunmasını azaltabilir. Bu nedenle yüzey temiz, sağlam ve
+          kullanılacak sisteme uygun olmalıdır.
+        </p>
+      </div>
+    </details>
+
+  </section>
+
+
+  <!-- 7 -->
+
+  <section class="faq-category">
+
+    <h2>7. Banyo ve Mutfak Fayans Döşeme</h2>
+
+
+    <details class="faq-item">
+      <summary>Banyo duvarı için seramik mi porselen mi daha uygundur?</summary>
+      <div class="faq-content">
+        <p>
+          Her iki ürün de uygun özelliklere sahip olduğunda kullanılabilir.
+          Seçim; ölçü, ağırlık, su emme, tasarım, temizlik, bütçe ve uygulama
+          şartlarına göre yapılmalıdır.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>Eski fayansın üzerine yeni fayans döşenir mi?</summary>
+      <div class="faq-content">
+        <p>
+          Bazı durumlarda eski fayansların üzerine yeni fayans döşenebilir.
+          Ancak eski karoların sağlam olması, yüzeyin temizlenmesi ve uygun
+          bir yapıştırıcı sisteminin kullanılması gerekir.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>Eski fayansın üzerine döşeme yapmak daha hızlı mıdır?</summary>
+      <div class="faq-content">
+        <p>
+          Uygun şartlarda kırma ve moloz işlemlerini azaltabilir. Ancak
+          zeminin yükselmesi, kapı yükseklikleri, giderler ve tesisat gibi
+          detaylar mutlaka önceden kontrol edilmelidir.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>Banyo giderinin çevresine fayans nasıl döşenir?</summary>
+      <div class="faq-content">
+        <p>
+          Giderin yüksekliği ve konumu önceden ayarlanmalı, zemin eğimi
+          gider yönünde hazırlanmalı ve karo kesimleri gider çevresine
+          düzgün şekilde uygulanmalıdır.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>Su borularının çevresine fayans nasıl kesilir?</summary>
+      <div class="faq-content">
+        <p>
+          Borunun konumu ölçülerek uygun çap ve şekle göre kesim yapılır.
+          Karonun gereğinden fazla zayıflatılmaması ve boruya baskı
+          uygulanmaması gerekir.
+        </p>
+      </div>
+    </details>
+
+  </section>
+
+
+  <!-- 8 -->
+
+  <section class="faq-category">
+
+    <h2>8. Balkon ve Teras Fayans Döşeme</h2>
+
+
+    <details class="faq-item">
+      <summary>Balkon için hangi fayans kullanılmalıdır?</summary>
+      <div class="faq-content">
+        <p>
+          Balkon için dış mekâna uygun, neme ve sıcaklık değişimlerine
+          dayanıklı ve kullanım alanına uygun yüzey özelliklerine sahip
+          fayans seçilmelidir.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>Banyo fayansı balkonda kullanılabilir mi?</summary>
+      <div class="faq-content">
+        <p>
+          İç mekân için üretilmiş her fayans dış mekâna uygun değildir.
+          Balkon veya teras için ürünün dış mekân kullanımına uygunluğu
+          üretici teknik bilgileri üzerinden kontrol edilmelidir.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>Balkon fayansları neden çatlar veya yerinden çıkar?</summary>
+      <div class="faq-content">
+        <p>
+          Sıcaklık değişimleri, nem, yetersiz su yalıtımı, yüzey hareketleri,
+          uygun olmayan yapıştırıcı veya uygulama hataları balkon fayanslarında
+          çatlama ve ayrılmaya neden olabilir.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>Teras fayansından önce su yalıtımı yapılmalı mı?</summary>
+      <div class="faq-content">
+        <p>
+          Yağmur ve suya maruz kalan teraslarda uygun bir su yalıtım sistemi
+          önemlidir. Yalıtımın türü ve detayları terasın mevcut yapısına
+          ve kullanılacak sisteme göre belirlenmelidir.
+        </p>
+      </div>
+    </details>
+
+  </section>
+
+
+  <!-- 9 -->
+
+  <section class="faq-category">
+
+    <h2>9. Havuz Fayans ve Seramik Döşeme</h2>
+
+
+    <details class="faq-item">
+      <summary>Havuz için hangi fayans kullanılmalıdır?</summary>
+      <div class="faq-content">
+        <p>
+          Havuz uygulamalarında su altında kullanıma uygun, üretici tarafından
+          belirtilen özelliklere sahip karo veya mozaik ürünler tercih edilmelidir.
+          Yapıştırıcı, derz ve yalıtım sistemi de havuz koşullarına uygun olmalıdır.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>Havuzda sadece fayans döşemek yeterli midir?</summary>
+      <div class="faq-content">
+        <p>
+          Fayans ve derz malzemesi tek başına bir su yalıtım sistemi yerine
+          geçmez. Havuzun yapısına uygun yalıtım ve detayların doğru şekilde
+          uygulanması gerekir.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>Havuzda normal fayans yapıştırıcısı kullanılabilir mi?</summary>
+      <div class="faq-content">
+        <p>
+          Havuz uygulamalarında suya sürekli maruz kalmaya uygun ve karo ile
+          yalıtım sistemiyle uyumlu bir yapıştırıcı kullanılmalıdır. Ürünün
+          teknik özellikleri kontrol edilmeden yalnızca genel amaçlı bir
+          yapıştırıcı seçilmemelidir.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>Havuz fayansları neden yerinden çıkar?</summary>
+      <div class="faq-content">
+        <p>
+          Yapışma problemi, alt yüzeyde hareket veya çatlak, suyun karo
+          arkasına ulaşması, yanlış malzeme seçimi veya uygulama hataları
+          havuz fayanslarının ayrılmasına neden olabilir.
+        </p>
+      </div>
+    </details>
+
+  </section>
+
+
+  <!-- 10 -->
+
+  <section class="faq-category">
+
+    <h2>10. Antalya Fayans Ustası Hizmetleri Hakkında</h2>
+
+
+    <details class="faq-item">
+      <summary>Antalya'da fayans ve seramik döşeme hizmeti veriyor musunuz?</summary>
+      <div class="faq-content">
+        <p>
+          Evet. Antalya Fayans Ustası olarak fayans, seramik ve porselen
+          döşeme işleri; banyo, mutfak, zemin, duvar, balkon, teras ve
+          havuz gibi farklı alanlar için yapılmaktadır.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>Antalya'da hangi bölgelerde hizmet veriyorsunuz?</summary>
+      <div class="faq-content">
+        <p>
+          Hizmet bölgeleri arasında Muratpaşa, Konyaaltı, Kepez, Döşemealtı,
+          Aksu, Serik, Kemer, Manavgat ve Alanya bulunmaktadır. İşin türüne
+          ve konumuna göre hizmet planlaması yapılabilir.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>Banyo fayans döşeme işi yapıyor musunuz?</summary>
+      <div class="faq-content">
+        <p>
+          Evet. Banyo zemin ve duvar fayansları, seramik döşeme, gider çevresi,
+          eğim, karo kesimleri ve uygun yüzey hazırlığı gibi işler yapılabilir.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>Mutfak fayans ve seramik döşeme yapıyor musunuz?</summary>
+      <div class="faq-content">
+        <p>
+          Evet. Mutfak duvar ve zeminlerinde fayans veya seramik döşeme,
+          ölçüye göre kesimler ve farklı detayların uygulanması yapılabilir.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>İş başlamadan önce yerinde keşif yapılabilir mi?</summary>
+      <div class="faq-content">
+        <p>
+          Evet. Yerinde inceleme; alanın ölçüsünü, yüzey durumunu, karo
+          türünü, gerekli hazırlıkları ve işin kapsamını daha doğru
+          değerlendirmeye yardımcı olur.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>Büyük ebatlı porselen döşemesi yapılıyor mu?</summary>
+      <div class="faq-content">
+        <p>
+          Uygun yüzey ve çalışma şartlarında büyük ebatlı porselen döşemesi
+          yapılabilir. Büyük karolarda taşıma, kesim, yapıştırıcı dağılımı
+          ve seviye kontrolü daha dikkatli yapılmalıdır.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>Mevcut fayansların tamiri veya değiştirilmesi yapılabilir mi?</summary>
+      <div class="faq-content">
+        <p>
+          Mevcut fayanslar incelenerek sorunun nedeni belirlenebilir.
+          Gevşemiş veya kırılmış karoların değiştirilmesi bazı durumlarda
+          mümkündür. Uygun çözüm mevcut yüzeyin durumuna göre belirlenir.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>Sadece bir adet kırık fayans değiştirilebilir mi?</summary>
+      <div class="faq-content">
+        <p>
+          Evet, uygun yedek karo mevcutsa tek bir kırık fayansın değiştirilmesi
+          çoğu durumda mümkündür. Ancak mevcut karonun aynısını bulmak renk,
+          ölçü ve üretim serisi nedeniyle her zaman mümkün olmayabilir.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>Fayans döşeme fiyatı bölgeye göre değişir mi?</summary>
+      <div class="faq-content">
+        <p>
+          İşçilik maliyeti yalnızca bölgeye göre belirlenmez. Alanın büyüklüğü,
+          yüzeyin durumu, karo türü ve ölçüsü, kesim miktarı, söküm, tesviye,
+          yalıtım ve işin zorluk derecesi gibi birçok faktör değerlendirilir.
+        </p>
+      </div>
+    </details>
+
+
+    <details class="faq-item">
+      <summary>Fayans döşeme fiyatı almak için hangi bilgiler gerekir?</summary>
+      <div class="faq-content">
+        <p>
+          Bulunduğunuz bölge, yaklaşık metrekare, kullanılacak fayans veya
+          porselenin türü ve ölçüsü, mevcut zeminin durumu ve mümkünse
+          çalışma alanının fotoğrafları fiyat değerlendirmesine yardımcı olur.
+        </p>
+      </div>
+    </details>
+
+  </section>
+
+
+  <!-- CTA -->
+
+  <section class="faq-cta">
+
+    <h2>Fayans veya seramik işi için bilgi mi almak istiyorsunuz?</h2>
+
+    <p>
+      Banyo, mutfak, zemin, duvar, balkon, teras veya havuz fayans
+      uygulaması için işin durumunu görüşebilirsiniz.
+    </p>
+
+    <a class="cta-button" href="tel:+905319667732">
+      Antalya Fayans Ustası'nı Ara
+    </a>
+
+  </section>
+
+
+  <!-- Internal Links -->
+
+  <section class="internal-links">
+
+    <h2>Sitedeki Faydalı Sayfalar</h2>
+
+    <ul>
+
+      <li>
+        <a href="/services-tr.html">
+          Fayans ve Seramik Hizmetleri
+        </a>
+      </li>
+
+      <li>
+        <a href="/areas-tr.html">
+          Antalya Hizmet Bölgeleri
+        </a>
+      </li>
+
+      <li>
+        <a href="/about-tr.html">
+          Antalya Fayans Ustası Hakkında
+        </a>
+      </li>
+
+      <li>
+        <a href="/contact-tr.html">
+          İletişim ve Hizmet Talebi
+        </a>
+      </li>
+
+      <li>
+        <a href="/faq.html">
+          Sık Sorulan Sorular - Arapça
+        </a>
+      </li>
+
+    </ul>
+
+  </section>
+
+</main>
 
 </body>
 </html>
