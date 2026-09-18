@@ -2,82 +2,288 @@
 <html lang="ar" dir="rtl">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>من نحن</title>
+<!-- SEO Meta Tags -->
+<title>من نحن | معلم سيراميك وبورسلين في أنطاليا - Muhammed Ali Usta</title>
+<meta name="description" content="تعرّف على الخبرة المهنية للمعلم Muhammed Ali Usta وفريقه في تركيب السيراميك، البورسلين، والعزل المائي في أنطاليا. خبرة أكثر من 10 سنوات بدون وسطاء.">
+<meta name="keywords" content="من نحن, معلم سيراميك أنطاليا, Muhammed Ali Usta, فني سيراميك أنطاليا, تركيب بورسلين أنطاليا, معلم فايانس كيبز">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://antalyafayansustasi.com/about.html">
 
+<!-- Open Graph -->
+<meta property="og:locale" content="ar_AR">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="من نحن | Muhammed Ali Usta - معلم سيراميك أنطاليا">
+<meta property="og:description" content="فريق حرفي متخصص في تركيب جميع أنواع السيراميك والبورسلين والعزل المائي في أنطاليا بخبرة تزيد عن 10 سنوات.">
+<meta property="og:url" content="https://antalyafayansustasi.com/about.html">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 
+<!-- Structured Data (Advanced Schema.org - AboutPage & LocalBusiness) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "@id": "https://antalyafayansustasi.com/about.html#webpage",
+      "url": "https://antalyafayansustasi.com/about.html",
+      "name": "من نحن - معلم سيراميك وبورسلين في أنطاليا",
+      "description": "الصفحة التعريفية بالخبرة والخدمات التي يقدمها المعلم Muhammed Ali Usta في مجال تركيب السيراميك والبورسلين بأنطاليا"
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://antalyafayansustasi.com/#business",
+      "name": "Antalya Fayans Ustası - Muhammed Ali Usta",
+      "url": "https://antalyafayansustasi.com",
+      "telephone": "+905319667732",
+      "email": "info@antalyafayansustasi.com",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kepez",
+        "addressRegion": "Antalya",
+        "addressCountry": "TR"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Muhammed Ali Usta",
+        "jobTitle": "Master Tile & Porcelain Installer"
+      },
+      "areaServed": [
+        "Kepez",
+        "Muratpaşa",
+        "Konyaaltı",
+        "Antalya"
+      ]
+    }
+  ]
+}
+</script>
+
 <style>
-
-body{
-    font-family:'Cairo',sans-serif;
-    max-width:900px;
-    margin:auto;
-    padding:30px;
-    background:#ffffff;
-    color:#333;
-    font-size:22px;
-    line-height:2.2;
-    text-align:right;
+:root {
+  --primary: #25D366;
+  --secondary: #0A58CA;
+  --dark: #0f172a;
+  --light: #f8fafc;
+  --border: #e2e8f0;
 }
 
-p{
-    text-align:justify;
-    margin-bottom:22px;
+* {
+    box-sizing: border-box;
 }
 
-strong{
-    color:#0A58CA;
-    font-weight:800;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Cairo', sans-serif;
+    background-color: var(--light);
+    color: #334155;
+    line-height: 1.8;
 }
 
+.header {
+    background: var(--dark);
+    color: #fff;
+    padding: 45px 20px 35px;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0 0 10px;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.header p {
+    margin: 0;
+    color: #94a3b8;
+    font-size: 16px;
+}
+
+.wrapper {
+    max-width: 780px;
+    margin: -20px auto 40px;
+    padding: 0 15px;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.06);
+    border: 1px solid var(--border);
+    margin-bottom: 20px;
+}
+
+.card h2 {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--dark);
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 10px;
+}
+
+.highlight-box {
+    background: #eff6ff;
+    border-right: 4px solid var(--secondary);
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 20px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.feature-item {
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.feature-item h3 {
+    margin: 0 0 6px 0;
+    font-size: 16px;
+    color: var(--secondary);
+}
+
+.feature-item p {
+    margin: 0;
+    font-size: 14px;
+    color: #64748b;
+}
+
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+@media (min-width: 500px) {
+    .btn-group {
+        flex-direction: row;
+    }
+}
+
+.btn {
+    flex: 1;
+    padding: 14px;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.btn-whatsapp {
+    background: var(--primary);
+    color: #fff;
+}
+
+.btn-call {
+    background: var(--secondary);
+    color: #fff;
+}
+
+.footer-links {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+.footer-links a {
+    color: #64748b;
+    text-decoration: none;
+    margin: 0 8px;
+    font-weight: 700;
+}
+
+.footer-links a:hover {
+    color: var(--secondary);
+}
 </style>
 
 </head>
 
 <body>
 
-<p>
-منذ أكثر من <strong>عشر سنوات</strong>، نعمل في مجال <strong>تركيب السيراميك والبورسلان</strong> في مدينة أنطاليا، معتمدين على <strong>الخبرة، والدقة، والالتزام</strong> في كل مشروع نقوم بتنفيذه.
-</p>
+<header class="header">
+    <h1>خبرة واحترافية في تنفيذ السيراميك والبورسلين</h1>
+    <p>المعلم Muhammed Ali Usta | أنطاليا</p>
+</header>
 
-<p>
-نحن لسنا <strong>شركة وساطة</strong>، بل <strong>مجموعة من الحرفيين المحترفين</strong> الذين يمارسون هذه المهنة منذ سنوات طويلة، واكتسبوا خبرة واسعة في تنفيذ جميع أنواع أعمال السيراميك الداخلية والخارجية.
-</p>
+<main class="wrapper">
 
-<p>
-نؤمن بأن <strong>جودة العمل هي أساس النجاح</strong>، لذلك نحرص على تنفيذ كل مشروع بأعلى مستوى من الإتقان، مهما كان حجمه أو تفاصيله.
-</p>
+    <section class="card">
+        <div class="highlight-box">
+            خبرة تمتد لأكثر من 10 سنوات بدون وسطاء – تنفيذ مباشر على أيدي حرفيين محترفين.
+        </div>
+        <p>
+            نحن مجموعة من الحرفيين المتخصصين في أعمال <strong>تركيب السيراميك والبورسلين والعزل المائي</strong> في ولاية أنطاليا. نعتمد في عملنا على الخبرة الميدانية الطويلة والدقة المتناهية، مع الالتزام التام بتسليم المشاريع في أوقاتها المحددة.
+        </p>
+    </section>
 
-<p>
-نقدم خدمات <strong>تركيب سيراميك الأرضيات والجدران</strong>، والحمامات، والمطابخ، والشرفات، والسلالم، والمسابح، بالإضافة إلى <strong>أعمال الترميم والتجديد</strong>.
-</p>
+    <section class="card">
+        <h2>نطاق خدماتنا الميدانية</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <h3>الأرضيات والجدران</h3>
+                <p>تركيب السيراميك والبورسلين للمنازل، الفلل، والمحلات التجاريّة.</p>
+            </div>
+            <div class="feature-item">
+                <h3>الحمامات والمطابخ</h3>
+                <p>تجديد شامل، تركيب أرضيات وجدران، وتأسيس العزل المائي.</p>
+            </div>
+            <div class="feature-item">
+                <h3>المسابح والشرفات</h3>
+                <p>تركيب موزاييك وعزل مائي معتمد للمقاومة العالية لتقلبات الطقس.</p>
+            </div>
+            <div class="feature-item">
+                <h3>السلالم والواجهات</h3>
+                <p>قص ليزري وتركيب بورسلين المقاسات الكبيرة بدقة عالية.</p>
+            </div>
+        </div>
+    </section>
 
-<p>
-نستخدم <strong>أحدث الأساليب والأدوات الحديثة</strong> لضمان أفضل النتائج، مع الاهتمام بأدق التفاصيل التي تمنح المكان مظهرًا أنيقًا وعمرًا طويلًا.
-</p>
+    <section class="card">
+        <h2>قيم العمل والالتزام</h2>
+        <p>
+            نحرص على استخدام أحدث الأدوات ومواد التثبيت المعتمدة لضمان عمر طويل للأعمال. نغطي كافة مناطق ولاية أنطاليا (Kepez, Muratpaşa, Konyaaltı والمناطق المحيطة)، ونضع الشفافية والصدق مع العميل في مقدمة أسرار نجاحنا.
+        </p>
 
-<p>
-نغطي <strong>معظم مناطق مدينة أنطاليا</strong>، ونحرص دائمًا على <strong>الالتزام بالمواعيد</strong> وإنجاز جميع الأعمال في الوقت المتفق عليه.
-</p>
+        <div class="btn-group">
+            <a href="https://wa.me/905319667732" class="btn btn-whatsapp" target="_blank" rel="noopener">تواصل معنا عبر واتساب</a>
+            <a href="tel:+905319667732" class="btn btn-call">اتصال مباشر</a>
+        </div>
+    </section>
 
-<p>
-نفخر بـ <strong>ثقة عملائنا</strong>، فالكثير منهم عاد إلينا في مشاريع جديدة، كما قاموا بترشيحنا لأقاربهم وأصدقائهم بعد أن لمسوا <strong>جودة العمل واحترافيته</strong>.
-</p>
+    <nav class="footer-links">
+        <a href="https://antalyafayansustasi.com/">الرئيسية</a> | 
+        <a href="https://antalyafayansustasi.com/quality.html">معايير الجودة</a> | 
+        <a href="https://antalyafayansustasi.com/question.html">أرسل سؤالك</a> | 
+        <a href="https://antalyafayansustasi.com/contact.html">تواصل معنا</a>
+    </nav>
 
-<p>
-هدفنا ليس فقط <strong>إنهاء المشروع</strong>، بل تقديم نتيجة ترضي العميل وتجعله يشعر بالفخر بمنزله أو مكان عمله.
-</p>
-
-<p>
-نعتبر <strong>الصدق، والشفافية، وحسن التعامل</strong> جزءًا أساسيًا من عملنا، ونحرص على تقديم النصائح المناسبة للعميل قبل البدء بأي مشروع.
-</p>
-
-<p>
-إذا كنت تبحث عن <strong>خبرة حقيقية</strong>، و<strong>جودة عالية</strong>، و<strong>أسعار مناسبة</strong>، وفريق يهتم بكل تفصيل، فإننا نسعد بخدمتك والمساهمة في تنفيذ مشروعك بأفضل صورة ممكنة.
-</p>
+</main>
 
 </body>
+
 </html>
